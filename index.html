@@ -1347,6 +1347,7 @@ function loadEngine(){return new Promise(res=>{if(!GMAPS_KEY)return res(d3Engine
 const shown=new Set(['ley','no','vec']);let eng=null,curF=null,picking=false,draft=null,step=0,fotoURL=null;
 const vis=()=>PTS.filter(p=>shown.has(p.cat));
 function mapClick(lat,lng){if(picking){draft.lat=lat;draft.lng=lng;eng.pin(lat,lng);endPick(true)}else closeFicha()}
+window.gm_authFailure=()=>{const m=$('map');m.innerHTML='';m.removeAttribute('style');eng=d3Engine(m,mapClick);$('mapnote').textContent='Vista previa · ubicaciones de ejemplo';eng.setMarkers(vis(),openFicha)};
 loadEngine().then(E=>{eng=E($('map'),mapClick);if(E===gEngine)$('mapnote').textContent='Ubicaciones de ejemplo';eng.setMarkers(vis(),openFicha);const top=PTS.filter(p=>p.cat==='ley').sort((a,b)=>b.viv-a.viv)[0];if(top)openFicha(top.id)});
 document.querySelectorAll('.lg').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.c;shown.has(c)?shown.delete(c):shown.add(c);b.classList.toggle('on',shown.has(c));eng&&eng.setMarkers(vis(),openFicha)}));
 $('zIn').addEventListener('click',()=>eng&&eng.zoomBy(1.6));$('zOut').addEventListener('click',()=>eng&&eng.zoomBy(1/1.6));
