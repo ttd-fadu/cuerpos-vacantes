@@ -1431,12 +1431,12 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){if(picking)endPick(false);el
 /* ---------- estrategia: carrusel de mockups ---------- */
 const ES=[
  {img:'mk/afiches.jpg',t:'afiches en obras abandonadas',k:'cartelería pública',b:'var(--naranja)',f:'var(--rosa)',s:[0,1],c:'Un afiche con QR en cada esqueleto: lo escaneás y llegás a su ficha en el mapa.'},
- {img:'mk/instagram.jpg',t:'instagram · carrusel de datos',k:'redes propias',b:'var(--rosa)',f:'var(--naranja)',s:[0],c:'Un dato por publicación y "el esqueleto de la semana" para poner el tema en agenda.'},
+ {img:'mk/instagram-perfil.jpg',t:'instagram · carrusel de datos',k:'redes propias',b:'var(--rosa)',f:'var(--naranja)',s:[0],c:'Un dato por publicación y "el esqueleto de la semana" para poner el tema en agenda.'},
  {img:'mk/luminica.jpg',t:'intervención lumínica',k:'vía pública',b:'var(--bordo)',f:'var(--celeste)',s:[0],c:'De noche, proyecciones sobre las estructuras: "acá podrían vivir 30 familias".'},
  {img:'mk/mesa.jpg',t:'mesa en la vereda',k:'gestión participativa',b:'var(--lima)',f:'var(--bordo)',s:[1,2],c:'Discutimos la ley con los vecinos en la puerta de las obras, en jornadas y festivales.'},
  {t:'tiktok · recorrido por un esqueleto',k:'redes propias',b:'var(--celeste)',f:'var(--bordo)',s:[0],c:'Videos cortos: llegar al barrio, mirar el esqueleto e imaginar quién podría vivir ahí.'},
- {img:'mk/colaboraciones.jpg',t:'colaboraciones',k:'CESBA · FADU · Gato y la Caja · Popurrí · Migliore',b:'var(--crema)',f:'var(--naranja)',s:[0,2],c:'Instituciones, universidades y divulgadores que suman alcance, datos y legitimidad.'},
- {img:'mk/poste.jpg',t:'propuestas a la Legislatura',k:'consenso',b:'var(--bordo)',f:'var(--crema)',s:[2,3],c:'Lo que sale de las mesas se convierte en un documento con mejoras a la ley.'}];
+ {img:'mk/colaboraciones-cesba.jpg',t:'colaboraciones',k:'CESBA · FADU · Gato y la Caja · Popurrí · Migliore',b:'var(--crema)',f:'var(--naranja)',s:[0,2],c:'Instituciones, universidades y divulgadores que suman alcance, datos y legitimidad.'},
+ {img:'mk/afiche-calle.jpg',t:'convocatorias abiertas',k:'vía pública',b:'var(--bordo)',f:'var(--crema)',s:[1],c:'Afiches en la calle que invitan a las mesas abiertas en la vereda de cada esqueleto.'}];
 const esStage=$('esStage'),esSteps=[...$('esSteps').querySelectorAll('b')],esN=ES.length;let esPos=0,esTarget=null,esHover=false,esLast=null,esIdx=-1;
 const esCards=ES.map((e,i)=>{const d=document.createElement('article');d.className='ecard';d.style.setProperty('--b',e.b);d.style.setProperty('--f',e.f);
   d.innerHTML=`<p class="ek">${esc(e.k)}</p>`+(e.img?`<div class="eimg"><img src="${e.img}" alt=""></div>`:'')+`<div><p class="et">${esc(e.t)}</p>${e.img?'':'<p class="ef">mockup a definir</p>'}</div>`;if(e.img)d.classList.add('has');
