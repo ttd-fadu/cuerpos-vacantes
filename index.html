@@ -887,6 +887,22 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .act2 .vcta{align-self:flex-end}
 @media (max-width:900px){.act2{grid-template-columns:1fr}.axo-svg{max-height:70vh}}
 @media (max-width:520px){.act2 .act-grid{grid-template-columns:1fr!important}}
+
+/* v6 · axonometría que se construye */
+.axo .sl{opacity:0;transition:opacity .25s calc(var(--k)*.09s)}
+.axo .rb{stroke:#9B1549;stroke-width:1.2}
+.axo.go .sl{opacity:.92}
+.axo .ax-gruesa,.axo .ax-build{clip-path:inset(100% 0 0 0);transition:clip-path 1.8s cubic-bezier(.45,0,.25,1)}
+.axo.s2 .ax-gruesa,.axo.s3 .ax-build{clip-path:inset(-2% 0 0 0)}
+.axo .ax-extra{opacity:0;transition:opacity .9s}
+.axo.s4 .ax-extra{opacity:1}
+.axo.s4 .ax-skel{opacity:0;transition:opacity .6s}
+.axo figcaption{opacity:0;transition:opacity .8s}
+.axo.s4 figcaption{opacity:1}
+.axo-replay{justify-self:center;font:600 11px var(--mono);letter-spacing:.06em;background:none;border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer;color:var(--ink);opacity:0;transition:opacity .6s}
+.axo.s4 .axo-replay{opacity:1}
+.axo-replay:hover{background:var(--ink);color:#fff}
+@media (prefers-reduced-motion:reduce){.axo .sl,.axo .ax-gruesa,.axo .ax-build,.axo .ax-extra,.axo figcaption{transition:none}}
 </style>
 </head>
 <body style="margin:0">
@@ -1023,7 +1039,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 
 <section id="actores" class="act act2" aria-label="A quién le sirve">
   <figure class="axo">
-    <svg class="axo-svg" viewBox="380 220 690 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Axonometría de un edificio de planta baja más 10 pisos en un lote de 10 por 50 metros, con patio de aire y luz, pulmón de manzana, terraza accesible y la planta tipo despiezada con 4 departamentos por piso">
+    <svg class="axo-svg" viewBox="380 220 690 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Axonometría que se construye: el esqueleto, la obra gruesa y el edificio terminado de planta baja más 10 pisos, con la planta tipo de 4 departamentos">
 <defs>
 <pattern id="ax-winFront" patternUnits="userSpaceOnUse" x="0" y="0" width="10" height="3">
 <rect width="10" height="3" fill="#F7F3EC"></rect>
@@ -1066,6 +1082,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <circle cx="3" cy="3" r="1.1" fill="#F08F90"></circle>
 </pattern>
 </defs>
+<g class="ax-ground">
 <g transform="matrix(9.526 -5.5 9.526 5.5 420 1060)">
 <rect x="-3" y="-10" width="3" height="30" fill="#EEEAE3"></rect>
 <rect x="0" y="10" width="30" height="10" fill="#FAF8F4" stroke="#D9D0C6" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"></rect>
@@ -1099,6 +1116,10 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <g transform="translate(862 875)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#E0787B"></rect><circle cy="-11.5" r="1.9" fill="#E0787B"></circle></g>
 <g transform="translate(829.6 845.5)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#2A2B45"></rect><circle cy="-11.5" r="1.9" fill="#2A2B45"></circle></g>
 </g>
+</g>
+<g class="ax-skel"><g stroke="#8E8478" stroke-width="1.6"><line x1="420.0" y1="1060.0" x2="420.0" y2="697.0"></line><line class="rb" x1="420.0" y1="697.0" x2="420.0" y2="675.0"></line><line x1="467.6" y1="1087.5" x2="467.6" y2="724.5"></line><line class="rb" x1="467.6" y1="724.5" x2="467.6" y2="702.5"></line><line x1="515.3" y1="1115.0" x2="515.3" y2="752.0"></line><line class="rb" x1="515.3" y1="752.0" x2="515.3" y2="730.0"></line><line x1="477.2" y1="1027.0" x2="477.2" y2="664.0"></line><line class="rb" x1="477.2" y1="664.0" x2="477.2" y2="642.0"></line><line x1="524.8" y1="1054.5" x2="524.8" y2="691.5"></line><line class="rb" x1="524.8" y1="691.5" x2="524.8" y2="669.5"></line><line x1="572.4" y1="1082.0" x2="572.4" y2="719.0"></line><line class="rb" x1="572.4" y1="719.0" x2="572.4" y2="697.0"></line><line x1="534.3" y1="994.0" x2="534.3" y2="631.0"></line><line class="rb" x1="534.3" y1="631.0" x2="534.3" y2="609.0"></line><line x1="581.9" y1="1021.5" x2="581.9" y2="658.5"></line><line class="rb" x1="581.9" y1="658.5" x2="581.9" y2="636.5"></line><line x1="629.6" y1="1049.0" x2="629.6" y2="686.0"></line><line class="rb" x1="629.6" y1="686.0" x2="629.6" y2="664.0"></line><line x1="591.5" y1="961.0" x2="591.5" y2="598.0"></line><line class="rb" x1="591.5" y1="598.0" x2="591.5" y2="576.0"></line><line x1="639.1" y1="988.5" x2="639.1" y2="625.5"></line><line class="rb" x1="639.1" y1="625.5" x2="639.1" y2="603.5"></line><line x1="686.7" y1="1016.0" x2="686.7" y2="653.0"></line><line class="rb" x1="686.7" y1="653.0" x2="686.7" y2="631.0"></line><line x1="648.6" y1="928.0" x2="648.6" y2="565.0"></line><line class="rb" x1="648.6" y1="565.0" x2="648.6" y2="543.0"></line><line x1="696.3" y1="955.5" x2="696.3" y2="592.5"></line><line class="rb" x1="696.3" y1="592.5" x2="696.3" y2="570.5"></line><line x1="743.9" y1="983.0" x2="743.9" y2="620.0"></line><line class="rb" x1="743.9" y1="620.0" x2="743.9" y2="598.0"></line><line x1="705.8" y1="895.0" x2="705.8" y2="532.0"></line><line class="rb" x1="705.8" y1="532.0" x2="705.8" y2="510.0"></line><line x1="753.4" y1="922.5" x2="753.4" y2="559.5"></line><line class="rb" x1="753.4" y1="559.5" x2="753.4" y2="537.5"></line><line x1="801.0" y1="950.0" x2="801.0" y2="587.0"></line><line class="rb" x1="801.0" y1="587.0" x2="801.0" y2="565.0"></line></g><g class="sl" style="--k:0"><polygon points="420.0,1060.0 705.8,895.0 801.0,950.0 686.7,1016.0 658.1,999.5 601.0,1032.5 629.6,1049.0 515.3,1115.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:1"><polygon points="420.0,1027.0 705.8,862.0 801.0,917.0 686.7,983.0 658.1,966.5 601.0,999.5 629.6,1016.0 515.3,1082.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:2"><polygon points="420.0,994.0 705.8,829.0 801.0,884.0 686.7,950.0 658.1,933.5 601.0,966.5 629.6,983.0 515.3,1049.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:3"><polygon points="420.0,961.0 705.8,796.0 801.0,851.0 686.7,917.0 658.1,900.5 601.0,933.5 629.6,950.0 515.3,1016.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:4"><polygon points="420.0,928.0 705.8,763.0 801.0,818.0 686.7,884.0 658.1,867.5 601.0,900.5 629.6,917.0 515.3,983.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:5"><polygon points="420.0,895.0 705.8,730.0 801.0,785.0 686.7,851.0 658.1,834.5 601.0,867.5 629.6,884.0 515.3,950.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:6"><polygon points="420.0,862.0 705.8,697.0 801.0,752.0 686.7,818.0 658.1,801.5 601.0,834.5 629.6,851.0 515.3,917.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:7"><polygon points="420.0,829.0 705.8,664.0 801.0,719.0 686.7,785.0 658.1,768.5 601.0,801.5 629.6,818.0 515.3,884.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:8"><polygon points="420.0,796.0 705.8,631.0 801.0,686.0 686.7,752.0 658.1,735.5 601.0,768.5 629.6,785.0 515.3,851.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:9"><polygon points="420.0,763.0 705.8,598.0 801.0,653.0 686.7,719.0 658.1,702.5 601.0,735.5 629.6,752.0 515.3,818.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:10"><polygon points="420.0,730.0 705.8,565.0 801.0,620.0 686.7,686.0 658.1,669.5 601.0,702.5 629.6,719.0 515.3,785.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g><g class="sl" style="--k:11"><polygon points="420.0,697.0 705.8,532.0 801.0,587.0 686.7,653.0 658.1,636.5 601.0,669.5 629.6,686.0 515.3,752.0" fill="#EFE8DF" stroke="#8E8478" stroke-width="1"></polygon></g></g>
+<g class="ax-gruesa"><polygon points="601.0,1032.5 658.1,999.5 658.1,636.5 601.0,669.5" fill="#DCC2B2" stroke="#B9ADA3" stroke-width="1"></polygon><polygon points="658.1,999.5 686.7,1016.0 686.7,653.0 658.1,636.5" fill="#CFB3A2" stroke="#B9ADA3" stroke-width="1"></polygon><polygon points="515.3,1115.0 629.6,1049.0 629.6,686.0 515.3,752.0" fill="#E6CDBD" stroke="#B9ADA3" stroke-width="1"></polygon><polygon points="686.7,1016.0 801.0,950.0 801.0,587.0 686.7,653.0" fill="#E6CDBD" stroke="#B9ADA3" stroke-width="1"></polygon><polygon points="420.0,1060.0 515.3,1115.0 515.3,752.0 420.0,697.0" fill="#EED8CA" stroke="#B9ADA3" stroke-width="1"></polygon><g stroke="#C9A995" stroke-width=".8"><line x1="420.0" y1="1027.0" x2="515.3" y2="1082.0"></line><line x1="420.0" y1="994.0" x2="515.3" y2="1049.0"></line><line x1="420.0" y1="961.0" x2="515.3" y2="1016.0"></line><line x1="420.0" y1="928.0" x2="515.3" y2="983.0"></line><line x1="420.0" y1="895.0" x2="515.3" y2="950.0"></line><line x1="420.0" y1="862.0" x2="515.3" y2="917.0"></line><line x1="420.0" y1="829.0" x2="515.3" y2="884.0"></line><line x1="420.0" y1="796.0" x2="515.3" y2="851.0"></line><line x1="420.0" y1="763.0" x2="515.3" y2="818.0"></line><line x1="420.0" y1="730.0" x2="515.3" y2="785.0"></line><line x1="515.3" y1="1082.0" x2="629.6" y2="1016.0"></line><line x1="515.3" y1="1049.0" x2="629.6" y2="983.0"></line><line x1="515.3" y1="1016.0" x2="629.6" y2="950.0"></line><line x1="515.3" y1="983.0" x2="629.6" y2="917.0"></line><line x1="515.3" y1="950.0" x2="629.6" y2="884.0"></line><line x1="515.3" y1="917.0" x2="629.6" y2="851.0"></line><line x1="515.3" y1="884.0" x2="629.6" y2="818.0"></line><line x1="515.3" y1="851.0" x2="629.6" y2="785.0"></line><line x1="515.3" y1="818.0" x2="629.6" y2="752.0"></line><line x1="515.3" y1="785.0" x2="629.6" y2="719.0"></line><line x1="686.7" y1="983.0" x2="801.0" y2="917.0"></line><line x1="686.7" y1="950.0" x2="801.0" y2="884.0"></line><line x1="686.7" y1="917.0" x2="801.0" y2="851.0"></line><line x1="686.7" y1="884.0" x2="801.0" y2="818.0"></line><line x1="686.7" y1="851.0" x2="801.0" y2="785.0"></line><line x1="686.7" y1="818.0" x2="801.0" y2="752.0"></line><line x1="686.7" y1="785.0" x2="801.0" y2="719.0"></line><line x1="686.7" y1="752.0" x2="801.0" y2="686.0"></line><line x1="686.7" y1="719.0" x2="801.0" y2="653.0"></line><line x1="686.7" y1="686.0" x2="801.0" y2="620.0"></line></g></g>
+<g class="ax-build">
 <g transform="matrix(9.526 -5.5 0 -11 486.68 1098.5)">
 <rect x="12" y="0" width="6" height="33" fill="url(#ax-winPatio)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
 <rect x="12" y="30" width="6" height="3" fill="#F79F9F" fill-opacity="0.45"></rect>
@@ -1145,6 +1166,8 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <g transform="translate(533 707)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#E0787B"></rect><circle cy="-11.5" r="1.9" fill="#E0787B"></circle></g>
 <g transform="translate(686.7 587)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#9B1549"></rect><circle cy="-11.5" r="1.9" fill="#9B1549"></circle></g>
 </g>
+</g>
+<g class="ax-extra">
 <g stroke="#2A2B45" stroke-width="1">
 <line x1="404" y1="697" x2="404" y2="1060"></line>
 <line x1="399" y1="697" x2="409" y2="697"></line>
@@ -1240,9 +1263,10 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <text x="400" y="1140" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">PLANTA BAJA VIDRIADA</text>
 <text x="400" y="1158" font-size="12">hall, control de acceso,</text>
 <text x="400" y="1174" font-size="12">medidores y bicicletero</text>
-</g>
+</g></g>
 </svg>
     <figcaption><b>caso piloto</b> · una obra parada de 3.300 m², <em>40 hogares nuevos</em><span>caso hipotético · cálculo propio</span></figcaption>
+    <button type="button" class="axo-replay" id="axoReplay">ver cómo se construye ↺</button>
   </figure>
   <div class="act-side">
     <h2>¿a quién le sirve?</h2>
@@ -1879,6 +1903,13 @@ ctaGo();setInterval(()=>{if(onScreen(ctaSec))ctaGo()},2800);
 
 /* ---------- recorrido: aparece al entrar ---------- */
 document.querySelectorAll('.rec').forEach(rc=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){rc.classList.add('in');io.disconnect()}}),{threshold:.25});io.observe(rc)});
+/* ---------- axonometría: esqueleto → obra gruesa → edificio ---------- */
+{const ax=document.querySelector('.axo');if(ax){let tm=[];
+ const run=()=>{tm.forEach(clearTimeout);ax.classList.remove('go','s2','s3','s4');void ax.offsetWidth;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ax.classList.add('go','s2','s3','s4');return}
+  tm=[setTimeout(()=>ax.classList.add('go'),50),setTimeout(()=>ax.classList.add('s2'),1500),setTimeout(()=>ax.classList.add('s3'),3500),setTimeout(()=>ax.classList.add('s4'),5400)]};
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run();io.disconnect()}}),{threshold:.35});io.observe(ax);
+ $('axoReplay').addEventListener('click',run)}}
 /* ---------- puntos laterales ---------- */
 const NAV={recorrido:'recorrido',inicio:'inicio',ciudad:'la ciudad',derecho:'el derecho',ley:'nuestra ley',actores:'a quién le sirve',mapa:'oportunidades',participar:'estrategia',accion:'cómo sumarte',novedades:'novedades',sp:'antecedente',sumate:'sumate'};
 const navSecs=[...document.querySelectorAll('body > section')].filter(s=>NAV[s.id]);const dotsEl=$('snav');
