@@ -868,6 +868,25 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .estr-cap a{color:var(--bordo);font-weight:600;text-underline-offset:3px}
 .estr-cap .ex{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 #novedades .eimg img{filter:grayscale(1) contrast(1.1)}
+
+/* v5 · a quién le sirve con axonometría */
+.act2{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,64px);align-items:center}
+.axo{margin:0;display:grid;justify-items:center;gap:8px;min-height:0}
+.axo-svg{width:100%;height:auto;max-height:calc(100vh - 120px);display:block}
+.axo figcaption{font:600 13px/1.5 var(--mono);color:var(--ink);text-align:center}
+.axo figcaption em{font-style:normal;color:var(--rosa-d)}
+.axo figcaption span{display:block;font-size:11px;font-weight:400;color:var(--muted)}
+.act-side{display:flex;flex-direction:column;gap:clamp(12px,2vh,20px)}
+.act2 .act-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;row-gap:12px!important;gap:12px!important}
+.act2 .acard{grid-row:auto!important;display:block!important;padding:14px 16px!important}
+.act2 .acard dl{display:grid!important;gap:2px!important}
+.act2 .acard dl>div{display:block!important}
+.act2 .acard h3{font-size:clamp(16px,1.3vw,21px)!important;margin-bottom:6px!important}
+.act2 .acard dd{margin:0;font-size:clamp(12.5px,.95vw,15px)!important;line-height:1.3!important}
+.act2 .acard dt{font-size:9.5px!important;margin-top:6px}
+.act2 .vcta{align-self:flex-end}
+@media (max-width:900px){.act2{grid-template-columns:1fr}.axo-svg{max-height:70vh}}
+@media (max-width:520px){.act2 .act-grid{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body style="margin:0">
@@ -1002,10 +1021,234 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 </section>
 
 
-<section id="actores" class="act" aria-label="A quién le sirve">
-  <h2>¿a quién le sirve?</h2>
-  <div class="act-grid"><article class="acard" style="--ab:var(--celeste);--af:var(--bordo)"><h3>futuro propietario</h3><dl><div><dt>hoy</dt><dd>Alquileres que suben y precios para comprar inaccesibles.</dd></div><div><dt>da</dt><dd>Reactiva el barrio con mixtura y diversidad.</dd></div><div><dt>recibe</dt><dd>Su primera casa, cerca de todo, con un crédito a su alcance.</dd></div></dl></article><article class="acard" style="--ab:var(--rosa);--af:var(--bordo)"><h3>propietario del esqueleto</h3><dl><div><dt>hoy</dt><dd>Capital inmovilizado, deudas de ABL y una estructura que se deteriora.</dd></div><div><dt>da</dt><dd>Terminar la obra en plazo y ofrecer viviendas asequibles.</dd></div><div><dt>recibe</dt><dd>Incentivos fiscales y un subsidio de hasta el 25% de la obra.</dd></div></dl></article><article class="acard" style="--ab:var(--lima);--af:var(--bordo)"><h3>vecino</h3><dl><div><dt>hoy</dt><dd>Una obra abandonada que trae inseguridad y apaga la cuadra.</dd></div><div><dt>da</dt><dd>Detectar y registrar esqueletos, y opinar en las mesas.</dd></div><div><dt>recibe</dt><dd>Una cuadra con vida y voz en el proceso.</dd></div></dl></article><article class="acard" style="--ab:var(--naranja);--af:var(--crema)"><h3>la Ciudad</h3><dl><div><dt>hoy</dt><dd>Suelo con infraestructura sin usar y deudas impagas.</dd></div><div><dt>da</dt><dd>Un registro, incentivos y créditos para primera vivienda.</dd></div><div><dt>recibe</dt><dd>Vivienda nueva sin comprar suelo y un tejido urbano recuperado.</dd></div></dl></article></div>
-  <a class="vcta" href="#mapa">buscá las oportunidades ↓</a>
+<section id="actores" class="act act2" aria-label="A quién le sirve">
+  <figure class="axo">
+    <svg class="axo-svg" viewBox="380 220 690 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Axonometría de un edificio de planta baja más 10 pisos en un lote de 10 por 50 metros, con patio de aire y luz, pulmón de manzana, terraza accesible y la planta tipo despiezada con 4 departamentos por piso">
+<defs>
+<pattern id="ax-winFront" patternUnits="userSpaceOnUse" x="0" y="0" width="10" height="3">
+<rect width="10" height="3" fill="#F7F3EC"></rect>
+<rect width="10" height="0.3" fill="#DED4CF"></rect>
+<rect x="0.5" y="0.75" width="5" height="1.85" fill="#D9E8F5"></rect>
+<rect x="6.5" y="0.75" width="3" height="1.85" fill="#D9E8F5"></rect>
+<rect x="2.95" y="0.75" width="0.1" height="1.85" fill="#F7F3EC"></rect>
+<rect x="7.95" y="0.75" width="0.1" height="1.85" fill="#F7F3EC"></rect>
+<rect x="0.5" y="0.75" width="5" height="0.6" fill="#EDE6DD"></rect>
+<rect x="6.5" y="0.75" width="3" height="0.6" fill="#EDE6DD"></rect>
+</pattern>
+<pattern id="ax-winPatio" patternUnits="userSpaceOnUse" x="0" y="0" width="3" height="3">
+<rect width="3" height="3" fill="#EAE2D8"></rect>
+<rect width="3" height="0.25" fill="#D6CCC0"></rect>
+<rect x="0.6" y="0.8" width="1.8" height="1.6" fill="#C9DDEF"></rect>
+</pattern>
+<pattern id="ax-winPatioD" patternUnits="userSpaceOnUse" x="0" y="0" width="3" height="3">
+<rect width="3" height="3" fill="#DDD3C6"></rect>
+<rect width="3" height="0.25" fill="#CEC3B6"></rect>
+<rect x="0.6" y="0.8" width="1.8" height="1.6" fill="#B5CDE3"></rect>
+</pattern>
+<pattern id="ax-medF" patternUnits="userSpaceOnUse" x="0" y="0" width="30" height="3">
+<rect width="30" height="3" fill="#EFE8DF"></rect>
+<rect width="30" height="0.1" fill="#E2D9CD"></rect>
+</pattern>
+<pattern id="ax-dotsBlue" patternUnits="userSpaceOnUse" x="0" y="0" width="0.9" height="0.9">
+<rect width="0.9" height="0.9" fill="#D3E7F7"></rect>
+<circle cx="0.45" cy="0.45" r="0.15" fill="#9CC3E6"></circle>
+</pattern>
+<pattern id="ax-dotsPink" patternUnits="userSpaceOnUse" x="0" y="0" width="0.9" height="0.9">
+<rect width="0.9" height="0.9" fill="#FCD4D3"></rect>
+<circle cx="0.45" cy="0.45" r="0.15" fill="#F08F90"></circle>
+</pattern>
+<pattern id="ax-swBlue" patternUnits="userSpaceOnUse" x="0" y="0" width="6" height="6">
+<rect width="6" height="6" fill="#D3E7F7"></rect>
+<circle cx="3" cy="3" r="1.1" fill="#9CC3E6"></circle>
+</pattern>
+<pattern id="ax-swPink" patternUnits="userSpaceOnUse" x="0" y="0" width="6" height="6">
+<rect width="6" height="6" fill="#FCD4D3"></rect>
+<circle cx="3" cy="3" r="1.1" fill="#F08F90"></circle>
+</pattern>
+</defs>
+<g transform="matrix(9.526 -5.5 9.526 5.5 420 1060)">
+<rect x="-3" y="-10" width="3" height="30" fill="#EEEAE3"></rect>
+<rect x="0" y="10" width="30" height="10" fill="#FAF8F4" stroke="#D9D0C6" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"></rect>
+<rect x="30" y="0" width="20" height="10" fill="#E7E9AE"></rect>
+<rect x="0" y="0" width="50" height="10" fill="none" stroke="#2A2B45" stroke-width="1.1" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 420 1060)">
+<rect x="-10" y="0" width="10" height="15" fill="#F6F2EC" stroke="#D9D0C6" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 420 895)">
+<rect x="0" y="-10" width="28" height="10" fill="#FBF9F5" stroke="#D9D0C6" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g stroke="#8E6A72" stroke-width="2">
+<line x1="891.5" y1="826.3" x2="891.5" y2="798"></line>
+<line x1="929.6" y1="859.3" x2="929.6" y2="831"></line>
+<line x1="891.5" y1="870.3" x2="891.5" y2="842"></line>
+<line x1="810.6" y1="867.5" x2="810.6" y2="839"></line>
+<line x1="834.4" y1="886.8" x2="834.4" y2="858"></line>
+<line x1="820.1" y1="917" x2="820.1" y2="889"></line>
+</g>
+<g fill="#D0D35B" stroke="#B5BC3B" stroke-width="1.2">
+<circle cx="891.5" cy="790" r="12"></circle>
+<circle cx="929.6" cy="823" r="13"></circle>
+<circle cx="891.5" cy="834" r="12"></circle>
+<circle cx="810.6" cy="831" r="11"></circle>
+<circle cx="834.4" cy="850" r="12"></circle>
+<circle cx="820.1" cy="881" r="12"></circle>
+</g>
+<g fill="#9B1549">
+<g transform="translate(848.7 867.5)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4"></rect><circle cy="-11.5" r="1.9"></circle></g>
+<g transform="translate(862 875)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#E0787B"></rect><circle cy="-11.5" r="1.9" fill="#E0787B"></circle></g>
+<g transform="translate(829.6 845.5)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#2A2B45"></rect><circle cy="-11.5" r="1.9" fill="#2A2B45"></circle></g>
+</g>
+<g transform="matrix(9.526 -5.5 0 -11 486.68 1098.5)">
+<rect x="12" y="0" width="6" height="33" fill="url(#ax-winPatio)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="12" y="30" width="6" height="3" fill="#F79F9F" fill-opacity="0.45"></rect>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 591.47 961)">
+<rect x="7" y="0" width="3" height="33" fill="url(#ax-winPatioD)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="7" y="30" width="3" height="3" fill="#E0787B" fill-opacity="0.45"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 0 -11 515.26 1115)">
+<rect x="18" y="0" width="12" height="33" fill="url(#ax-medF)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="0" y="0" width="12" height="33" fill="url(#ax-medF)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="18" y="30" width="12" height="3" fill="#F79F9F" fill-opacity="0.45" stroke="#9B1549" stroke-width="1.4" vector-effect="non-scaling-stroke"></rect>
+<rect x="0" y="30" width="12" height="3" fill="#F79F9F" fill-opacity="0.45" stroke="#9B1549" stroke-width="1.4" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 420 1060)">
+<rect x="0" y="3" width="10" height="30" fill="url(#ax-winFront)" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="0" y="0" width="10" height="3" fill="#CFE3F4" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="1.6" y="0" width="0.07" height="2.7" fill="#9CC3E6"></rect>
+<rect x="3.2" y="0" width="0.07" height="2.7" fill="#9CC3E6"></rect>
+<rect x="6.8" y="0" width="0.07" height="2.7" fill="#9CC3E6"></rect>
+<rect x="8.4" y="0" width="0.07" height="2.7" fill="#9CC3E6"></rect>
+<rect x="4.2" y="0" width="1.6" height="2.3" fill="#9CC3E6"></rect>
+<rect x="0" y="2.7" width="10" height="0.3" fill="#DED4CF"></rect>
+<rect x="0" y="30" width="10" height="3" fill="#F79F9F" fill-opacity="0.45" stroke="#9B1549" stroke-width="1.4" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 420 697)">
+<path d="M0 0 H30 V10 H18 V7 H12 V10 H0 Z" fill="#F8F4DF" stroke="#2A2B45" stroke-width="1.2" vector-effect="non-scaling-stroke"></path>
+<rect x="1" y="0.6" width="8" height="1" fill="#D0D35B"></rect>
+<rect x="20" y="8.4" width="8" height="1" fill="#D0D35B"></rect>
+<rect x="3" y="4" width="2.4" height="2.4" rx="1.2" fill="#FCD4D3" stroke="#E0787B" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 534.31 994)">
+<rect x="0" y="33" width="5" height="3" fill="#8A123F" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect>
+<rect x="1.8" y="33" width="1.4" height="2.2" fill="#B23A64"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 0 -11 467.63 1087.5)">
+<rect x="12" y="33" width="6" height="3" fill="#7E1039" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 420 664)">
+<rect x="12" y="0" width="6" height="5" fill="#B23A64" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g fill="#2A2B45">
+<g transform="translate(524.8 702.5)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4"></rect><circle cy="-11.5" r="1.9"></circle></g>
+<g transform="translate(533 707)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#E0787B"></rect><circle cy="-11.5" r="1.9" fill="#E0787B"></circle></g>
+<g transform="translate(686.7 587)"><rect x="-1.6" y="-9" width="3.2" height="7" rx="1.4" fill="#9B1549"></rect><circle cy="-11.5" r="1.9" fill="#9B1549"></circle></g>
+</g>
+<g stroke="#2A2B45" stroke-width="1">
+<line x1="404" y1="697" x2="404" y2="1060"></line>
+<line x1="399" y1="697" x2="409" y2="697"></line>
+<line x1="399" y1="1060" x2="409" y2="1060"></line>
+</g>
+<text x="0" y="0" transform="translate(396 878) rotate(-90)" text-anchor="middle" font-family="'Chivo Mono', monospace" font-size="11" fill="#2A2B45">PB + 10 pisos · 11 niveles</text>
+<g stroke="#E0787B" stroke-width="1.3" stroke-dasharray="4 4">
+<line x1="735.3" y1="490" x2="515.3" y2="752"></line>
+<line x1="1021" y1="325" x2="801.1" y2="587"></line>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 640 435)"><rect x="0" y="-0.6" width="10" height="0.6" fill="#E7DFD4" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 706.68 473.5)"><rect x="12" y="-0.6" width="6" height="0.6" fill="#E7DFD4"></rect></g>
+<g transform="matrix(9.526 5.5 0 -11 811.47 336)"><rect x="7" y="-0.6" width="3" height="0.6" fill="#DDD3C6"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 735.26 490)">
+<rect x="0" y="-0.6" width="12" height="0.6" fill="#E7DFD4" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+<rect x="18" y="-0.6" width="12" height="0.6" fill="#E7DFD4" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></rect>
+</g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 435)">
+<path d="M0 0 H30 V10 H18 V7 H12 V10 H0 Z" fill="#FFFFFF" stroke="#B9ADA3" vector-effect="non-scaling-stroke"></path>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 811.47 336)"><rect x="0" y="0" width="6" height="1" fill="#B9D3EA" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 697.16 468)"><rect x="18" y="0" width="12" height="1" fill="#A9C7E3" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 424)"><rect x="18" y="0" width="12" height="6" fill="url(#ax-dotsBlue)" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 5.5 0 -11 811.47 336)"><rect x="6" y="0" width="4" height="1" fill="#F2B6B5" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 735.26 490)"><rect x="18" y="0" width="12" height="1" fill="#EBA3A2" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 424)"><rect x="18" y="6" width="12" height="4" fill="url(#ax-dotsPink)" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 5.5 0 -11 754.31 369)"><rect x="0" y="0" width="5" height="2" fill="#8A123F" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 687.63 462.5)"><rect x="12" y="0" width="6" height="2" fill="#7E1039" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 413)">
+<rect x="12" y="0" width="6" height="5" fill="#9B1549" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect>
+<rect x="12.4" y="0.5" width="1.8" height="1.8" fill="#B23A64" stroke="#F79F9F" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect>
+<rect x="12.4" y="2.7" width="1.8" height="1.8" fill="#B23A64" stroke="#F79F9F" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect>
+<rect x="14.7" y="0.5" width="2.9" height="4" fill="#B23A64" stroke="#F79F9F" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect>
+<path d="M14.7 1 H17.6 M14.7 1.5 H17.6 M14.7 2 H17.6 M14.7 2.5 H17.6 M14.7 3 H17.6 M14.7 3.5 H17.6 M14.7 4 H17.6" stroke="#F79F9F" stroke-width="0.7" vector-effect="non-scaling-stroke"></path>
+</g>
+<g transform="matrix(9.526 5.5 0 -11 754.31 369)"><rect x="5" y="0" width="2" height="0.3" fill="#E8E2C4" stroke="#2A2B45" stroke-width="0.6" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 706.68 473.5)"><rect x="12" y="0" width="6" height="0.3" fill="#DDD6B5" stroke="#2A2B45" stroke-width="0.6" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 431.7)"><rect x="12" y="5" width="6" height="2" fill="#F8F4DF" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 5.5 0 -11 640 435)"><rect x="0" y="0" width="6" height="1" fill="#B9D3EA" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 697.16 468)"><rect x="0" y="0" width="12" height="1" fill="#A9C7E3" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 424)"><rect x="0" y="0" width="12" height="6" fill="url(#ax-dotsBlue)" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 5.5 0 -11 640 435)"><rect x="6" y="0" width="4" height="1" fill="#F2B6B5" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 0 -11 735.26 490)"><rect x="0" y="0" width="12" height="1" fill="#EBA3A2" stroke="#2A2B45" stroke-width="0.8" vector-effect="non-scaling-stroke"></rect></g>
+<g transform="matrix(9.526 -5.5 9.526 5.5 640 424)"><rect x="0" y="6" width="12" height="4" fill="url(#ax-dotsPink)" stroke="#2A2B45" vector-effect="non-scaling-stroke"></rect></g>
+<g font-family="'Chivo Mono', monospace" font-size="11" font-weight="700" fill="#2A2B45" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">
+<text x="725.7" y="411">3 amb</text>
+<text x="773.4" y="439">2 amb</text>
+<text x="897.2" y="312">3 amb</text>
+<text x="944.8" y="340">2 amb</text>
+<text x="866" y="404" fill="#9B1549" font-size="10">patio</text>
+</g>
+<g font-family="'Chivo Mono', monospace" fill="#2A2B45">
+<text x="400" y="272" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">PLANTA TIPO · PISOS 1 AL 10</text>
+<text x="400" y="301" font-family="'Archivo Black', sans-serif" font-size="22">4 deptos por piso</text>
+<rect x="400" y="322" width="24" height="16" rx="3" fill="url(#ax-swBlue)" stroke="#2A2B45"></rect>
+<text x="434" y="335" font-size="12">3 amb · 72 m² · ×2</text>
+<rect x="400" y="350" width="24" height="16" rx="3" fill="url(#ax-swPink)" stroke="#2A2B45"></rect>
+<text x="434" y="363" font-size="12">2 amb · 48 m² · ×2</text>
+<rect x="400" y="378" width="24" height="16" rx="3" fill="#9B1549" stroke="#2A2B45"></rect>
+<text x="434" y="391" font-size="12">núcleo: 2 ascensores</text>
+<text x="434" y="406" font-size="12">+ escalera presurizada</text>
+<rect x="400" y="420" width="24" height="16" rx="3" fill="#F8F4DF" stroke="#2A2B45"></rect>
+<text x="434" y="433" font-size="12">palier distribuidor</text>
+<rect x="400" y="448" width="24" height="16" rx="3" fill="#FFFFFF" stroke="#2A2B45" stroke-dasharray="3 2"></rect>
+<text x="434" y="461" font-size="12">patio de aire y luz</text>
+</g>
+<g stroke="#2A2B45" stroke-width="1" fill="none">
+<polyline points="558.1,628.3 505,592"></polyline>
+<polyline points="705.8,598 866,580"></polyline>
+<polyline points="658.2,812.5 866,712"></polyline>
+<polyline points="848.7,867.5 866,930"></polyline>
+<polyline points="467.6,1068.8 467.6,1124"></polyline>
+</g>
+<g fill="#E0787B" stroke="#FFFFFF" stroke-width="1.5">
+<circle cx="558.1" cy="628.3" r="4.5"></circle>
+<circle cx="705.8" cy="598" r="4.5"></circle>
+<circle cx="658.2" cy="812.5" r="4.5"></circle>
+<circle cx="848.7" cy="867.5" r="4.5"></circle>
+<circle cx="467.6" cy="1068.8" r="4.5"></circle>
+</g>
+<g font-family="'Chivo Mono', monospace" fill="#2A2B45">
+<text x="400" y="548" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">NÚCLEO CONTINUO</text>
+<text x="400" y="566" font-size="11">2 ascensores +</text>
+<text x="400" y="581" font-size="11">escalera presurizada</text>
+<text x="872" y="572" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">TERRAZA ACCESIBLE</text>
+<text x="872" y="590" font-size="12">+ sala de máquinas</text>
+<text x="872" y="704" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">PATIO DE AIRE Y LUZ</text>
+<text x="872" y="722" font-size="12">ilumina y ventila</text>
+<text x="872" y="738" font-size="12">los ambientes interiores</text>
+<text x="872" y="944" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">PULMÓN DE MANZANA</text>
+<text x="872" y="962" font-size="12">200 m² libres</text>
+<text x="872" y="978" font-size="12">en el fondo del lote</text>
+<text x="400" y="1140" font-size="11" font-weight="700" fill="#9B1549" letter-spacing="1.5">PLANTA BAJA VIDRIADA</text>
+<text x="400" y="1158" font-size="12">hall, control de acceso,</text>
+<text x="400" y="1174" font-size="12">medidores y bicicletero</text>
+</g>
+</svg>
+    <figcaption><b>caso piloto</b> · una obra parada de 3.300 m², <em>40 hogares nuevos</em><span>caso hipotético · cálculo propio</span></figcaption>
+  </figure>
+  <div class="act-side">
+    <h2>¿a quién le sirve?</h2>
+    <div class="act-grid"><article class="acard" style="--ab:var(--celeste);--af:var(--bordo)"><h3>futuro propietario</h3><dl><div><dt>hoy</dt><dd>Alquileres que suben y precios para comprar inaccesibles.</dd></div><div><dt>da</dt><dd>Reactiva el barrio con mixtura y diversidad.</dd></div><div><dt>recibe</dt><dd>Su primera casa, cerca de todo, con un crédito a su alcance.</dd></div></dl></article><article class="acard" style="--ab:var(--rosa);--af:var(--bordo)"><h3>propietario del esqueleto</h3><dl><div><dt>hoy</dt><dd>Capital inmovilizado, deudas de ABL y una estructura que se deteriora.</dd></div><div><dt>da</dt><dd>Terminar la obra en plazo y ofrecer viviendas asequibles.</dd></div><div><dt>recibe</dt><dd>Incentivos fiscales y un subsidio de hasta el 25% de la obra.</dd></div></dl></article><article class="acard" style="--ab:var(--lima);--af:var(--bordo)"><h3>vecino</h3><dl><div><dt>hoy</dt><dd>Una obra abandonada que trae inseguridad y apaga la cuadra.</dd></div><div><dt>da</dt><dd>Detectar y registrar esqueletos, y opinar en las mesas.</dd></div><div><dt>recibe</dt><dd>Una cuadra con vida y voz en el proceso.</dd></div></dl></article><article class="acard" style="--ab:var(--naranja);--af:var(--crema)"><h3>la Ciudad</h3><dl><div><dt>hoy</dt><dd>Suelo con infraestructura sin usar y deudas impagas.</dd></div><div><dt>da</dt><dd>Un registro, incentivos y créditos para primera vivienda.</dd></div><div><dt>recibe</dt><dd>Vivienda nueva sin comprar suelo y un tejido urbano recuperado.</dd></div></dl></article></div>
+    <a class="vcta" href="#mapa">buscá las oportunidades ↓</a>
+  </div>
 </section>
 
 
