@@ -820,6 +820,22 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .sp-diff li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-family:'Archivo',system-ui,sans-serif;font-size:clamp(14px,1.15vw,18px);line-height:1.4}
 .sp-diff li::before{content:"";width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--hc,var(--rosa));box-shadow:inset 3px 3px 0 rgba(42,43,69,.3)}
 .sp-dk{margin:4px 0 0;font-family:var(--display);font-size:clamp(18px,1.6vw,26px);line-height:1;letter-spacing:-.02em;color:var(--bordo)}
+
+/* v3 · ajustes de navegación y portada */
+.hpill{left:auto!important;right:calc(5*var(--u))}
+.ctrl{right:auto!important;left:calc(5*var(--u))!important}
+.pre.lc{font-size:calc(3.4*var(--u))!important}
+.s2b{font-size:calc(7.6*var(--u))!important}
+.s2t{color:var(--naranja);font-size:calc(4.6*var(--u))!important;margin-top:calc(2.4*var(--u))!important}
+.subL{font-size:calc(3.6*var(--u))!important;letter-spacing:-.03em}
+.rec .vcta,.der .vcta{align-self:flex-end}
+.der-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,5vw,80px);align-items:center}
+.der-hd{display:grid!important;grid-template-columns:1fr!important;gap:clamp(14px,2.4vh,24px)!important;align-items:start!important}
+.der-grid{grid-template-columns:1fr!important;gap:12px!important}
+.der-grid article{padding:clamp(14px,1.4vw,22px) clamp(16px,1.8vw,26px)!important;gap:4px!important}
+.der-grid h3{font-size:clamp(24px,2.4vw,38px)!important}
+@media (max-width:760px){.der-in{grid-template-columns:1fr}.pre.lc{font-size:18px!important}.s2b{font-size:calc(6.4*var(--u))!important}.s2t{font-size:calc(4.6*var(--u))!important}.subL{font-size:18px!important}
+  .ctrl{left:16px!important;right:auto!important}.hpill{left:auto!important;right:16px!important}}
 </style>
 </head>
 <body style="margin:0">
@@ -846,9 +862,8 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
       <p class="fall big" style="--o:12">tiene <span class="breath">esqueletos</span></p>
     </article>
     <article class="sl" data-ms="6000" style="--bg:var(--crema);--fg:var(--bordo)" aria-label="2 de 7">
-      <p class="type" style="--n:21;--t:0s">son obras abandonadas</p>
-      <p class="type" style="--n:18;--t:1.7s">a medio construir.</p>
-      <p class="shake">hay más de 100.</p>
+      <p class="big s2b"><span class="m"><span style="--d:0">son obras abandonadas</span></span><span class="m"><span style="--d:1">a medio construir.</span></span></p>
+      <p class="type s2t" style="--n:15;--t:2s">hay más de 100.</p>
     </article>
     <article class="sl s3" data-ms="5500" style="--bg:var(--naranja);--fg:var(--rosa)" aria-label="3 de 7">
       <p class="pre lc">por otro lado,</p>
@@ -863,7 +878,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
     <article class="sl" data-ms="5500" style="--bg:var(--lima);--fg:var(--crema)" aria-label="5 de 7">
       <p class="big"><span class="m"><span style="--d:0"><span class="strike">obra parada</span></span></span></p>
       <p class="pop">casa habitada</p>
-      <p class="sub2" style="--sd:2.6s">proponemos una ley para que pase.</p>
+      <p class="sub2 subL" style="--sd:2.6s">proponemos una ley para que pase.</p>
     </article>
     <article class="sl s1" data-ms="8500" style="--bg:var(--rosa);--fg:var(--naranja)" aria-label="6 de 7">
       <p class="pre lc">y de esta manera…</p>
@@ -930,14 +945,14 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 
 
 <section id="derecho" class="der" aria-label="La vivienda como punto de partida">
-  <div class="der-hd">
-    <div><p class="rec-k">el problema de fondo</p><h2>la vivienda es <em>un punto de partida</em></h2></div>
-    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p>
-  </div>
-  <div class="der-grid">
-    <article style="--db:var(--celeste);--df:var(--bordo)"><p class="dk">derecho a la ciudad</p><h3>vivir cerca</h3><p>Del trabajo, la escuela, el transporte y los servicios. Las políticas de vivienda suelen achicar y alejar; los esqueletos ya están en barrios con todo eso.</p></article>
-    <article style="--db:var(--rosa);--df:var(--bordo)"><p class="dk">derecho a una vivienda digna</p><h3>vivir bien</h3><p>Con la misma superficie, luz y calidad que cualquier otra casa del edificio. Menos es poco.</p></article>
-    <article style="--db:var(--lima);--df:var(--bordo)"><p class="dk">derecho a la identidad</p><h3>sentirse parte</h3><p>Una casa que se pueda hacer propia, en un barrio donde echar raíces. Por eso los vecinos participan desde el principio.</p></article>
+  <div class="der-in">
+    <div class="der-hd"><p class="rec-k">el problema de fondo</p><h2>la vivienda es <em>un punto de partida</em></h2>
+    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p></div>
+    <div class="der-grid">
+      <article style="--db:var(--celeste);--df:var(--bordo)"><p class="dk">derecho a la ciudad</p><h3>estar cerca</h3><p>Del trabajo, la escuela, el transporte y los servicios. Las políticas de vivienda suelen achicar y alejar; los esqueletos ya están en barrios con todo eso.</p></article>
+      <article style="--db:var(--rosa);--df:var(--bordo)"><p class="dk">derecho a una vivienda digna</p><h3>vivir bien</h3><p>Con la misma superficie, luz y calidad que cualquier otra casa del edificio. Menos es poco.</p></article>
+      <article style="--db:var(--lima);--df:var(--bordo)"><p class="dk">derecho a la identidad</p><h3>sentirse parte</h3><p>Una casa que se pueda hacer propia, en un barrio donde echar raíces. Por eso los vecinos participan desde el principio.</p></article>
+    </div>
   </div>
   <a class="vcta" href="#ley">nuestra propuesta ↓</a>
 </section>
@@ -1060,7 +1075,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   <nav class="flinks"><a href="mailto:cuerposvacantes@gmail.com">cuerposvacantes@gmail.com</a><button type="button" class="ftog" aria-expanded="false" aria-controls="fWho">quiénes somos <i>+</i></button><button type="button" class="ftog" aria-expanded="false" aria-controls="fPriv">privacidad <i>+</i></button><button type="button" class="ftog" id="fSrcBtn" aria-expanded="false" aria-controls="fSrc">fuentes <i>+</i></button></nav></div>
   <div class="fsrc ftx" id="fWho" hidden><p><b>Quiénes somos.</b> Cuerpos vacantes es una propuesta del equipo Impulsar para la convocatoria <i>Buenos Aires desafía al futuro. Ideas para proyectos imposibles</i>, del Consejo Económico y Social de la Ciudad (CESBA) y El Gato y La Caja. Entre casi 60 propuestas, el comité la destacó por plantear la recuperación participativa de estructuras abandonadas, y el proyecto se incubó en el laboratorio del CESBA. Hoy trabajamos en una propuesta de ley propia para que los esqueletos urbanos vuelvan a ser vivienda asequible. Esta web es una maqueta para compartir la iniciativa y sumar a más gente.</p><p><a href="https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/" target="_blank" rel="noopener">ver la convocatoria en CESBA ↗</a></p></div>
   <div class="fsrc ftx" id="fPriv" hidden><p><b>Privacidad.</b> Los datos que dejes en esta web (mail, nombre, ubicación de un esqueleto o una foto) se usan solo para la campaña: avisarte de novedades y mesas, sumar tu firma y armar el mapa. No los compartimos ni los vendemos, y podés pedir que los borremos cuando quieras (Ley 25.326 de Protección de Datos Personales). Lo que enviás por los formularios nos llega por mail a cuerposvacantes@gmail.com a través de FormSubmit, un servicio de envío de formularios.</p><p>En el mapa no publicamos datos personales de los dueños de las obras ni imágenes que expongan a quienes viven en ellas. Por favor, no entres a las estructuras: pueden derrumbarse.</p></div>
-  <div class="fsrc" id="fSrc" hidden><ul><li><a href="https://www.baenegocios.com/amp/Alquileres-el-75-de-los-jovenes-menores-de-35-anos-no-logra-terminar-su-contrato-20231121-0054/" target="_blank" rel="noopener">BAE Negocios (21/11/2023): Fundación Tejido Urbano, el 75% de los menores de 35 no termina su contrato de alquiler ↗</a></li><li><a href="https://www.infobae.com/sociedad/2026/05/29/que-pasa-con-los-edificios-abandonados-en-buenos-aires-y-por-que-podrian-convertirse-en-viviendas/" target="_blank" rel="noopener">Infobae (29/05/2026): estimación de 100 esqueletos ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/sin-salida-habitacional" target="_blank" rel="noopener">Observatorio Metropolitano: “Sin salida habitacional” ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/la-ciudad-inquilinato" target="_blank" rel="noopener">Observatorio Metropolitano: “La ciudad inquilinato” ↗</a></li><li><a href="https://tecnne.com/contextos/habitat/deficit-habitacional-especulacion-inmobiliaria-buenos-aires/" target="_blank" rel="noopener">Tecnne, citando a CELS, ACIJ y MPD CABA: situación de calle ↗</a></li><li><a href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Prefeitura de São Paulo: resultados de Requalifica Centro ↗</a></li></ul></div>
+  <div class="fsrc" id="fSrc" hidden><ul><li>Fundación Tejido Urbano: la edad promedio para convertirse en propietario pasó de 30-35 años en 2005 a 45 en la actualidad.</li><li><a href="https://www.infobae.com/sociedad/2026/05/29/que-pasa-con-los-edificios-abandonados-en-buenos-aires-y-por-que-podrian-convertirse-en-viviendas/" target="_blank" rel="noopener">Infobae (29/05/2026): estimación de 100 esqueletos ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/sin-salida-habitacional" target="_blank" rel="noopener">Observatorio Metropolitano: “Sin salida habitacional” ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/la-ciudad-inquilinato" target="_blank" rel="noopener">Observatorio Metropolitano: “La ciudad inquilinato” ↗</a></li><li><a href="https://tecnne.com/contextos/habitat/deficit-habitacional-especulacion-inmobiliaria-buenos-aires/" target="_blank" rel="noopener">Tecnne, citando a CELS, ACIJ y MPD CABA: situación de calle ↗</a></li><li><a href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Prefeitura de São Paulo: resultados de Requalifica Centro ↗</a></li></ul></div>
 </footer>
 
 <nav class="snav" id="snav" aria-label="Secciones"></nav>
@@ -1098,6 +1113,9 @@ function generic(x0,y0,x1,y1){const fl=2+Math.floor(R()*5),h=fl*FH,c=GEN[Math.fl
   return `<g class="gen">${s}</g>`;}
 
 const ESQS=[];
+const VIVB={'0,2,2,2':['juan',5],'2,2,2,2':['jov',4]},BPOS={};
+function vivB(x0,y0,x1,y1,id,fl){const h=fl*FH,c=GEN[1];BPOS[id]=[x1-.15,y1-.15,h+1.3];
+  return `<g class="hl hot" data-id="${id}">${box(x0,y0,x1,y1,0,h,{t:'#FFFFFF',a:'#FFFFFF',b:'#ECEAF2'})+wins(x0,y0,x1,y1,0,fl,'#3A3C66')}</g>`;}
 function esq(x0,y0,x1,y1,built,id){
   const n=ESQS.length,xm=(x0+x1)/2,ym=(y0+y1)/2,pts=[];
   for(const x of[x0+.12,xm,x1-.12])for(const y of[y0+.12,ym,y1-.12])pts.push([x,y]);
@@ -1202,6 +1220,7 @@ for(let bi=-7;bi<=9;bi++)for(let bj=-6;bj<=8;bj++){
       let s;
       if(key in ESQ)s=esq(x0,y0,x1,y1,key==='1,2,1,2'?5:3+Math.floor(R()*2),ESQ[key]);
       else if(key===ALQ)s=alquila(x0,y0,x1,y1,'alq');
+      else if(key in VIVB)s=vivB(x0,y0,x1,y1,...VIVB[key]);
       else s=generic(x0,y0,x1,y1);
       out.push({k:x1+y1,s});
     }
@@ -1229,7 +1248,7 @@ const cloudPath='M0,0 H150 C166,0 170,-22 150,-28 C152,-50 120,-60 102,-46 C95,-
 const CL=[{x:-480,y:-40,s:1,v:7},{x:160,y:60,s:.75,v:5},{x:380,y:-70,s:1.15,v:9},{x:-120,y:300,s:.9,v:6}];
 const clouds=CL.map((c,i)=>`<g id="cl${i}" opacity=".5"><path d="${cloudPath}" transform="scale(${c.s})" fill="#FFFFFF" stroke="#2A2B45" stroke-width="1.1" stroke-linejoin="round"/></g>`).join('');
 const EV=ESQS.find(e=>e.id==='viv')||{x:19.3,y:37.2,z:5*FH};
-const MK={esq:P(19.3,37.2,5*FH+1.6),viv:P(EV.x,EV.y,EV.z+1.6),alq:P(38.2,22.3,6*FH+1.3),jov:P(38.55,33.3,1.9),juan:P(8,38.7,1.9)};
+const MK={esq:P(19.3,37.2,5*FH+1.6),viv:P(EV.x,EV.y,EV.z+1.6),alq:P(38.2,22.3,6*FH+1.3),jov:P(...(BPOS.jov||[38.3,38.3,4])),juan:P(...(BPOS.juan||[12.3,38.3,5]))};
 const mk=Object.entries(MK).map(([id,[x,y]])=>`<g class="mk" data-id="${id}" id="mk-${id}" transform="translate(${r1(x)} ${r1(y)})" tabindex="0" role="button" aria-label="Ver dato"><g class="bob"><circle class="pulse" r="8"/><circle class="dot" r="8"/></g></g>`).join('');
 
 const svg=document.getElementById('city');
@@ -1237,7 +1256,7 @@ if(innerWidth<=760)svg.setAttribute('viewBox','-250 -60 500 520');
 svg.innerHTML=`${ground}<g id="cars"></g>${back.map(o=>o.s).join('')}${rail}${frontB.map(o=>o.s).join('')}<g style="pointer-events:none">${clouds}</g>${mk}`;
 
 // Juan y la persona en situación de calle, dentro de la capa de su manzana
-const juan=document.createElementNS(NS,'g');juan.setAttribute('class','hot');juan.dataset.id='juan';juan.innerHTML=person('#F79F9F',1.15);
+const juan=document.createElementNS(NS,'g');juan.innerHTML=person('#F79F9F',1.15);
 document.getElementById('wl0_2').appendChild(juan);
 const calle=document.createElementNS(NS,'g');calle.setAttribute('class','hot');calle.dataset.id='calle';
 const cq=P(38.6,33.5);calle.innerHTML=pg([[38.15,32.2,.02],[38.95,32.2,.02],[38.95,34.4,.02],[38.15,34.4,.02]],'#C9C2D9','hl')+`<g transform="translate(${r1(cq[0])} ${r1(cq[1])})">${seated()}</g>`;
@@ -1273,7 +1292,7 @@ function frame(t,dt){
   for(const w of walkers){w.u+=w.v*dt;if(w.u>w.len){w.u=w.len;w.v*=-1}if(w.u<0){w.u=0;w.v*=-1}
     const q=w.u<=w.ab?P(w.A[0]+w.u,w.A[1]):P(w.A[0]+w.ab,w.A[1]-(w.u-w.ab));tf(w.g,q[0],q[1])}
   jx+=jv*dt;if(jx>12){jx=12;jv=-jv}if(jx<4.5){jx=4.5;jv=-jv}
-  let q=P(jx,38.7);tf(juan,q[0],q[1]);q=P(jx,38.7,1.9);tf(mkJuan,q[0],q[1]);
+  let q=P(jx,38.7);tf(juan,q[0],q[1]);
   q=P(0,trainY(t));tf(train,q[0],q[1]);
   for(const c of cl){c.x+=c.v*dt;if(c.x>VB.x+VB.w+420)c.x=VB.x-660;tf(c.g,c.x,c.y)}
   if(react!==null)reveal(t);
@@ -1297,7 +1316,7 @@ const DATA={
   alq:{k:'Hogares inquilinos',n:'37%',b:'de los hogares porteños alquila. Hace 20 años eran el 22%.',s:'Observatorio Metropolitano (AMBA)'},
   viv:{k:'Viviendas posibles',n:'+3.000',b:'viviendas podrían sumarse si se terminaran los esqueletos de la Ciudad.',s:'Cálculo propio: 100 obras con la superficie mínima que pide la ley'},
   juan:{k:'Alquiler',n:'40%',b:'del sueldo de los jóvenes se va en el alquiler.',s:'Fuente a confirmar',c:1},
-  jov:{k:'Menores de 35',n:'75%',b:'de los menores de 35 años no llega a terminar su contrato de alquiler.',s:'Fundación Tejido Urbano (2023)'}};
+  jov:{k:'Comprar una casa',n:'45 años',b:'es hoy la edad promedio para convertirse en propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano'}};
 const $=id=>document.getElementById(id),stage=$('stage'),card=$('card');
 /* ---------- animaciones solo cuando la sección está en pantalla ---------- */
 const VIS=['inicio','ciudad','participar','sumate','novedades'].map(id=>$(id));
@@ -1603,7 +1622,7 @@ const LBL={esq:{g:'esq',n:'+100',t:'esqueletos urbanos en la Ciudad, como este.'
  viv:{g:'esq',n:'+3.000',t:'viviendas posibles si se terminaran.',s:'Cálculo propio: 100 obras de 2.000 m²',d:'R'},
  alq:{g:'viv',n:'37%',t:'de los hogares porteños alquila. Hace 20 años era el 22%.',s:'Observatorio Metropolitano',d:'UL'},
  juan:{g:'viv',n:'40%',t:'del sueldo de los jóvenes se va en el alquiler.',s:'fuente a confirmar',d:'L',c:1},
- jov:{g:'viv',n:'75%',t:'de los menores de 35 no llega a terminar su contrato de alquiler.',s:'Fundación Tejido Urbano, 2023',d:'L'}};
+ jov:{g:'viv',n:'45 años',t:'es hoy la edad promedio para ser propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano',d:'L'}};
 const LORD=['esq','viv','alq','juan','jov'],clabs=$('clabs');
 clabs.innerHTML=LORD.map((id,i)=>{const l=LBL[id];return `<div class="clab g-${l.g}" id="lab-${id}"><b>${l.n}</b><p>${l.t}</p><small${l.c?' class="tbc"':''}>${l.s}</small></div>`}).join('');
 function placeLabels(){if(innerWidth<=760)return;const s=stage.getBoundingClientRect();
