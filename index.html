@@ -836,6 +836,36 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .der-grid h3{font-size:clamp(24px,2.4vw,38px)!important}
 @media (max-width:760px){.der-in{grid-template-columns:1fr}.pre.lc{font-size:18px!important}.s2b{font-size:calc(6.4*var(--u))!important}.s2t{font-size:calc(4.6*var(--u))!important}.subL{font-size:18px!important}
   .ctrl{left:16px!important;right:auto!important}.hpill{left:auto!important;right:16px!important}}
+
+/* v4 · la ley en línea de tiempo */
+.ley2{background-color:var(--celeste);background-image:radial-gradient(rgba(42,43,69,.08) 1px,transparent 1.3px)}
+.ley2 h2 em{color:var(--bordo)}
+.ley2 .rec-line li:not(.next){border-radius:14px;padding:0 12px 14px;margin:0 -12px;transition:background-color .25s,box-shadow .25s,opacity .6s,transform .6s;cursor:default;outline:none}
+.ley2 .rec-line li:hover,.ley2 .rec-line li:focus-visible{background:#fff;box-shadow:6px 6px 0 var(--ink)}
+.ley2 .rec-line li.next:hover,.ley2 .rec-line li.next:focus-visible{box-shadow:6px 6px 0 var(--ink)}
+.ley2 .rec-line li.next{box-shadow:6px 6px 0 var(--bordo)}
+.ley2 .rec-w{color:var(--bordo)}
+.rec-more{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s ease;font-size:clamp(12.5px,.95vw,15px)!important;color:var(--ink);border-top:1.5px dashed transparent}
+.ley2 li:hover .rec-more,.ley2 li:focus-within .rec-more,.ley2 li:focus .rec-more{max-height:16em;opacity:1;padding-top:8px;border-top-color:var(--rc)}
+.ley2 .rec-line{align-items:start}
+@media (hover:none),(max-width:760px){.rec-more{max-height:none;opacity:1;padding-top:8px}}
+.ley2 .rec-line{min-height:clamp(240px,30vh,340px)}
+@media (max-width:760px){.ley2 .rec-line{min-height:0}.ley2 .rec-line li:not(.next){padding:0 0 0 52px!important;margin:0!important}.ley2 .rec-line li.next{padding:14px 16px 16px 52px!important}}
+/* v4 · problema de fondo */
+.der-in{align-items:stretch!important}
+.der-hd{display:flex!important;flex-direction:column;justify-content:space-between;gap:20px}
+.der-hd h2,.der-hd .der-lead{max-width:none!important;width:100%}
+.der-hd h2{font-size:clamp(34px,4.6vw,76px)!important}
+.der-hd .vcta{align-self:flex-start}
+.der>.vcta{display:none}
+/* v4 · estrategias en fila, novedades en carrusel */
+.estr-h{margin:0;font-family:var(--display);font-weight:400;font-size:var(--tsec);line-height:1;letter-spacing:-.03em}
+.ncard.es .nf img{filter:none;mix-blend-mode:normal}
+.ncard.es .nh span{color:var(--bordo)}
+.ncard.es p{-webkit-line-clamp:5}
+.estr-cap a{color:var(--bordo);font-weight:600;text-underline-offset:3px}
+.estr-cap .ex{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+#novedades .eimg img{filter:grayscale(1) contrast(1.1)}
 </style>
 </head>
 <body style="margin:0">
@@ -946,32 +976,33 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 
 <section id="derecho" class="der" aria-label="La vivienda como punto de partida">
   <div class="der-in">
-    <div class="der-hd"><p class="rec-k">el problema de fondo</p><h2>la vivienda es <em>un punto de partida</em></h2>
-    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p></div>
+    <div class="der-hd"><div><p class="rec-k">el problema de fondo</p><h2>la vivienda es <em>un punto de partida</em></h2></div>
+    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p>
+    <a class="vcta" href="#ley">nuestra propuesta ↓</a></div>
     <div class="der-grid">
       <article style="--db:var(--celeste);--df:var(--bordo)"><p class="dk">derecho a la ciudad</p><h3>estar cerca</h3><p>Del trabajo, la escuela, el transporte y los servicios. Las políticas de vivienda suelen achicar y alejar; los esqueletos ya están en barrios con todo eso.</p></article>
       <article style="--db:var(--rosa);--df:var(--bordo)"><p class="dk">derecho a una vivienda digna</p><h3>vivir bien</h3><p>Con la misma superficie, luz y calidad que cualquier otra casa del edificio. Menos es poco.</p></article>
       <article style="--db:var(--lima);--df:var(--bordo)"><p class="dk">derecho a la identidad</p><h3>sentirse parte</h3><p>Una casa que se pueda hacer propia, en un barrio donde echar raíces. Por eso los vecinos participan desde el principio.</p></article>
     </div>
   </div>
-  <a class="vcta" href="#ley">nuestra propuesta ↓</a>
 </section>
 
-<section id="ley" class="vac ley" aria-label="Nuestra propuesta de ley"><header class="vac-top"><h2>una ley para que los esqueletos<br><em>vuelvan a ser vivienda.</em></h2></header><div class="vac-body">
-    <div class="law">
-      <p class="law-k">nuestra propuesta de ley</p>
-      <p>Proponemos un régimen para que las obras privadas paralizadas se terminen y vuelvan a ser casas: la Ciudad da incentivos fiscales y financieros y, a cambio, una parte de las viviendas tiene que ser asequible.</p>
-      <p>La Ciudad lleva un <span class="gw">registro<button class="hole" data-v="0" aria-label="Ver el eje 1"></button></span> público de esqueletos. Quien termina su obra recibe más incentivos cuanta más vivienda <span class="gw">asequible<button class="hole" data-v="1" aria-label="Ver el eje 2"></button></span> ofrece. Esas viviendas se <span class="gw">adjudican<button class="hole" data-v="2" aria-label="Ver el eje 3"></button></span> con reglas claras, quedan <span class="gw">protegidas<button class="hole" data-v="3" aria-label="Ver el eje 4"></button></span> de la reventa y son <span class="gw">iguales<button class="hole" data-v="4" aria-label="Ver el eje 5"></button></span> al resto del edificio.</p>
-      <p>El Estado <span class="gw">controla<button class="hole" data-v="5" aria-label="Ver el eje 6"></button></span> antes, durante y después de la obra, con los vecinos en la mesa.</p>
-    </div>
-    <div class="vlist"><ol><li class="vit" data-v="0"><span class="vn"></span><div><h3>un registro de esqueletos</h3><p>La Ciudad releva y publica todas las obras paralizadas, con datos abiertos y aportes de los vecinos. La que siga parada sin adherir paga un recargo progresivo de ABL.</p></div></li><li class="vit" data-v="1"><span class="vn"></span><div><h3>asequible, con un número</h3><p>Al menos el 30% de las viviendas, con un precio que no supere el 30% del ingreso de un hogar medio. Más vivienda asequible, más incentivos.</p></div></li><li class="vit" data-v="2"><span class="vn"></span><div><h3>reglas claras para acceder</h3><p>Para quienes no tienen otra vivienda y viven o trabajan en la Ciudad, con topes de ingreso y sorteo público.</p></div></li><li class="vit" data-v="3"><span class="vn"></span><div><h3>asequible en el tiempo</h3><p>La condición se inscribe en el Registro de la Propiedad: no se puede revender ni alquilar a precio de mercado durante 20 años.</p></div></li><li class="vit" data-v="4"><span class="vn"></span><div><h3>las mismas viviendas</h3><p>Mismos metros, materiales y terminaciones que las unidades de mercado, mezcladas en el mismo edificio.</p></div></li><li class="vit" data-v="5"><span class="vn"></span><div><h3>control y participación</h3><p>Inspecciones de obra, control de precios y contratos después de la entrega, y mesas con los vecinos en cada esqueleto. Si no se cumple, se devuelven los beneficios.</p></div></li></ol><div class="ley-ctas"><button type="button" class="ley-more" id="leyMore">la propuesta en 3 pasos</button><a class="vcta" href="#actores">¿a quién le sirve? ↓</a></div></div>
-  </div>
+<section id="ley" class="rec ley2" aria-label="Nuestra propuesta de ley">
+  <div><p class="rec-k">nuestra propuesta de ley</p><h2>una ley para que los esqueletos <em>vuelvan a ser vivienda</em></h2></div>
+  <ol class="rec-line">
+    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">registro</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas se anotan en un registro público de la Ciudad.</p><p class="rec-more">La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></li>
+    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">adecuación</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></li>
+    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">beneficios</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></li>
+    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">primera vivienda</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><p class="rec-more">Con créditos hipotecarios especiales y requisitos más flexibles, pensados para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
+    <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><p class="rec-more">Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></li>
+  </ol>
+  <a class="vcta" href="#actores">¿a quién le sirve? ↓</a>
 </section>
 
 
 <section id="actores" class="act" aria-label="A quién le sirve">
   <h2>¿a quién le sirve?</h2>
-  <div class="act-grid"><article class="acard" style="--ab:var(--celeste);--af:var(--bordo)"><h3>futuro propietario</h3><dl><div><dt>hoy</dt><dd>Alquileres que suben y precios para comprar inaccesibles.</dd></div><div><dt>da</dt><dd>Reactiva el barrio con mixtura y diversidad.</dd></div><div><dt>recibe</dt><dd>Vivir cerca de todo, a un precio que pueda pagar.</dd></div></dl></article><article class="acard" style="--ab:var(--rosa);--af:var(--bordo)"><h3>propietario del esqueleto</h3><dl><div><dt>hoy</dt><dd>Capital inmovilizado, deudas de ABL y una estructura que se deteriora.</dd></div><div><dt>da</dt><dd>Terminar la obra en plazo y ofrecer viviendas asequibles.</dd></div><div><dt>recibe</dt><dd>Incentivos fiscales y financieros, mayores cuanta más vivienda asequible ofrezca.</dd></div></dl></article><article class="acard" style="--ab:var(--lima);--af:var(--bordo)"><h3>vecino</h3><dl><div><dt>hoy</dt><dd>Una obra abandonada que trae inseguridad y apaga la cuadra.</dd></div><div><dt>da</dt><dd>Detectar y registrar esqueletos, y opinar en las mesas.</dd></div><div><dt>recibe</dt><dd>Una cuadra con vida y voz en el proceso.</dd></div></dl></article><article class="acard" style="--ab:var(--naranja);--af:var(--crema)"><h3>la Ciudad</h3><dl><div><dt>hoy</dt><dd>Suelo con infraestructura sin usar y deudas impagas.</dd></div><div><dt>da</dt><dd>Incentivos, un registro público y control.</dd></div><div><dt>recibe</dt><dd>Vivienda nueva sin comprar suelo y un tejido urbano recuperado.</dd></div></dl></article></div>
+  <div class="act-grid"><article class="acard" style="--ab:var(--celeste);--af:var(--bordo)"><h3>futuro propietario</h3><dl><div><dt>hoy</dt><dd>Alquileres que suben y precios para comprar inaccesibles.</dd></div><div><dt>da</dt><dd>Reactiva el barrio con mixtura y diversidad.</dd></div><div><dt>recibe</dt><dd>Su primera casa, cerca de todo, con un crédito a su alcance.</dd></div></dl></article><article class="acard" style="--ab:var(--rosa);--af:var(--bordo)"><h3>propietario del esqueleto</h3><dl><div><dt>hoy</dt><dd>Capital inmovilizado, deudas de ABL y una estructura que se deteriora.</dd></div><div><dt>da</dt><dd>Terminar la obra en plazo y ofrecer viviendas asequibles.</dd></div><div><dt>recibe</dt><dd>Incentivos fiscales y un subsidio de hasta el 25% de la obra.</dd></div></dl></article><article class="acard" style="--ab:var(--lima);--af:var(--bordo)"><h3>vecino</h3><dl><div><dt>hoy</dt><dd>Una obra abandonada que trae inseguridad y apaga la cuadra.</dd></div><div><dt>da</dt><dd>Detectar y registrar esqueletos, y opinar en las mesas.</dd></div><div><dt>recibe</dt><dd>Una cuadra con vida y voz en el proceso.</dd></div></dl></article><article class="acard" style="--ab:var(--naranja);--af:var(--crema)"><h3>la Ciudad</h3><dl><div><dt>hoy</dt><dd>Suelo con infraestructura sin usar y deudas impagas.</dd></div><div><dt>da</dt><dd>Un registro, incentivos y créditos para primera vivienda.</dd></div><div><dt>recibe</dt><dd>Vivienda nueva sin comprar suelo y un tejido urbano recuperado.</dd></div></dl></article></div>
   <a class="vcta" href="#mapa">buscá las oportunidades ↓</a>
 </section>
 
@@ -1030,15 +1061,10 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
     <div class="regnav"><button type="button" class="ghost" id="regPrev" disabled>← atrás</button><button type="submit" class="solid" id="regNext">siguiente →</button></div>
   </form>
 </div>
-<section id="participar" class="estr" aria-label="Estrategia de la campaña">
-  <div class="estr-top">
-    <p class="steps2" id="esSteps"><b>instalar</b><i>→</i><b>discutir</b><i>→</i><b>consensuar</b><i>→</i><b>aprobar</b></p>
-  </div>
-  <p class="estr-cap" id="esCap"></p>
-  <div class="estr-stage" id="esStage" aria-roledescription="carrusel"></div>
-  <button class="estr-nav l" id="esPrev" aria-label="Anterior">←</button>
-  <button class="estr-nav r" id="esNext" aria-label="Siguiente">→</button>
-  <a class="vcta snext" href="#accion">quiero sumarme ↓</a>
+<section id="participar" class="nov estr2" aria-label="Estrategias">
+  <div class="nov-top"><h2>estrategias</h2></div>
+  <div class="nov-row" id="nvRow"></div>
+  <div class="nov-nav"><button id="nvPrev" aria-label="Anteriores">←</button><button id="nvNext" aria-label="Siguientes">→</button><a class="vcta" href="#accion">quiero sumarme ↓</a></div>
 </section>
 <section id="accion" class="wall" aria-label="Cómo sumarte">
   <h2>cómo sumarte</h2>
@@ -1049,16 +1075,19 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 
 <div class="apop" id="apop" hidden role="dialog" aria-modal="true" aria-label="Sumate"><div class="apop-s" id="apopS"></div></div>
 
-<section id="novedades" class="nov" aria-label="Novedades">
-  <div class="nov-top"><h2>novedades</h2></div>
-  <div class="nov-row" id="nvRow"></div>
-  <div class="nov-nav"><button id="nvPrev" aria-label="Anteriores">←</button><button id="nvNext" aria-label="Siguientes">→</button><a class="vcta" href="#sp">el antecedente ↓</a></div>
+<section id="novedades" class="estr" aria-label="Novedades">
+  <div class="estr-top"><h2 class="estr-h">novedades</h2><p id="esSteps" hidden></p></div>
+  <p class="estr-cap" id="esCap"></p>
+  <div class="estr-stage" id="esStage" aria-roledescription="carrusel"></div>
+  <button class="estr-nav l" id="esPrev" aria-label="Anterior">←</button>
+  <button class="estr-nav r" id="esNext" aria-label="Siguiente">→</button>
+  <a class="vcta snext" href="#sp">el antecedente ↓</a>
 </section>
 <section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
   <h2>lo que aprendimos de <em>San Pablo</em></h2>
   <div class="sp">
     <img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo">
-    <div class="sp-tx"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">fija un número: al menos 30% de vivienda asequible, con precio atado al ingreso.</li><li style="--hc:var(--naranja)">define quién accede, con requisitos y sorteo público.</li><li style="--hc:var(--celeste)">protege esas viviendas de la reventa durante 20 años.</li><li style="--hc:var(--lima)">controla también después de la obra, con los vecinos.</li></ul><div class="sp-links"><a class="vcta" href="#sumate">sumate a la discusión ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
+    <div class="sp-tx"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">registra cada obra y adapta el proyecto para que sea viable como vivienda asequible.</li><li style="--hc:var(--naranja)">destina las viviendas a quienes compran su primera casa.</li><li style="--hc:var(--celeste)">acompaña con créditos para jóvenes que hoy quedan afuera.</li><li style="--hc:var(--lima)">usa el historial de pago del alquiler como garantía.</li></ul><div class="sp-links"><a class="vcta" href="#sumate">sumate a la discusión ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
   </div>
 </section>
 <section id="sumate" class="cta" aria-label="Sumate">
@@ -1335,7 +1364,7 @@ function openCard(id){const d=DATA[id];openId=id;$('ck').textContent=d.k;$('cn')
 function closeCard(){openId=null;card.hidden=true;document.querySelectorAll('.mk.on').forEach(m=>m.classList.remove('on'))}
 function later(fn,ms){clearTimeout(tTimer);tTimer=setTimeout(fn,ms)}
 function tourNext(){if(!inView)return;const id=ORDER.find(i=>!seen.has(i));
-  if(!id){if(!concluded){concluded=true;later(()=>{if(inView)showSlide(0,true);else concluded=false},700)}return}
+  if(!id){if(!concluded){concluded=true;}return}
   show(id)}
 function show(id){started=true;openCard(id);if(!concluded)later(()=>{closeCard();later(tourNext,900)},5500);else clearTimeout(tTimer)}
 function userClose(){if(openId===null)return;closeCard();if(!concluded&&started)later(tourNext,900)}
@@ -1357,7 +1386,6 @@ $('mx').addEventListener('click',endModal);
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-close]'))endModal()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)endModal()});
 
-$('leyMore').addEventListener('click',()=>showSlide(0,true));
 /* ---------- portada ---------- */
 const hero=$('inicio'),track=$('track'),sls=[...track.children],hd=$('hd');let hi=0,timer=null;
 document.querySelectorAll('.split,.wv,.fall').forEach(el=>{{let i=0;const wrap=s=>s.split(/(\s+)/).map(w=>/^\s+$/.test(w)||!w?w:`<span class="wd">${[...w].map(c=>`<span style="--i:${i++}">${c}</span>`).join('')}</span>`).join('');el.innerHTML=[...el.childNodes].map(n=>n.nodeType===3?wrap(n.textContent):(n.innerHTML=wrap(n.textContent),n.outerHTML)).join('')}});
@@ -1499,7 +1527,7 @@ function openFicha(id){const p=PTS.find(x=>x.id===id);if(!p)return;curF=id;eng.s
   $('ficha').innerHTML=`  <div class="ph"><img src="${p.foto?esc(p.foto):'esqueleto.jpg'}" alt="Foto del esqueleto">${p.foto?'':'<span>foto ilustrativa</span>'}</div>
   <div class="bd"><span class="badge" style="background:${badge[1]};color:${p.cat==='no'||p.cat==='real'?'#fff':'#2A2B45'}">${badge[0]}</span>
   <p class="k">${esc(p.barrio||'Ciudad de Buenos Aires')} · ${esc(p.estado||'estado sin datos')}</p><h3>${esc(p.dir)}</h3>
-  <div class="viv"><b>${p.viv?'~'+fmt(p.viv)+'<sup>*</sup>':'¿?'}</b><span>viviendas posibles${aseq?` · <strong>~${fmt(aseq)} asequibles</strong> con nuestra propuesta`:''}</span><small>* Estimado con ${M2_VIV} m² por vivienda. Nuestra propuesta: al menos 30% asequible.</small></div>
+  <div class="viv"><b>${p.viv?'~'+fmt(p.viv)+'<sup>*</sup>':'¿?'}</b><span>viviendas posibles</span><small>* Estimado con ${M2_VIV} m² por vivienda.</small></div>
   <dl><div><dt>Pisos</dt><dd>${p.pisos??'—'}</dd></div><div><dt>Altura aprox.</dt><dd>${p.pisos?'~'+p.pisos*3+' m':'—'}</dd></div><div><dt>Construido</dt><dd>${p.m2?fmt(p.m2)+' m²':'—'}</dd></div><div><dt>Lote</dt><dd>${p.lote?fmt(p.lote)+' m²':'—'}</dd></div><div><dt>Avance</dt><dd>${p.avance!=null?p.avance+'%':'—'}</dd></div><div><dt>Parada hace</dt><dd>${p.anios!=null?p.anios+' años':'—'}</dd></div></dl>
   <div class="law"><p class="k">¿Entra en la propuesta?</p>${p.req.map(r=>`<p>${mark(r[1])}${r[0]}</p>`).join('')}</div>
   <div class="acts"><button id="fMore">sumar información</button><button id="fShare">compartir</button></div></div>`;
@@ -1546,26 +1574,10 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){if(picking)endPick(false);el
 const ES=[
  {img:'mk/carteles-obra.jpg',t:'carteles de obra',k:'cartelería pública',b:'var(--naranja)',f:'var(--crema)',s:[0],c:'Vestimos el cerco de cada esqueleto con carteles y un QR que lleva a su ficha en el mapa y a nuestra propuesta.'},
  {img:'mk/instagram-perfil.jpg',t:'instagram · carrusel de datos',k:'redes propias',b:'var(--rosa)',f:'var(--bordo)',s:[0,1],c:'Un dato por publicación para instalar el tema y explicar, eje por eje, la ley que proponemos.'},
- {img:'mk/luminica.jpg',t:'intervención lumínica',k:'vía pública',b:'var(--bordo)',f:'var(--celeste)',s:[0],c:'De noche, proyecciones sobre las estructuras: "acá podrían vivir 30 familias".'},
  {img:'mk/afiche-calle.jpg',t:'convocatorias abiertas',k:'vía pública',b:'var(--crema)',f:'var(--naranja)',s:[1],c:'Afiches en la calle que invitan a discutir la ley en las mesas abiertas de cada esqueleto.'},
  {img:'mk/mesa-vereda.jpg',t:'mesa en la vereda',k:'gestión participativa',b:'var(--lima)',f:'var(--bordo)',s:[1,2],c:'Discutimos nuestra propuesta con los vecinos en la puerta de las obras: lo que se acuerda ahí entra en la ley.'},
  {img:'mk/colaboraciones-cesba.jpg',t:'colaboraciones',k:'CESBA · FADU · Gato y la Caja · Popurrí · Migliore',b:'var(--celeste)',f:'var(--bordo)',s:[2,3],c:'Instituciones, universidades y divulgadores que suman respaldo para presentar la ley en la Legislatura y lograr que se apruebe.'}];
-const esStage=$('esStage'),esSteps=[...$('esSteps').querySelectorAll('b')],esN=ES.length;let esPos=0,esTarget=null,esHover=false,esLast=null,esIdx=-1;
-const esCards=ES.map((e,i)=>{const d=document.createElement('article');d.className='ecard';d.style.setProperty('--b',e.b);d.style.setProperty('--f',e.f);
-  d.innerHTML=`<p class="ek">${esc(e.k)}</p>`+(e.img?`<div class="eimg"><img src="${e.img}" alt=""></div>`:'')+`<div><p class="et">${esc(e.t)}</p>${e.img?'':'<p class="ef">mockup a definir</p>'}</div>`;if(e.img)d.classList.add('has');
-  d.addEventListener('click',()=>{const c=((Math.round(esPos)%esN)+esN)%esN;clearTimeout(esPT);if(c===i&&esTarget==null){esHover=!esHover}else{esTo(i);esHover=true}esStage.classList.toggle('paused',esHover)});esStage.appendChild(d);return d});
-function esRender(){esCards.forEach((c,k)=>{let d=((k-esPos)%esN+esN)%esN;if(d>esN/2)d-=esN;const a=Math.abs(d);
-  c.style.transform=`translate(calc(-50% + ${d.toFixed(3)}*var(--cw)*.62),-50%) scale(${Math.max(.45,1-.17*a).toFixed(3)})`;c.style.zIndex=String(Math.round(100-a*10));c.style.opacity=Math.max(0,Math.min(1,(2.9-a)/1.1)).toFixed(3);c.style.pointerEvents=a>2.4?'none':'auto';c.setAttribute('aria-hidden',a>.5)});
-  const ix=((Math.round(esPos)%esN)+esN)%esN;if(ix!==esIdx){esIdx=ix;esSteps.forEach((b,k)=>b.classList.toggle('on',ES[ix].s.includes(k)));$('esCap').textContent=ES[ix].c}}
-function esTo(i){let d=((i-esPos)%esN+esN)%esN;if(d>esN/2)d-=esN;esTarget=esPos+d}
-function esTick(ts){const dt=esLast==null?0:Math.min(.05,(ts-esLast)/1000);esLast=ts;
-  if(onScreen($('participar'))){if(esTarget!=null){const df=esTarget-esPos;esPos+=df*Math.min(1,dt*5);if(Math.abs(df)<.002){esPos=esTarget;esTarget=null}}else if(!esHover)esPos+=dt/10;esRender()}
-  requestAnimationFrame(esTick)}
-$('esPrev').addEventListener('click',()=>{esTo(Math.round(esPos)-1);esPause()});$('esNext').addEventListener('click',()=>{esTo(Math.round(esPos)+1);esPause()});
 
-let esX=null;esStage.addEventListener('pointerdown',e=>{esX=e.clientX});esStage.addEventListener('pointerup',e=>{if(esX===null)return;const d=e.clientX-esX;esX=null;if(Math.abs(d)>40){esTo(Math.round(esPos)+(d<0?1:-1));esPause()}});
-let esPT;function esPause(){esHover=true;clearTimeout(esPT);esPT=setTimeout(()=>{esHover=false},8000)}
-esRender();requestAnimationFrame(esTick);
 
 /* ---------- novedades ---------- */
 /* Para sumar una novedad, agregar un objeto a esta lista (la más nueva primero). */
@@ -1577,9 +1589,9 @@ const NOV=[
  {fecha:'01/10/2026',cat:'prensa',titulo:'Hablamos de esqueletos urbanos en la radio',texto:'Contamos por qué hay edificios abandonados a medio construir y qué proponemos para que vuelvan a ser vivienda.',link:'#novedades',linkTxt:'escuchar la entrevista',foto:'ph/ph07.jpg',color:'var(--celeste)'},
  {fecha:'24/09/2026',cat:'intervención',titulo:'Una noche, un esqueleto iluminado',texto:'Proyectamos ventanas encendidas sobre una estructura abandonada para imaginar quién podría vivir ahí.',link:'#novedades',linkTxt:'ver el video en youtube',foto:'ph/ph10.jpg',color:'var(--bordo)'},
  {fecha:'10/09/2026',cat:'colaboración',titulo:'Sumamos aliados',texto:'Universidades, organizaciones y divulgadores se suman a la campaña para llevar el tema a más gente.',link:'https://www.instagram.com/cuerposvacantes/',linkTxt:'ver en instagram',foto:'ph/ph02.jpg',color:'var(--crema)'}];
-const nvRow=$('nvRow');
+const nvRow=$('nvRow');const ROW=ES;
 NOV.push({fecha:'01/09/2026',cat:'mapa',titulo:'Ya podés cargar esqueletos',texto:'Si pasás por una obra abandonada, registrala en el mapa: ubicación, foto y lo que ves.',link:'#mapa',linkTxt:'ir al mapa',foto:'ph/ph09.jpg',color:'var(--celeste)'});
-nvRow.innerHTML=[...NOV,...NOV].map(n=>`<article class="ncard"><div class="nh"><span>${esc(n.cat)}</span><time>${esc(n.fecha)}</time></div><div class="nf" style="--c:${n.color}"><img src="${esc(n.foto)}" alt="" loading="lazy"></div><h3>${esc(n.titulo)}</h3>${n.real?'':'<span class="ex">contenido de ejemplo</span>'}<p>${esc(n.texto)}</p><a href="${esc(n.link)}"${/^https?:/.test(n.link)?' target="_blank" rel="noopener"':''}>${esc(n.linkTxt)} →</a></article>`).join('');
+nvRow.innerHTML=[...ROW,...ROW].map(e=>`<article class="ncard es"><div class="nh"><span>${esc(e.k)}</span></div><div class="nf" style="--c:${e.b}"><img src="${e.img}" alt="" loading="lazy"></div><h3>${esc(e.t)}</h3><p>${esc(e.c)}</p></article>`).join('');
 const nvStep=()=>{const c=nvRow.querySelector('.ncard');return c?c.getBoundingClientRect().width+20:300};
 requestAnimationFrame(()=>{const c=nvRow.children[1];if(c)nvRow.scrollLeft=c.offsetLeft-nvRow.offsetLeft-(c.getBoundingClientRect().width/2+20)});
 
@@ -1587,11 +1599,30 @@ let nvHover=false,nvLast=null,nvX=null;nvRow.style.scrollSnapType='none';
 nvRow.addEventListener('mouseenter',()=>nvHover=true);nvRow.addEventListener('mouseleave',()=>nvHover=false);
 nvRow.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'){nvHover=true;setTimeout(()=>nvHover=false,4000)}});
 function nvTick(ts){const dt=nvLast==null?0:Math.min(.05,(ts-nvLast)/1000);nvLast=ts;
-  if(onScreen($('novedades'))&&!nvHover){const cs=nvRow.children,half=cs[NOV.length].offsetLeft-cs[0].offsetLeft;if(nvX==null||Math.abs(nvRow.scrollLeft-nvX)>2)nvX=nvRow.scrollLeft;nvX+=dt*26;if(nvX>=half+cs[0].offsetLeft)nvX-=half;nvRow.scrollLeft=nvX}
+  if(onScreen($('participar'))&&!nvHover){const cs=nvRow.children,half=cs[ROW.length].offsetLeft-cs[0].offsetLeft;if(nvX==null||Math.abs(nvRow.scrollLeft-nvX)>2)nvX=nvRow.scrollLeft;nvX+=dt*26;if(nvX>=half+cs[0].offsetLeft)nvX-=half;nvRow.scrollLeft=nvX}
   requestAnimationFrame(nvTick)}
 requestAnimationFrame(nvTick);
 $('nvPrev').addEventListener('click',()=>nvRow.scrollBy({left:-nvStep(),behavior:'smooth'}));
 $('nvNext').addEventListener('click',()=>nvRow.scrollBy({left:nvStep(),behavior:'smooth'}));
+
+/* ---------- novedades: carrusel ---------- */
+const DARK=['var(--bordo)','var(--naranja)'];const CAR=NOV.map(n=>({img:n.foto,k:n.cat+' · '+n.fecha,t:n.titulo,b:n.color,f:DARK.includes(n.color)?'var(--crema)':'var(--bordo)',s:[],c:esc(n.texto)+(n.real?'':' <span class="ex">contenido de ejemplo</span>')+` <a href="${esc(n.link)}"${/^https?:/.test(n.link)?' target="_blank" rel="noopener"':''}>${esc(n.linkTxt)} →</a>`}));
+const esStage=$('esStage'),esSteps=[],esN=CAR.length;let esPos=0,esTarget=null,esHover=false,esLast=null,esIdx=-1;
+const esCards=CAR.map((e,i)=>{const d=document.createElement('article');d.className='ecard';d.style.setProperty('--b',e.b);d.style.setProperty('--f',e.f);
+  d.innerHTML=`<p class="ek">${esc(e.k)}</p>`+(e.img?`<div class="eimg"><img src="${e.img}" alt=""></div>`:'')+`<div><p class="et">${esc(e.t)}</p>${e.img?'':'<p class="ef">mockup a definir</p>'}</div>`;if(e.img)d.classList.add('has');
+  d.addEventListener('click',()=>{const c=((Math.round(esPos)%esN)+esN)%esN;clearTimeout(esPT);if(c===i&&esTarget==null){esHover=!esHover}else{esTo(i);esHover=true}esStage.classList.toggle('paused',esHover)});esStage.appendChild(d);return d});
+function esRender(){esCards.forEach((c,k)=>{let d=((k-esPos)%esN+esN)%esN;if(d>esN/2)d-=esN;const a=Math.abs(d);
+  c.style.transform=`translate(calc(-50% + ${d.toFixed(3)}*var(--cw)*.62),-50%) scale(${Math.max(.45,1-.17*a).toFixed(3)})`;c.style.zIndex=String(Math.round(100-a*10));c.style.opacity=Math.max(0,Math.min(1,(2.9-a)/1.1)).toFixed(3);c.style.pointerEvents=a>2.4?'none':'auto';c.setAttribute('aria-hidden',a>.5)});
+  const ix=((Math.round(esPos)%esN)+esN)%esN;if(ix!==esIdx){esIdx=ix;$('esCap').innerHTML=CAR[ix].c}}
+function esTo(i){let d=((i-esPos)%esN+esN)%esN;if(d>esN/2)d-=esN;esTarget=esPos+d}
+function esTick(ts){const dt=esLast==null?0:Math.min(.05,(ts-esLast)/1000);esLast=ts;
+  if(onScreen($('novedades'))){if(esTarget!=null){const df=esTarget-esPos;esPos+=df*Math.min(1,dt*5);if(Math.abs(df)<.002){esPos=esTarget;esTarget=null}}else if(!esHover)esPos+=dt/10;esRender()}
+  requestAnimationFrame(esTick)}
+$('esPrev').addEventListener('click',()=>{esTo(Math.round(esPos)-1);esPause()});$('esNext').addEventListener('click',()=>{esTo(Math.round(esPos)+1);esPause()});
+
+let esX=null;esStage.addEventListener('pointerdown',e=>{esX=e.clientX});esStage.addEventListener('pointerup',e=>{if(esX===null)return;const d=e.clientX-esX;esX=null;if(Math.abs(d)>40){esTo(Math.round(esPos)+(d<0?1:-1));esPause()}});
+let esPT;function esPause(){esHover=true;clearTimeout(esPT);esPT=setTimeout(()=>{esHover=false},8000)}
+esRender();requestAnimationFrame(esTick);
 
 /* ---------- llamado final ---------- */
 const CTA=[['discutamos','#F79F9F','#FF5200'],['escribamos','#FF5200','#F79F9F'],['consensuemos','#D3E7F7','#9B1549'],['habitemos','#D0D35A','#9B1549'],['participemos','#9B1549','#D3E7F7']];
@@ -1601,7 +1632,7 @@ function ctaGo(){const [w,b,f]=CTA[ctaI];ctaSec.style.setProperty('--cb',b);ctaS
 ctaGo();setInterval(()=>{if(onScreen(ctaSec))ctaGo()},2800);
 
 /* ---------- recorrido: aparece al entrar ---------- */
-{const rc=$('recorrido');if(rc){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){rc.classList.add('in');io.disconnect()}}),{threshold:.25});io.observe(rc)}}
+document.querySelectorAll('.rec').forEach(rc=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){rc.classList.add('in');io.disconnect()}}),{threshold:.25});io.observe(rc)});
 /* ---------- puntos laterales ---------- */
 const NAV={recorrido:'recorrido',inicio:'inicio',ciudad:'la ciudad',derecho:'el derecho',ley:'nuestra ley',actores:'a quién le sirve',mapa:'oportunidades',participar:'estrategia',accion:'cómo sumarte',novedades:'novedades',sp:'antecedente',sumate:'sumate'};
 const navSecs=[...document.querySelectorAll('body > section')].filter(s=>NAV[s.id]);const dotsEl=$('snav');
