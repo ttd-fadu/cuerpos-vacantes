@@ -769,7 +769,8 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .rec-line::after{content:"";position:absolute;left:80%;right:0;top:17px;height:2px;background:repeating-linear-gradient(90deg,var(--bordo) 0 8px,transparent 8px 14px)}
 .rec-line li{position:relative;display:grid;align-content:start;gap:10px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
 .rec.in .rec-line li{opacity:1;transform:none}
-.rec.in .rec-line li:nth-child(2){transition-delay:.25s}.rec.in .rec-line li:nth-child(3){transition-delay:.5s}.rec.in .rec-line li:nth-child(4){transition-delay:.75s}.rec.in .rec-line li:nth-child(5){transition-delay:1s}
+.rec-line li:nth-child(2){--dl:.25s}.rec-line li:nth-child(3){--dl:.5s}.rec-line li:nth-child(4){--dl:.75s}.rec-line li:nth-child(5){--dl:1s}
+.rec .rec-line li{transition:opacity .6s var(--dl,0s),transform .6s var(--dl,0s),background-color .12s,box-shadow .12s}
 .rec-d{width:36px;height:36px;box-sizing:border-box;border-radius:50%;background:var(--rc);border:2px solid var(--ink);box-shadow:inset 6px 6px 0 rgba(42,43,69,.25);position:relative;z-index:1}
 .rec-w{margin:4px 0 0;font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rosa-d)}
 .rec-line h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(20px,1.9vw,32px);line-height:1;letter-spacing:-.02em}
@@ -840,17 +841,18 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 /* v4 · la ley en línea de tiempo */
 .ley2{background-color:var(--celeste);background-image:radial-gradient(rgba(42,43,69,.08) 1px,transparent 1.3px)}
 .ley2 h2 em{color:var(--bordo)}
-.ley2 .rec-line li:not(.next){border-radius:14px;padding:0 12px 14px;margin:0 -12px;transition:background-color .25s,box-shadow .25s,opacity .6s,transform .6s;cursor:default;outline:none}
+.ley2 .rec-line li:not(.next){border-radius:14px;padding:0 12px 14px;margin:0 -12px;cursor:default;outline:none}
 .ley2 .rec-line li:hover,.ley2 .rec-line li:focus-visible{background:#fff;box-shadow:6px 6px 0 var(--ink)}
 .ley2 .rec-line li.next:hover,.ley2 .rec-line li.next:focus-visible{box-shadow:6px 6px 0 var(--ink)}
 .ley2 .rec-line li.next{box-shadow:6px 6px 0 var(--bordo)}
 .ley2 .rec-w{color:var(--bordo)}
-.rec-more{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s ease;font-size:clamp(12.5px,.95vw,15px)!important;color:var(--ink);border-top:1.5px dashed transparent}
+.rec-more{max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .2s ease;font-size:clamp(12.5px,.95vw,15px)!important;color:var(--ink);border-top:1.5px dashed transparent}
 .ley2 li:hover .rec-more,.ley2 li:focus-within .rec-more,.ley2 li:focus .rec-more{max-height:16em;opacity:1;padding-top:8px;border-top-color:var(--rc)}
 .ley2 .rec-line{align-items:start}
 @media (hover:none),(max-width:760px){.rec-more{max-height:none;opacity:1;padding-top:8px}}
 .ley2 .rec-line{min-height:clamp(240px,30vh,340px)}
 @media (max-width:760px){.ley2 .rec-line{min-height:0}.ley2 .rec-line li:not(.next){padding:0 0 0 52px!important;margin:0!important}.ley2 .rec-line li.next{padding:14px 16px 16px 52px!important}}
+.ley2 .rec-line::before,.ley2 .rec-line::after{display:none}
 /* v4 · problema de fondo */
 .der-in{align-items:stretch!important}
 .der-hd{display:flex!important;flex-direction:column;justify-content:space-between;gap:20px}
@@ -990,10 +992,10 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <section id="ley" class="rec ley2" aria-label="Nuestra propuesta de ley">
   <div><p class="rec-k">nuestra propuesta de ley</p><h2>una ley para que los esqueletos <em>vuelvan a ser vivienda</em></h2></div>
   <ol class="rec-line">
-    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">registro</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas se anotan en un registro público de la Ciudad.</p><p class="rec-more">La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></li>
-    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">adecuación</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></li>
-    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">beneficios</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></li>
-    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">primera vivienda</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><p class="rec-more">Con créditos hipotecarios especiales y requisitos más flexibles, pensados para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
+    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">quién entra</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas se anotan en un registro público de la Ciudad.</p><p class="rec-more">La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></li>
+    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></li>
+    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">qué recibe</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></li>
+    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><p class="rec-more">Con créditos hipotecarios especiales y requisitos más flexibles, pensados para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
     <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><p class="rec-more">Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></li>
   </ol>
   <a class="vcta" href="#actores">¿a quién le sirve? ↓</a>
@@ -1011,7 +1013,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   <div class="mapwrap" id="mapwrap">
     <div id="map" class="map" aria-label="Mapa de la Ciudad de Buenos Aires"></div>
     <div class="mphd"><h2>el mapa de las <em>oportunidades</em></h2></div>
-    <div class="mcol"><div class="minfo"><p>Cada punto es un esqueleto: una obra parada en un barrio con transporte, escuelas y servicios, que podría ser vivienda. Tocá uno para ver su ficha: cuántas viviendas podría tener y si entra en nuestra propuesta.</p><p>¿Conocés uno que no está? Cargalo con el botón <b>+ cargar un esqueleto</b>.</p><p class="mcare">Por seguridad, no entres a las estructuras. No publicamos datos de los dueños ni de quienes viven en ellas.</p></div><div class="ficha" id="ficha" aria-live="polite"></div><a class="mnext" href="#participar">¿y cómo seguimos? ↓</a></div>
+    <div class="mcol"><div class="minfo"><p>Cada punto es un esqueleto: una obra parada en un barrio con transporte, escuelas y servicios, que podría ser vivienda. Tocá uno para ver su ficha: cuántas viviendas podría tener y si entra en nuestra propuesta.</p><p>¿Conocés uno que no está? Cargalo con el botón <b>+ cargar un esqueleto</b>.</p><p class="mcare">Por seguridad, no entres a las estructuras. No publicamos datos de los dueños ni de quienes viven en ellas.</p></div><div class="ficha" id="ficha" aria-live="polite"></div><a class="mnext" href="#sp">lo que aprendimos de San Pablo ↓</a></div>
     <div class="legend" role="group" aria-label="Filtrar por tipo">
       <button class="lg on" data-c="real" hidden><i style="background:#9B1549"></i>relevados</button>
       <button class="lg on" data-c="ley"><i style="background:#F79F9F"></i>entra en la propuesta</button>
@@ -1061,6 +1063,13 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
     <div class="regnav"><button type="button" class="ghost" id="regPrev" disabled>← atrás</button><button type="submit" class="solid" id="regNext">siguiente →</button></div>
   </form>
 </div>
+<section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
+  <h2>lo que aprendimos de <em>San Pablo</em></h2>
+  <div class="sp">
+    <img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo">
+    <div class="sp-tx"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">registra cada obra y adapta el proyecto para que sea viable como vivienda asequible.</li><li style="--hc:var(--naranja)">destina las viviendas a quienes compran su primera casa.</li><li style="--hc:var(--celeste)">acompaña con créditos para jóvenes que hoy quedan afuera.</li><li style="--hc:var(--lima)">usa el historial de pago del alquiler como garantía.</li></ul><div class="sp-links"><a class="vcta" href="#participar">¿y cómo seguimos? ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
+  </div>
+</section>
 <section id="participar" class="nov estr2" aria-label="Estrategias">
   <div class="nov-top"><h2>estrategias</h2></div>
   <div class="nov-row" id="nvRow"></div>
@@ -1081,15 +1090,9 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   <div class="estr-stage" id="esStage" aria-roledescription="carrusel"></div>
   <button class="estr-nav l" id="esPrev" aria-label="Anterior">←</button>
   <button class="estr-nav r" id="esNext" aria-label="Siguiente">→</button>
-  <a class="vcta snext" href="#sp">el antecedente ↓</a>
+  <a class="vcta snext" href="#sumate">sumate ↓</a>
 </section>
-<section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
-  <h2>lo que aprendimos de <em>San Pablo</em></h2>
-  <div class="sp">
-    <img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo">
-    <div class="sp-tx"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">registra cada obra y adapta el proyecto para que sea viable como vivienda asequible.</li><li style="--hc:var(--naranja)">destina las viviendas a quienes compran su primera casa.</li><li style="--hc:var(--celeste)">acompaña con créditos para jóvenes que hoy quedan afuera.</li><li style="--hc:var(--lima)">usa el historial de pago del alquiler como garantía.</li></ul><div class="sp-links"><a class="vcta" href="#sumate">sumate a la discusión ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
-  </div>
-</section>
+
 <section id="sumate" class="cta" aria-label="Sumate">
   <div class="cta-in">
     <p class="cta-w" id="ctaW" aria-live="polite">discutamos</p>
@@ -1650,15 +1653,15 @@ $('nl').addEventListener('submit',e=>{e.preventDefault();const v=$('nlMail').val
 
 /* ---------- ciudad: los cinco datos a la vista ---------- */
 const LBL={esq:{g:'esq',n:'+100',t:'esqueletos urbanos en la Ciudad, como este.',s:'Infobae, 29/05/2026',d:'R'},
- viv:{g:'esq',n:'+3.000',t:'viviendas posibles si se terminaran.',s:'Cálculo propio: 100 obras de 2.000 m²',d:'R'},
+ viv:{g:'esq',n:'+3.000',t:'viviendas posibles si se terminaran.',s:'Cálculo propio: 100 obras de 2.000 m²',d:'UR'},
  alq:{g:'viv',n:'37%',t:'de los hogares porteños alquila. Hace 20 años era el 22%.',s:'Observatorio Metropolitano',d:'UL'},
- juan:{g:'viv',n:'40%',t:'del sueldo de los jóvenes se va en el alquiler.',s:'fuente a confirmar',d:'L',c:1},
+ juan:{g:'viv',n:'40%',t:'del sueldo de los jóvenes se va en el alquiler.',s:'fuente a confirmar',d:'DL',c:1},
  jov:{g:'viv',n:'45 años',t:'es hoy la edad promedio para ser propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano',d:'L'}};
 const LORD=['esq','viv','alq','juan','jov'],clabs=$('clabs');
 clabs.innerHTML=LORD.map((id,i)=>{const l=LBL[id];return `<div class="clab g-${l.g}" id="lab-${id}"><b>${l.n}</b><p>${l.t}</p><small${l.c?' class="tbc"':''}>${l.s}</small></div>`}).join('');
 function placeLabels(){if(innerWidth<=760)return;const s=stage.getBoundingClientRect();
   for(const id of LORD){const el=$('lab-'+id),m=$('mk-'+id).getBoundingClientRect(),x=m.left-s.left+m.width/2,y=m.top-s.top+m.height/2,w=el.offsetWidth,h=el.offsetHeight,d=LBL[id].d;
-    let l=d==='R'?x+18:x-18-w,tp=d==='UL'?y-h-16:y-h/2;l=Math.max(8,Math.min(l,s.width-w-8));tp=Math.max(8,Math.min(tp,s.height-h-8));el.style.transform=`translate(${l.toFixed(0)}px,${tp.toFixed(0)}px)`}}
+    let l=d.includes('R')?x+18:x-18-w,tp=d.includes('U')?y-h-34:d.includes('D')?y+30:y-h/2;l=Math.max(8,Math.min(l,s.width-w-8));tp=Math.max(8,Math.min(tp,s.height-h-8));el.style.transform=`translate(${l.toFixed(0)}px,${tp.toFixed(0)}px)`}}
 function flashLab(id){const el=$('lab-'+id);if(!el)return;el.classList.add('flash');clearTimeout(el._ft);el._ft=setTimeout(()=>el.classList.remove('flash'),900)}
 svg.addEventListener('mouseover',e=>{const t=e.target.closest('.mk[data-id]');if(t){const el=$('lab-'+t.dataset.id);if(el)el.classList.add('flash')}});
 svg.addEventListener('mouseout',e=>{const t=e.target.closest('.mk[data-id]');if(t){const el=$('lab-'+t.dataset.id);if(el)el.classList.remove('flash')}});
