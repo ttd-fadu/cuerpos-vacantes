@@ -903,6 +903,25 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 .axo.s4 .axo-replay{opacity:1}
 .axo-replay:hover{background:var(--ink);color:#fff}
 @media (prefers-reduced-motion:reduce){.axo .sl,.axo .ax-gruesa,.axo .ax-build,.axo .ax-extra,.axo figcaption{transition:none}}
+
+/* v7 · mobile */
+@media (max-width:760px){
+  .s2b{font-size:calc(5.3*var(--u))!important}
+  .s2t{font-size:calc(3.9*var(--u))!important;white-space:nowrap;overflow:visible!important;width:auto!important}
+  .ctrl{bottom:14px!important}
+  .act2{display:flex!important;flex-direction:column;align-items:stretch;gap:18px;padding-block:44px!important}
+  .act2 .act-side{display:contents}
+  .act2 .act-side h2{order:0}
+  .act2 .axo{order:1}
+  .act2 .act-grid{order:2}
+  .act2 .act-side .vcta{order:3}
+  .act2 .acard{padding:12px 14px!important}
+  .act2 .acard dt{margin-top:4px}
+  .axo-svg{max-height:none}
+  .der{padding-block:44px!important}
+  .rec{padding-block:44px!important}
+  .ley2 .rec-line{gap:26px}
+}
 </style>
 </head>
 <body style="margin:0">
@@ -1941,7 +1960,7 @@ svg.addEventListener('mouseover',e=>{const t=e.target.closest('.mk[data-id]');if
 svg.addEventListener('mouseout',e=>{const t=e.target.closest('.mk[data-id]');if(t){const el=$('lab-'+t.dataset.id);if(el)el.classList.remove('flash')}});
 placeLabels();addEventListener('resize',placeLabels);
 const cityIn=()=>{const r=$('ciudad').getBoundingClientRect();return r.top<innerHeight*.5&&r.bottom>innerHeight*.5};
-let labN=0;setInterval(()=>{if(labN<LORD.length&&cityIn()){$('lab-'+LORD[labN]).classList.add('in');labN++}},900);setInterval(()=>{if(onScreen($('ciudad')))placeLabels()},120);
+let labN=0,labGo=false;const labM=innerWidth<=760;setInterval(()=>{if(cityIn()||(labM&&onScreen($('ciudad'))))labGo=true;if(labN<LORD.length&&labGo&&(labM||cityIn())){$('lab-'+LORD[labN]).classList.add('in');labN++}},labM?350:900);setInterval(()=>{if(onScreen($('ciudad')))placeLabels()},120);
 /* ---------- vacíos: agujeros numerados que señalan su crítica ---------- */
 const HC=['#F79F9F','#FF5200','#D3E7F7','#D0D35A','#9B1549','#F7F4D4'];
 const holes=[...document.querySelectorAll('.hole')],vits=[...document.querySelectorAll('.vit')];
