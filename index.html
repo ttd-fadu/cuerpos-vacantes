@@ -922,6 +922,65 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   .rec{padding-block:44px!important}
   .ley2 .rec-line{gap:26px}
 }
+
+/* v8 · recorrido */
+#recorrido .rec-line h3{margin-top:6px}
+.rec-go{align-self:flex-end;box-sizing:border-box;width:calc((100% - 4*clamp(14px,2vw,32px))/5 + 32px);margin-right:-16px;text-align:center}
+/* v8 · scroll: cada sección encaja entera */
+@media (min-width:1101px){html{scroll-snap-type:y mandatory}}
+/* v8 · problema de fondo */
+.der-in{align-items:start!important;gap:clamp(32px,6vw,96px)!important}
+.der-hd{justify-content:flex-start!important;gap:clamp(18px,2.6vh,24px)!important}
+.der-hd .rec-k{margin-bottom:12px}
+.der-hd h2{font-size:clamp(30px,3.4vw,54px)!important;line-height:.98!important}
+.der-hd .der-lead{font-size:clamp(15px,1.2vw,19px)!important;line-height:1.5;max-width:42ch!important}
+.der-hd .vcta{margin-top:4px;align-self:flex-start}
+.der-grid{gap:14px!important;grid-auto-rows:1fr}
+.der-grid article{border-radius:16px!important;padding:22px 26px!important;gap:0!important;display:flex!important;flex-direction:column;justify-content:center}
+.der-grid article::after{background-image:radial-gradient(rgba(42,43,69,.05) 1px,transparent 1.4px)!important;background-size:8px 8px!important}
+.der-grid .dk{font-size:10.5px!important;letter-spacing:.16em!important;opacity:.8;margin:0 0 6px!important}
+.der-grid h3{font-size:clamp(26px,2.3vw,36px)!important;line-height:1!important;margin:0 0 10px!important}
+.der-grid p:not(.dk){font-size:clamp(14px,1.05vw,16px)!important;line-height:1.5!important;max-width:46ch}
+/* v8 · ley: tarjetas quietas, desplegable superpuesto */
+.ley2 .rec-line{align-items:stretch!important;min-height:0!important;gap:clamp(12px,1.4vw,20px)!important}
+.ley2 .rec-line li,.ley2 .rec-line li.next{position:relative;margin:0!important;padding:20px 20px 52px!important;border-radius:16px!important;background:rgba(255,255,255,.6)!important;border:1.5px solid var(--ink)!important;box-shadow:4px 4px 0 var(--rc)!important;display:flex;flex-direction:column;gap:8px;min-height:clamp(300px,38vh,360px);cursor:pointer}
+.ley2 .rec-line li.next{background:#fff!important;box-shadow:6px 6px 0 var(--rosa)!important}
+.ley2 .rec-line li:hover,.ley2 .rec-line li:focus-visible{box-shadow:6px 6px 0 var(--ink)!important}
+.ley2 .rec-line h3{margin:0}
+.rec-hint{position:absolute;left:20px;bottom:16px;font:600 11px var(--mono);letter-spacing:.06em;color:var(--bordo);border:1.5px solid var(--bordo);border-radius:999px;padding:3px 10px}
+.ley2 .rec-more{position:absolute!important;inset:0;max-height:none!important;overflow:auto!important;opacity:0!important;padding:20px!important;border:0!important;border-radius:15px;background:#fff;display:flex;flex-direction:column;gap:8px;transition:opacity .18s ease!important;pointer-events:none}
+.ley2 li:hover .rec-more,.ley2 li:focus .rec-more,.ley2 li:focus-within .rec-more{opacity:1!important;pointer-events:auto}
+.ley2 .rec-more p:not(.rec-w){margin:0;font-size:clamp(13px,.95vw,15px)!important;line-height:1.45;color:var(--ink)}
+.ley2 .rec-more .rec-w{margin:0}
+@media (max-width:760px){
+  .ley2 .rec-line li,.ley2 .rec-line li.next,.ley2 .rec-line li:not(.next){padding:18px 18px 18px 60px!important;margin:0!important;min-height:0;cursor:default}
+  .ley2 .rec-line li .rec-d,.ley2 .rec-line li.next .rec-d{position:absolute;left:14px!important;top:16px!important}
+  .ley2 .rec-more{position:static!important;opacity:1!important;padding:8px 0 0!important;background:none;border-top:1.5px dashed var(--rc)!important;border-radius:0;pointer-events:auto}
+  .ley2 .rec-more .rec-w,.ley2 .rec-more h3,.rec-hint{display:none}
+  .rec-go{width:100%;margin-right:0}
+}
+/* v8 · San Pablo en dos columnas */
+.spsec .sp.sp2{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)!important;align-items:stretch!important}
+.sp-l{display:flex;flex-direction:column;gap:14px;min-height:0}
+.spsec .sp2 .sp-ph{flex:1 1 0;height:auto!important;min-height:140px;width:100%;object-fit:cover}
+.sp-r{display:flex;flex-direction:column;justify-content:center;gap:18px;padding-left:clamp(18px,3vw,44px);border-left:1.5px dashed rgba(42,43,69,.3)}
+.sp-r .sp-dk{font-size:clamp(24px,2.4vw,38px)!important;margin:0!important}
+.sp-r .sp-diff li{font-size:clamp(15px,1.3vw,20px)!important}
+@media (max-width:760px){.spsec .sp.sp2{grid-template-columns:1fr!important}.sp-r{padding-left:0;border-left:0;border-top:1.5px dashed rgba(42,43,69,.3);padding-top:18px}.spsec .sp2 .sp-ph{flex:none;aspect-ratio:4/3}}
+/* v8 · estrategias centradas */
+.estr2 .nov-row{justify-content:safe center;padding-inline:max(16px,3vw);scroll-snap-type:x mandatory;scroll-padding-inline:max(16px,3vw)}
+.estr2 .ncard{flex:0 0 calc((100% - 4*var(--g))/5);scroll-snap-align:center}
+@media (min-width:761px){.estr2 .nov-nav button{display:none}}
+@media (max-width:760px){.estr2 .ncard{flex-basis:76%}}
+.ley2 .rec-more{z-index:2}
+.estr2{justify-content:center!important;padding-top:clamp(20px,4vh,44px)!important}
+.estr2 .ncard .nf{aspect-ratio:4/5}
+.estr2 .nov-nav{flex:0 0 auto!important;margin-top:clamp(16px,3vh,28px)}
+.estr2 .ncard h3{font-size:clamp(16px,1.25vw,20px)}
+.estr2 .ncard p{font-size:12.5px;-webkit-line-clamp:6}
+/* v8 · novedades: todas las fotos en semitono */
+#novedades .eimg{background:var(--b)}
+#novedades .eimg img{filter:grayscale(1) contrast(1.15)!important;mix-blend-mode:multiply}
 </style>
 </head>
 <body style="margin:0">
@@ -930,13 +989,13 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <section id="recorrido" class="rec" aria-label="Nuestro recorrido">
   <div><p class="rec-k">nuestro recorrido</p><h2>de una idea <em>a una ley</em></h2></div>
   <ol class="rec-line">
-    <li style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">convocatoria</p><h3>nos inscribimos</h3><p>Presentamos cuerpos vacantes en <i>Buenos Aires desafía al futuro</i>, del CESBA y El Gato y La Caja. Quedamos entre las propuestas seleccionadas.</p></li>
-    <li style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">incubación</p><h3>incubamos el proyecto</h3><p>Trabajamos la idea en el laboratorio del CESBA, con especialistas y otros equipos de la convocatoria.</p></li>
-    <li style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">campaña</p><h3>salimos a la calle</h3><p>Armamos una estrategia para instalar el tema y discutir con los vecinos qué hacer con los esqueletos. <a href="v1/" target="_blank" rel="noopener">ver la campaña ↗</a></p></li>
-    <li style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">Legislatura</p><h3>nos reunimos en la Legislatura</h3><p>Conversamos con José Rosenfeld, director de Patrimonio y Paisaje de la Legislatura porteña.</p></li>
-    <li class="next" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">a futuro</p><h3>presentamos nuestra ley</h3><p>Llevamos a la Legislatura nuestro propio proyecto para que los esqueletos vuelvan a ser vivienda asequible.</p></li>
+    <li style="--rc:var(--rosa)"><span class="rec-d"></span><h3>nos inscribimos</h3><p>Presentamos cuerpos vacantes en <i>Buenos Aires desafía al futuro</i>, del CESBA y El Gato y La Caja: una propuesta para recuperar edificios en obra abandonados con un programa de vivienda.</p></li>
+    <li style="--rc:var(--celeste)"><span class="rec-d"></span><h3>incubamos el proyecto</h3><p>Trabajamos la idea en el laboratorio del CESBA, con especialistas y otros equipos. Ahí nos contaron sobre el proyecto de ley de esqueletos urbanos.</p></li>
+    <li style="--rc:var(--lima)"><span class="rec-d"></span><h3>salimos a la calle</h3><p>Hicimos una campaña para instalar la problemática y discutir esa ley, porque le veíamos algunos agujeros. <a href="v1/" target="_blank" rel="noopener">ver la campaña ↗</a></p></li>
+    <li style="--rc:var(--naranja)"><span class="rec-d"></span><h3>nos reunimos en la Legislatura</h3><p>José Rosenfeld, director de Patrimonio y Paisaje, nos contó cómo es el proceso para movilizar una ley.</p></li>
+    <li class="next" style="--rc:var(--bordo)"><span class="rec-d"></span><h3>llevaremos nuestra ley</h3><p>Estamos escribiendo nuestra propia propuesta de ley y la vamos a presentar en la Legislatura.</p></li>
   </ol>
-  <a class="vcta" href="#inicio">conocé la propuesta ↓</a>
+  <a class="vcta rec-go" href="#inicio">conocé la propuesta ↓</a>
 </section>
 
 <!-- 01 · PORTADA: slider tipográfico animado -->
@@ -1000,39 +1059,10 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   </div>
 </section>
 
-<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Nuestra propuesta de ley">
-  <div class="sheet">
-    <button class="x" id="mx" aria-label="Cerrar">×</button>
-    <div class="slide" data-s="0">
-      <p class="k">Nuestra propuesta de ley</p>
-      <h2>de obra parada a casa habitada</h2>
-      <p>Proponemos que los dueños de obras privadas paralizadas reciban incentivos para terminarlas: menos impuestos, un subsidio para la obra o un crédito con tasa bonificada.</p>
-      <p>A cambio, una parte de esas viviendas tiene que ser asequible de verdad, y seguir siéndolo.</p>
-    </div>
-    <div class="slide" data-s="1" hidden>
-      <p class="k">Lo que garantiza</p>
-      <h2>que la vivienda llegue a quien la necesita, y se quede ahí</h2>
-      <ul>
-        <li>Un número: al menos el 30% de las viviendas, con un precio atado al ingreso.</li>
-        <li>Reglas claras para acceder y sorteo público.</li>
-        <li>Protección contra la reventa durante 20 años.</li>
-        <li>Un registro público de esqueletos y control después de la obra.</li>
-      </ul>
-    </div>
-    <div class="slide" data-s="2" hidden>
-      <p class="k">Tu turno</p>
-      <h2>escribamos la ley entre todos</h2>
-      <p>Antes de presentarla en la Legislatura, la discutimos en mesas abiertas en la vereda de cada esqueleto.</p>
-      <div class="ctas"><a class="pill" href="#ley" data-close>conocé los ejes</a></div>
-    </div>
-    <div class="nav"><button id="prev" disabled>← anterior</button><span class="dots" id="dots"><i class="on"></i><i></i><i></i></span><button id="next">siguiente →</button></div>
-  </div>
-</div>
-
 
 <section id="derecho" class="der" aria-label="La vivienda como punto de partida">
   <div class="der-in">
-    <div class="der-hd"><div><p class="rec-k">el problema de fondo</p><h2>la vivienda es <em>un punto de partida</em></h2></div>
+    <div class="der-hd"><div><p class="rec-k">el problema de fondo</p><h2>la vivienda es<br><em>un punto de partida</em></h2></div>
     <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p>
     <a class="vcta" href="#ley">nuestra propuesta ↓</a></div>
     <div class="der-grid">
@@ -1046,11 +1076,11 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 <section id="ley" class="rec ley2" aria-label="Nuestra propuesta de ley">
   <div><p class="rec-k">nuestra propuesta de ley</p><h2>una ley para que los esqueletos <em>vuelvan a ser vivienda</em></h2></div>
   <ol class="rec-line">
-    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">quién entra</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas se anotan en un registro público de la Ciudad.</p><p class="rec-more">La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></li>
-    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></li>
-    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">qué recibe</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></li>
-    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><p class="rec-more">Con créditos hipotecarios especiales y requisitos más flexibles, pensados para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
-    <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><p class="rec-more">Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></li>
+    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">qué obras entran</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas las anotan en un registro público de la Ciudad.</p><span class="rec-hint">+ más info</span><div class="rec-more"><p class="rec-w">qué obras entran</p><h3>registro voluntario de esqueletos</h3><p>La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></div></li>
+    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><span class="rec-hint">+ más info</span><div class="rec-more"><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></div></li>
+    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">qué recibe</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><span class="rec-hint">+ más info</span><div class="rec-more"><p class="rec-w">qué recibe</p><h3>beneficios fiscales</h3><p>Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></div></li>
+    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><span class="rec-hint">+ más info</span><div class="rec-more"><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Créditos hipotecarios especiales, con requisitos más flexibles, para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></div></li>
+    <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><span class="rec-hint">+ más info</span><div class="rec-more"><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></div></li>
   </ol>
   <a class="vcta" href="#actores">¿a quién le sirve? ↓</a>
 </section>
@@ -1351,9 +1381,9 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
 </div>
 <section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
   <h2>lo que aprendimos de <em>San Pablo</em></h2>
-  <div class="sp">
-    <img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo">
-    <div class="sp-tx"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">registra cada obra y adapta el proyecto para que sea viable como vivienda asequible.</li><li style="--hc:var(--naranja)">destina las viviendas a quienes compran su primera casa.</li><li style="--hc:var(--celeste)">acompaña con créditos para jóvenes que hoy quedan afuera.</li><li style="--hc:var(--lima)">usa el historial de pago del alquiler como garantía.</li></ul><div class="sp-links"><a class="vcta" href="#participar">¿y cómo seguimos? ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
+  <div class="sp sp2">
+    <div class="sp-l"><p class="sp-k">el antecedente · Requalifica Centro</p><p class="sp-p">En 2021, San Pablo lanzó <i>Requalifica Centro</i>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo"></div>
+    <div class="sp-r"><p class="sp-dk">por eso nuestra ley es distinta:</p><ul class="sp-diff"><li style="--hc:var(--rosa)">registra cada obra y adapta el proyecto para que sea viable como vivienda asequible.</li><li style="--hc:var(--naranja)">destina las viviendas a quienes compran su primera casa.</li><li style="--hc:var(--celeste)">acompaña con créditos para jóvenes que hoy quedan afuera.</li><li style="--hc:var(--lima)">usa el historial de pago del alquiler como garantía.</li></ul><div class="sp-links"><a class="vcta" href="#participar">¿y cómo seguimos? ↓</a><a class="sp-a" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">conocer el caso ↗</a></div></div>
   </div>
 </section>
 <section id="participar" class="nov estr2" aria-label="Estrategias">
@@ -1393,7 +1423,7 @@ button:focus-visible,.mk:focus-visible{outline:2px solid var(--ink);outline-offs
   <nav class="flinks"><a href="mailto:cuerposvacantes@gmail.com">cuerposvacantes@gmail.com</a><button type="button" class="ftog" aria-expanded="false" aria-controls="fWho">quiénes somos <i>+</i></button><button type="button" class="ftog" aria-expanded="false" aria-controls="fPriv">privacidad <i>+</i></button><button type="button" class="ftog" id="fSrcBtn" aria-expanded="false" aria-controls="fSrc">fuentes <i>+</i></button></nav></div>
   <div class="fsrc ftx" id="fWho" hidden><p><b>Quiénes somos.</b> Cuerpos vacantes es una propuesta del equipo Impulsar para la convocatoria <i>Buenos Aires desafía al futuro. Ideas para proyectos imposibles</i>, del Consejo Económico y Social de la Ciudad (CESBA) y El Gato y La Caja. Entre casi 60 propuestas, el comité la destacó por plantear la recuperación participativa de estructuras abandonadas, y el proyecto se incubó en el laboratorio del CESBA. Hoy trabajamos en una propuesta de ley propia para que los esqueletos urbanos vuelvan a ser vivienda asequible. Esta web es una maqueta para compartir la iniciativa y sumar a más gente.</p><p><a href="https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/" target="_blank" rel="noopener">ver la convocatoria en CESBA ↗</a></p></div>
   <div class="fsrc ftx" id="fPriv" hidden><p><b>Privacidad.</b> Los datos que dejes en esta web (mail, nombre, ubicación de un esqueleto o una foto) se usan solo para la campaña: avisarte de novedades y mesas, sumar tu firma y armar el mapa. No los compartimos ni los vendemos, y podés pedir que los borremos cuando quieras (Ley 25.326 de Protección de Datos Personales). Lo que enviás por los formularios nos llega por mail a cuerposvacantes@gmail.com a través de FormSubmit, un servicio de envío de formularios.</p><p>En el mapa no publicamos datos personales de los dueños de las obras ni imágenes que expongan a quienes viven en ellas. Por favor, no entres a las estructuras: pueden derrumbarse.</p></div>
-  <div class="fsrc" id="fSrc" hidden><ul><li>Fundación Tejido Urbano: la edad promedio para convertirse en propietario pasó de 30-35 años en 2005 a 45 en la actualidad.</li><li><a href="https://www.infobae.com/sociedad/2026/05/29/que-pasa-con-los-edificios-abandonados-en-buenos-aires-y-por-que-podrian-convertirse-en-viviendas/" target="_blank" rel="noopener">Infobae (29/05/2026): estimación de 100 esqueletos ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/sin-salida-habitacional" target="_blank" rel="noopener">Observatorio Metropolitano: “Sin salida habitacional” ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/la-ciudad-inquilinato" target="_blank" rel="noopener">Observatorio Metropolitano: “La ciudad inquilinato” ↗</a></li><li><a href="https://tecnne.com/contextos/habitat/deficit-habitacional-especulacion-inmobiliaria-buenos-aires/" target="_blank" rel="noopener">Tecnne, citando a CELS, ACIJ y MPD CABA: situación de calle ↗</a></li><li><a href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Prefeitura de São Paulo: resultados de Requalifica Centro ↗</a></li></ul></div>
+  <div class="fsrc" id="fSrc" hidden><ul><li><a href="https://www.cels.org.ar/web/wp-content/uploads/2025/12/Encuesta-inquilina-2025-4.pdf" target="_blank" rel="noopener">CELS, Encuesta Inquilina 2025 (AMBA): el 53% de los hogares con jefatura joven destina más de la mitad de sus ingresos al alquiler ↗</a></li><li>Fundación Tejido Urbano: la edad promedio para convertirse en propietario pasó de 30-35 años en 2005 a 45 en la actualidad.</li><li><a href="https://www.infobae.com/sociedad/2026/05/29/que-pasa-con-los-edificios-abandonados-en-buenos-aires-y-por-que-podrian-convertirse-en-viviendas/" target="_blank" rel="noopener">Infobae (29/05/2026): estimación de 100 esqueletos ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/sin-salida-habitacional" target="_blank" rel="noopener">Observatorio Metropolitano: “Sin salida habitacional” ↗</a></li><li><a href="https://observatorioamba.org/noticias-y-agenda/noticia/la-ciudad-inquilinato" target="_blank" rel="noopener">Observatorio Metropolitano: “La ciudad inquilinato” ↗</a></li><li><a href="https://tecnne.com/contextos/habitat/deficit-habitacional-especulacion-inmobiliaria-buenos-aires/" target="_blank" rel="noopener">Tecnne, citando a CELS, ACIJ y MPD CABA: situación de calle ↗</a></li><li><a href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Prefeitura de São Paulo: resultados de Requalifica Centro ↗</a></li></ul></div>
 </footer>
 
 <nav class="snav" id="snav" aria-label="Secciones"></nav>
@@ -1632,8 +1662,8 @@ function loop(ts){const t=ts/1000;if(onScreen($('ciudad'))||react!==null&&react<
 const DATA={
   esq:{k:'Esqueleto urbano',n:'~100',b:'Como este, hay cerca de 100 edificios abandonados en la Ciudad. Terminarlos podría sumar miles de viviendas.',s:'Estimación del autor del proyecto de ley (Infobae, 29/05/2026)'},
   alq:{k:'Hogares inquilinos',n:'37%',b:'de los hogares porteños alquila. Hace 20 años eran el 22%.',s:'Observatorio Metropolitano (AMBA)'},
-  viv:{k:'Viviendas posibles',n:'+3.000',b:'viviendas podrían sumarse si se terminaran los esqueletos de la Ciudad.',s:'Cálculo propio: 100 obras con la superficie mínima que pide la ley'},
-  juan:{k:'Alquiler',n:'40%',b:'del sueldo de los jóvenes se va en el alquiler.',s:'Fuente a confirmar',c:1},
+  viv:{k:'Viviendas posibles',n:'+3.000',b:'viviendas podrían sumarse si se terminaran los esqueletos de la Ciudad.',s:'Cálculo propio: 100 obras de 2.000 m²'},
+  juan:{k:'Alquiler',n:'53%',b:'de los hogares inquilinos con jefatura joven destina más de la mitad de sus ingresos al alquiler.',s:'CELS, Encuesta Inquilina 2025 (AMBA)'},
   jov:{k:'Comprar una casa',n:'45 años',b:'es hoy la edad promedio para convertirse en propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano'}};
 const $=id=>document.getElementById(id),stage=$('stage'),card=$('card');
 /* ---------- animaciones solo cuando la sección está en pantalla ---------- */
@@ -1664,17 +1694,7 @@ let inView=false;setInterval(()=>{const r=stage.getBoundingClientRect(),vh=inner
 $('vermas').addEventListener('click',()=>$('derecho').scrollIntoView({behavior:'smooth'}));
 addEventListener('resize',place);
 
-/* ---------- pop-up de 3 diapositivas ---------- */
-const modal=$('modal'),slides=[...modal.querySelectorAll('.slide')],dots=[...$('dots').children];let cur=0;
-function showSlide(i,openIt){cur=i;slides.forEach((s,k)=>s.hidden=k!==i);dots.forEach((d,k)=>d.classList.toggle('on',k===i));
-  $('prev').disabled=i===0;$('next').textContent=i===2?'cerrar':'siguiente →';if(openIt){modal.hidden=false;$('next').focus()}}
-function endModal(){modal.hidden=true;if(react===null){react=-1;if(reduce){react=0;reveal(1e6)}}}
-$('next').addEventListener('click',()=>cur<2?showSlide(cur+1):endModal());
-$('prev').addEventListener('click',()=>cur>0&&showSlide(cur-1));
-$('mx').addEventListener('click',endModal);
-modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-close]'))endModal()});
-addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)endModal()});
-
+const modal={hidden:true};function endModal(){}
 /* ---------- portada ---------- */
 const hero=$('inicio'),track=$('track'),sls=[...track.children],hd=$('hd');let hi=0,timer=null;
 document.querySelectorAll('.split,.wv,.fall').forEach(el=>{{let i=0;const wrap=s=>s.split(/(\s+)/).map(w=>/^\s+$/.test(w)||!w?w:`<span class="wd">${[...w].map(c=>`<span style="--i:${i++}">${c}</span>`).join('')}</span>`).join('');el.innerHTML=[...el.childNodes].map(n=>n.nodeType===3?wrap(n.textContent):(n.innerHTML=wrap(n.textContent),n.outerHTML)).join('')}});
@@ -1871,18 +1891,17 @@ const ES=[
 /* ---------- novedades ---------- */
 /* Para sumar una novedad, agregar un objeto a esta lista (la más nueva primero). */
 const NOV=[
- {fecha:'2026',cat:'legislatura',titulo:'Nos reunimos en la Legislatura',texto:'Presentamos cuerpos vacantes a José Rosenfeld, director de Patrimonio y Paisaje de la Legislatura porteña, y conversamos sobre cómo llevar nuestra propuesta de ley.',link:'#ley',linkTxt:'conocé la propuesta',foto:'ph/legislatura.jpg',color:'var(--naranja)',real:1},
- {fecha:'2026',cat:'incubación',titulo:'Incubamos la idea en el CESBA',texto:'Trabajamos el proyecto en el laboratorio del Consejo Económico y Social de la Ciudad, junto a especialistas y otros equipos de la convocatoria.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver la convocatoria',foto:'ph/cesba.jpg',color:'var(--celeste)',real:1},
- {fecha:'07/2026',cat:'convocatoria',titulo:'Seleccionados en Buenos Aires desafía al futuro',texto:'Entre casi 60 propuestas, cuerpos vacantes quedó entre las seleccionadas de la convocatoria del CESBA y El Gato y La Caja.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver en CESBA',foto:'ph/ph12.jpg',color:'var(--rosa)',real:1},
+ {fecha:'19/10/2026',cat:'legislatura',titulo:'Nos reunimos en la Legislatura',texto:'Presentamos cuerpos vacantes a José Rosenfeld, director de Patrimonio y Paisaje de la Legislatura porteña, que nos contó cómo es el proceso para movilizar una ley.',link:'#ley',linkTxt:'conocé la propuesta',foto:'ph/legislatura-ht.jpg',color:'var(--naranja)',real:1},
  {fecha:'08/10/2026',cat:'evento',titulo:'Primera mesa en la vereda',texto:'Nos juntamos frente a un esqueleto con los vecinos del barrio a discutir qué es un precio asequible y quién debería poder acceder.',link:'https://www.instagram.com/cuerposvacantes/',linkTxt:'ver en instagram',foto:'ph/ph03.jpg',color:'var(--lima)'},
- {fecha:'01/10/2026',cat:'prensa',titulo:'Hablamos de esqueletos urbanos en la radio',texto:'Contamos por qué hay edificios abandonados a medio construir y qué proponemos para que vuelvan a ser vivienda.',link:'#novedades',linkTxt:'escuchar la entrevista',foto:'ph/ph07.jpg',color:'var(--celeste)'},
+ {fecha:'01/10/2026',cat:'incubación',titulo:'Incubamos la idea en el CESBA',texto:'Trabajamos el proyecto en el laboratorio del CESBA, en jornadas del 1 y el 29 de octubre, con especialistas y otros equipos. Ahí conocimos el proyecto de ley de esqueletos urbanos.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver la convocatoria',foto:'ph/cesba-ht.jpg',color:'var(--celeste)',real:1},
+ {fecha:'01/10/2026',cat:'prensa',titulo:'Hablamos de esqueletos urbanos en la radio',texto:'Contamos por qué hay edificios abandonados a medio construir y qué proponemos para que vuelvan a ser vivienda.',link:'#novedades',linkTxt:'escuchar la entrevista',foto:'ph/ph07.jpg',color:'var(--rosa)'},
  {fecha:'24/09/2026',cat:'intervención',titulo:'Una noche, un esqueleto iluminado',texto:'Proyectamos ventanas encendidas sobre una estructura abandonada para imaginar quién podría vivir ahí.',link:'#novedades',linkTxt:'ver el video en youtube',foto:'ph/ph10.jpg',color:'var(--bordo)'},
  {fecha:'10/09/2026',cat:'colaboración',titulo:'Sumamos aliados',texto:'Universidades, organizaciones y divulgadores se suman a la campaña para llevar el tema a más gente.',link:'https://www.instagram.com/cuerposvacantes/',linkTxt:'ver en instagram',foto:'ph/ph02.jpg',color:'var(--crema)'}];
 const nvRow=$('nvRow');const ROW=ES;
-NOV.push({fecha:'01/09/2026',cat:'mapa',titulo:'Ya podés cargar esqueletos',texto:'Si pasás por una obra abandonada, registrala en el mapa: ubicación, foto y lo que ves.',link:'#mapa',linkTxt:'ir al mapa',foto:'ph/ph09.jpg',color:'var(--celeste)'});
-nvRow.innerHTML=[...ROW,...ROW].map(e=>`<article class="ncard es"><div class="nh"><span>${esc(e.k)}</span></div><div class="nf" style="--c:${e.b}"><img src="${e.img}" alt="" loading="lazy"></div><h3>${esc(e.t)}</h3><p>${esc(e.c)}</p></article>`).join('');
+NOV.push({fecha:'01/09/2026',cat:'mapa',titulo:'Ya podés cargar esqueletos',texto:'Si pasás por una obra abandonada, registrala en el mapa: ubicación, foto y lo que ves.',link:'#mapa',linkTxt:'ir al mapa',foto:'ph/ph09.jpg',color:'var(--lima)'},{fecha:'07/2026',cat:'convocatoria',titulo:'Presentamos cuerpos vacantes',texto:'Nos inscribimos en Buenos Aires desafía al futuro, del CESBA y El Gato y La Caja, con una propuesta para recuperar edificios en obra abandonados con un programa de vivienda.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver en CESBA',foto:'ph/ph12.jpg',color:'var(--rosa)',real:1});
+nvRow.innerHTML=ROW.map(e=>`<article class="ncard es"><div class="nh"><span>${esc(e.k)}</span></div><div class="nf" style="--c:${e.b}"><img src="${e.img}" alt="" loading="lazy"></div><h3>${esc(e.t)}</h3><p>${esc(e.c)}</p></article>`).join('');
 const nvStep=()=>{const c=nvRow.querySelector('.ncard');return c?c.getBoundingClientRect().width+20:300};
-requestAnimationFrame(()=>{const c=nvRow.children[1];if(c)nvRow.scrollLeft=c.offsetLeft-nvRow.offsetLeft-(c.getBoundingClientRect().width/2+20)});
+
 
 let nvHover=false,nvLast=null,nvX=null;nvRow.style.scrollSnapType='none';
 nvRow.addEventListener('mouseenter',()=>nvHover=true);nvRow.addEventListener('mouseleave',()=>nvHover=false);
@@ -1890,7 +1909,7 @@ nvRow.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'){nvHover=tru
 function nvTick(ts){const dt=nvLast==null?0:Math.min(.05,(ts-nvLast)/1000);nvLast=ts;
   if(onScreen($('participar'))&&!nvHover){const cs=nvRow.children,half=cs[ROW.length].offsetLeft-cs[0].offsetLeft;if(nvX==null||Math.abs(nvRow.scrollLeft-nvX)>2)nvX=nvRow.scrollLeft;nvX+=dt*26;if(nvX>=half+cs[0].offsetLeft)nvX-=half;nvRow.scrollLeft=nvX}
   requestAnimationFrame(nvTick)}
-requestAnimationFrame(nvTick);
+
 $('nvPrev').addEventListener('click',()=>nvRow.scrollBy({left:-nvStep(),behavior:'smooth'}));
 $('nvNext').addEventListener('click',()=>nvRow.scrollBy({left:nvStep(),behavior:'smooth'}));
 
@@ -1948,7 +1967,7 @@ $('nl').addEventListener('submit',e=>{e.preventDefault();const v=$('nlMail').val
 const LBL={esq:{g:'esq',n:'+100',t:'esqueletos urbanos en la Ciudad, como este.',s:'Infobae, 29/05/2026',d:'R'},
  viv:{g:'esq',n:'+3.000',t:'viviendas posibles si se terminaran.',s:'Cálculo propio: 100 obras de 2.000 m²',d:'UR'},
  alq:{g:'viv',n:'37%',t:'de los hogares porteños alquila. Hace 20 años era el 22%.',s:'Observatorio Metropolitano',d:'UL'},
- juan:{g:'viv',n:'40%',t:'del sueldo de los jóvenes se va en el alquiler.',s:'fuente a confirmar',d:'DL',c:1},
+ juan:{g:'viv',n:'53%',t:'de los hogares inquilinos jóvenes destina más de la mitad de sus ingresos al alquiler.',s:'CELS, Encuesta Inquilina 2025',d:'DL'},
  jov:{g:'viv',n:'45 años',t:'es hoy la edad promedio para ser propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano',d:'L'}};
 const LORD=['esq','viv','alq','juan','jov'],clabs=$('clabs');
 clabs.innerHTML=LORD.map((id,i)=>{const l=LBL[id];return `<div class="clab g-${l.g}" id="lab-${id}"><b>${l.n}</b><p>${l.t}</p><small${l.c?' class="tbc"':''}>${l.s}</small></div>`}).join('');
