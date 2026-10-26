@@ -60,7 +60,7 @@ section{position:relative}
 .rw b{font-weight:400;height:1.15em;line-height:1;color:var(--bordo)}
 .s1 .big{font-size:calc(8.6*var(--u))}
 .s1 .slam{margin-top:calc(1*var(--u))!important}
-.sl.on .rw{animation:rot 8.4s .9s cubic-bezier(.7,0,.2,1) forwards}
+.sl.on .rw{animation:rot 3.6s .7s cubic-bezier(.7,0,.2,1) forwards}
 @keyframes rot{0%,30%{transform:translateY(0)}36%,64%{transform:translateY(-1.15em)}70%,100%{transform:translateY(-2.3em)}}
 .slam{font-family:var(--display);font-size:calc(9.2*var(--u));line-height:1;letter-spacing:-.04em;margin-top:calc(2.6*var(--u))!important;white-space:nowrap}
 .sl.on .slam{animation:slam .7s .85s cubic-bezier(.2,1.5,.4,1) both}
@@ -1194,24 +1194,57 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 .cp-axo[data-s="2"] .pw{opacity:.6}
 @media (max-width:900px){.cp-cards{order:3}.cp-steps{order:2}.cp-nav{order:4}}
 @media (max-width:520px){.cp-cards{grid-template-columns:1fr 1fr;gap:8px}.cp-cards .acard{padding:12px!important}.cp-cards .acard h3{font-size:17px!important}.cp-cards .acard dd{font-size:13px!important}}
+
+/* v12 · puntos de navegación con aire propio */
+@media (min-width:761px){
+  :root{--navgut:58px}
+  body>section{padding-right:max(var(--gut),var(--navgut))!important;box-sizing:border-box}
+  .snav{right:16px}
+  .city,.mp,.hero{padding-right:0!important}
+  .city .stage,.mapwrap{margin-right:var(--navgut);border-right:1px solid transparent}
+}
+/* fondos rosita */
+.rec:not(.ley2),.estr2,.spsec{background-color:#FDECEC!important;background-image:radial-gradient(rgba(155,21,73,.07) 1px,transparent 1.3px)!important;background-size:7px 7px!important}
+.spsec .sp{background:#FFF7F6!important}
+/* mapa: caja amarilla, referencias debajo de la ficha */
+.minfo{background:var(--crema)!important;color:var(--naranja)!important;border:1.5px solid var(--naranja)}
+.minfo p,.minfo b{color:var(--naranja)!important}
+.mcol .legend{position:static!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px!important;max-width:none!important;width:auto!important;margin:0!important}
+.mcol .legend .lg{justify-content:center;font-size:10.5px;padding:6px 6px;background:#fff;white-space:normal;line-height:1.15;text-align:left}
+.mcol .legend .lg[hidden]{display:none}
+@media (max-width:1100px){.mcol .legend{grid-area:leg;margin:12px 16px 0!important}.mapwrap{grid-template-areas:"hd" "info" "map" "ficha" "leg" "reg" "next" "note"!important}}
+/* estrategias sin rótulos */
+.estr2 .ncard{padding-top:14px}
+/* cómo sumarte: tres papeles + redes */
+.posters{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1100px;margin:0 auto;width:100%}
+.wall-ch{position:relative;z-index:1;display:flex;justify-content:center;padding:18px 0 6px}
+.wall-ch .cta-ch{display:flex;gap:14px;color:var(--bordo)}
+.wall-ch .soc{width:52px;height:52px;border:1.5px solid currentColor;border-radius:999px;display:grid;place-items:center;color:inherit;background:#fff}
+.wall-ch .soc:hover{background:var(--bordo);color:#fff}
+@media (max-width:760px){.posters{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body style="margin:0">
 
 <!-- 00 · RECORRIDO: solo para la presentación. En la web final, borrar esta sección y su entrada en NAV. -->
+
+
+
+<!-- 01 · PORTADA: slider tipográfico animado -->
+
+
+
 <section id="recorrido" class="rec" aria-label="Nuestro recorrido">
   <div><p class="rec-k">nuestro recorrido</p><h2>de una idea <em>a una ley</em></h2></div>
   <ol class="rec-line">
-    <li style="--rc:var(--rosa)"><span class="rec-d"></span><h3>nos inscribimos</h3><p>Presentamos <b class="cvx">CUERPOS VACANTES</b> en <i>Buenos Aires desafía al futuro</i>, del CESBA y El Gato y La Caja: una propuesta para recuperar edificios en obra abandonados con un programa de vivienda.</p></li>
-    <li style="--rc:var(--celeste)"><span class="rec-d"></span><h3>incubamos el proyecto</h3><p>Trabajamos la idea en el laboratorio del CESBA, con especialistas y otros equipos. Ahí nos contaron sobre el proyecto de ley de esqueletos urbanos.</p></li>
-    <li style="--rc:var(--lima)"><span class="rec-d"></span><h3>salimos a la calle</h3><p>Hicimos una campaña para instalar la problemática y discutir esa ley, porque le veíamos algunos agujeros. <a href="v1/" target="_blank" rel="noopener">ver la campaña ↗</a></p></li>
-    <li style="--rc:var(--naranja)"><span class="rec-d"></span><h3>nos reunimos en la Legislatura</h3><p>José Rosenfeld, director de Patrimonio y Paisaje, nos contó cómo es el proceso para movilizar una ley.</p></li>
-    <li class="next" style="--rc:var(--bordo)"><span class="rec-d"></span><h3>presentaremos nuestra ley</h3><p>Estamos escribiendo nuestra propia propuesta de ley y la vamos a presentar en la Legislatura.</p></li>
+    <li style="--rc:var(--rosa)"><span class="rec-d"></span><h3>concursamos</h3><p>Presentamos <b class="cvx">CUERPOS VACANTES</b> en el concurso <i>“Buenos Aires desafía al futuro”</i> del CESBA y El Gato y La Caja. Propusimos recuperar edificios en construcción que fueron abandonados y transformarlos en vivienda asequible.</p></li>
+    <li style="--rc:var(--celeste)"><span class="rec-d"></span><h3>incubamos el proyecto</h3><p>Profundizamos la idea en el laboratorio del CESBA junto a especialistas y discutimos acerca de otras propuestas similares.</p></li>
+    <li style="--rc:var(--lima)"><span class="rec-d"></span><h3>salimos a la calle</h3><p>Discutimos con la gente la problemática de la vivienda y los esqueletos urbanos para saber qué opinaban y afinar nuestra propuesta.</p></li>
+    <li style="--rc:var(--naranja)"><span class="rec-d"></span><h3>nos reunimos en la Legislatura</h3><p>Compartimos nuestra propuesta con José Rosenfeld, director de Patrimonio y Paisaje, quien nos asesoró en el proceso para impulsar una ley.</p></li>
+    <li class="next" style="--rc:var(--bordo)"><span class="rec-d"></span><h3>presentaremos una ley</h3><p>Estamos redactando <b class="cvx">CUERPOS VACANTES</b>, un nuevo proyecto de ley para presentar en la Legislatura Porteña.</p></li>
   </ol>
   <a class="vcta rec-go" href="#inicio">conocé la propuesta ↓</a>
 </section>
-
-<!-- 01 · PORTADA: slider tipográfico animado -->
 <section id="inicio" class="hero" aria-roledescription="carrusel" aria-label="Portada">
  <div class="hlft">
   <div class="track" id="track">
@@ -1238,7 +1271,7 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
       <p class="pop">casa habitada</p>
       <p class="sub2 subL" style="--sd:2.6s">proponemos una ley para que pase.</p>
     </article>
-    <article class="sl s1" data-ms="8500" style="--bg:var(--rosa);--fg:var(--naranja)" aria-label="6 de 7">
+    <article class="sl s1" data-ms="6000" style="--bg:var(--rosa);--fg:var(--naranja)" aria-label="6 de 7">
       <p class="pre lc">y de esta manera…</p>
       <p class="big"><span class="m"><span style="--d:0">acá podría</span></span><span class="m"><span style="--d:1">vivir <span class="rot"><span class="rw"><b>una maestra,</b><b>un enfermero,</b><b>una estudiante,</b></span></span></span></span></p>
       <p class="slam">CON SU SUELDO</p>
@@ -1246,22 +1279,31 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
     <article class="sl" data-ms="6000" style="--bg:var(--bordo);--fg:var(--celeste)" aria-label="7 de 7">
       <p class="pre">presentamos</p>
       <div class="echo"><p class="huge split">cuerpos</p><p class="huge split" style="--o:7">vacantes</p></div>
-      <p class="sub2" style="--sd:1.6s">una ley para que los esqueletos vuelvan a ser vivienda.<br>escrita con los vecinos.</p>
+      <p class="sub2" style="--sd:1.6s">una ley para que los esqueletos vuelvan a ser vivienda.</p>
     </article>
   </div>
-  <p class="hbrand">cuerpos vacantes</p><a class="hpill" href="#ciudad">conocé el problema ↓</a>
+  <p class="hbrand">cuerpos vacantes</p><a class="hpill" href="#derecho">conocé el problema ↓</a>
   <div class="ctrl"><span class="hdots" id="hd"></span><button id="hpz" aria-label="Pausar">❚❚</button></div>
  </div>
  <div class="hph" id="hph" aria-hidden="true"><img id="hphA" alt=""><img id="hphB" alt=""></div>
 </section>
-
-<span id="datos"></span>
-<!-- 02 · EL PROBLEMA EN DATOS: ciudad isométrica -->
+<section id="derecho" class="der" aria-label="La vivienda como punto de partida">
+  <div class="der-in">
+    <div class="der-hd"><div><p class="rec-k">el problema de fondo</p><h2>la vivienda es<br><em>un punto de partida</em></h2></div>
+    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado por sí solo no lo va a garantizar.</b></p>
+    <a class="vcta" href="#ciudad">el problema en datos ↓</a></div>
+    <div class="der-grid">
+      <article style="--db:var(--celeste);--df:var(--bordo)"><p class="dk">derecho a la ciudad</p><h3>estar cerca</h3><p>Del trabajo, la escuela, el transporte y los servicios. Las políticas de vivienda suelen achicar y alejar; los esqueletos ya están donde la gente quiere vivir.</p></article>
+      <article style="--db:var(--rosa);--df:var(--bordo)"><p class="dk">derecho a una vivienda digna</p><h3>vivir bien</h3><p>Con la misma superficie, luz y calidad que cualquier otra casa del edificio.</p></article>
+      <article style="--db:var(--lima);--df:var(--bordo)"><p class="dk">derecho a la identidad</p><h3>sentirse parte</h3><p>Una casa que se pueda hacer propia, en un barrio donde echar raíces. Por eso los vecinos participan desde el principio.</p></article>
+    </div>
+  </div>
+</section>
 <section class="city" id="ciudad" aria-label="Ciudad interactiva">
   
   <div class="stage" id="stage">
     <div class="ctitle"><h2>dos problemáticas, <em>una oportunidad</em></h2></div>
-    <button class="vermas" id="vermas">por qué importa ↓</button>
+    <button class="vermas" id="vermas">nuestra propuesta ↓</button>
     <div class="clabs" id="clabs"></div>
     <svg id="city" viewBox="-533 -108 1066 600" role="img" aria-label="Ciudad isométrica con edificios abandonados marcados"></svg>
     <div class="card" id="card" hidden role="dialog" aria-live="polite">
@@ -1271,38 +1313,39 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
     </div>
   </div>
 </section>
-
-
-<section id="derecho" class="der" aria-label="La vivienda como punto de partida">
-  <div class="der-in">
-    <div class="der-hd"><div><p class="rec-k">el problema de fondo</p><h2>la vivienda es<br><em>un punto de partida</em></h2></div>
-    <p class="der-lead">Una casa no es solo un techo: es lo que permite estudiar, trabajar, cuidarse y proyectar una vida. Por eso no puede ser el premio al final de una vida de esfuerzo. <b>Es un derecho, y el mercado solo no lo va a garantizar.</b></p>
-    <a class="vcta" href="#ley">nuestra propuesta ↓</a></div>
-    <div class="der-grid">
-      <article style="--db:var(--celeste);--df:var(--bordo)"><p class="dk">derecho a la ciudad</p><h3>estar cerca</h3><p>Del trabajo, la escuela, el transporte y los servicios. Las políticas de vivienda suelen achicar y alejar; los esqueletos ya están en barrios con todo eso.</p></article>
-      <article style="--db:var(--rosa);--df:var(--bordo)"><p class="dk">derecho a una vivienda digna</p><h3>vivir bien</h3><p>Con la misma superficie, luz y calidad que cualquier otra casa del edificio. Menos es poco.</p></article>
-      <article style="--db:var(--lima);--df:var(--bordo)"><p class="dk">derecho a la identidad</p><h3>sentirse parte</h3><p>Una casa que se pueda hacer propia, en un barrio donde echar raíces. Por eso los vecinos participan desde el principio.</p></article>
-    </div>
-  </div>
-</section>
-
 <section id="ley" class="rec ley2" aria-label="Nuestra propuesta de ley">
   <div><p class="rec-k">nuestra propuesta de ley</p><h2>una ley para que los esqueletos <em>vuelvan a ser vivienda</em></h2></div>
   <ol class="rec-line">
-    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">qué obras entran</p><h3>registro voluntario de esqueletos</h3><p>Los dueños de obras paradas las anotan en un registro público de la Ciudad.</p><span class="rec-hint">+ más info</span><p class="rec-more">La inscripción es voluntaria. Se releva dónde está cada obra, cuánto avanzó, su superficie y su situación legal. El registro es abierto: cualquier vecino puede ver qué obras están paradas y en qué etapa están.</p></li>
-    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><span class="rec-hint">+ más info</span><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad: las mismas viviendas que el resto del edificio.</p></li>
-    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">qué recibe</p><h3>beneficios fiscales</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% de la obra.</p><span class="rec-hint">+ más info</span><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía: una parte del mayor valor que ganan los inmuebles por las decisiones de la Ciudad vuelve al programa.</p></li>
-    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><span class="rec-hint">+ más info</span><p class="rec-more">Créditos hipotecarios especiales, con requisitos más flexibles, para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
-    <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><span class="rec-hint">+ más info</span><p class="rec-more">Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></li>
+    <li tabindex="0" style="--rc:var(--rosa)"><span class="rec-d"></span><p class="rec-w">qué obras entran</p><h3>registro voluntario de esqueletos</h3><p>Los propietarios de obras paradas se inscriben para poder acceder a los incentivos de la ley.</p><span class="rec-hint">+ info</span><p class="rec-more">La inscripción es voluntaria y se evalúa en cada caso quién puede acceder. En paralelo, se crea un registro público de las obras paralizadas con información que releva ubicación, avance de obra, superficie y situación legal. El registro es público y abierto.</p></li>
+    <li tabindex="0" style="--rc:var(--naranja)"><span class="rec-d"></span><p class="rec-w">cómo se adapta</p><h3>adecuación del proyecto</h3><p>Cada proyecto se adapta para que sea viable como vivienda asequible.</p><span class="rec-hint">+ info</span><p class="rec-more">Se revisan la tipología, las superficies y los costos de terminación para que las unidades lleguen a un precio accesible, sin resignar calidad ni habitabilidad.</p></li>
+    <li tabindex="0" style="--rc:var(--lima)"><span class="rec-d"></span><p class="rec-w">qué recibe</p><h3>incentivos económicos</h3><p>Quien adhiere recibe incentivos fiscales y un subsidio de hasta el 25% del costo de obra.</p><span class="rec-hint">+ info</span><p class="rec-more">Exenciones de impuestos mientras dura la obra y un subsidio de hasta el 25% del costo de terminación. Se financia con la plusvalía urbana.</p></li>
+    <li tabindex="0" style="--rc:var(--celeste)"><span class="rec-d"></span><p class="rec-w">para quién</p><h3>primera vivienda</h3><p>Las viviendas son para quienes compran su primera casa, sobre todo jóvenes.</p><span class="rec-hint">+ info</span><p class="rec-more">Créditos hipotecarios especiales, con requisitos más flexibles, para quienes hoy quedan afuera de los créditos que ya existen. El historial de pago del alquiler cuenta como garantía: si pagaste el alquiler todos los meses, podés pagar una cuota.</p></li>
+    <li class="next" tabindex="0" style="--rc:var(--bordo)"><span class="rec-d"></span><p class="rec-w">resultado</p><h3>casa habitada</h3><p>Lo que hoy es una obra parada pasa a ser el hogar de una maestra, un enfermero, una estudiante.</p><span class="rec-hint">+ info</span><p class="rec-more">Más vivienda en barrios con transporte, escuelas y servicios, sin sumar suelo nuevo ni alejar a nadie de la ciudad.</p></li>
   </ol>
-  <a class="vcta" href="#actores">¿a quién beneficia? ↓</a>
+  <a class="vcta" href="#mapa">el mapa de las oportunidades ↓</a>
 </section>
-
-
+<section id="mapa" class="mp" aria-label="Mapa de oportunidades">
+  <div class="mapwrap" id="mapwrap">
+    <div id="map" class="map" aria-label="Mapa de la Ciudad de Buenos Aires"></div>
+    <div class="mphd"><h2>el mapa de las <em>oportunidades</em></h2></div>
+    <div class="mcol"><div class="minfo"><p>Cada punto es un esqueleto. Tocá uno para ver su ficha: cuántas viviendas podría tener y si entra en nuestra propuesta.</p><p>¿Conocés uno que no está? Cargalo con el botón <b>+ cargar un esqueleto</b>.</p></div><div class="ficha" id="ficha" aria-live="polite"></div><div class="legend" role="group" aria-label="Filtrar por tipo">
+      <button class="lg on" data-c="real" hidden><i style="background:#9B1549"></i>relevados</button>
+      <button class="lg on" data-c="ley"><i style="background:#F79F9F"></i>entra en la propuesta</button>
+      <button class="lg on" data-c="no"><i style="background:#FF5200"></i>no entra o faltan datos</button>
+      <button class="lg on" data-c="vec"><i style="background:#D3E7F7"></i>cargado por vecinos</button>
+    </div><button class="regbtn" id="regOpen">+ cargar un esqueleto</button></div>
+    
+    <div class="zoom" id="zoomCtl"><button id="zIn" aria-label="Acercar">+</button><button id="zOut" aria-label="Alejar">−</button></div>
+    <div class="pickbar" id="pickbar" hidden>Tocá el mapa donde está el esqueleto <button id="pickCancel">cancelar</button></div>
+    <a class="mnext" href="#actores">¿a quién beneficia? ↓</a>
+    <p class="mapnote" id="mapnote">Vista previa · ubicaciones de ejemplo</p>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</section>
 <section id="actores" class="act cp" aria-label="A quién beneficia: caso piloto">
   <div class="cp-side">
     <div class="cp-hd"><p class="rec-k">caso piloto · una obra parada de 3.300 m²</p><h2>¿a quién beneficia?</h2></div>
-    <div class="cp-steps" aria-live="polite"><article class="cp-step on" data-s="1"><p class="cp-n">1 / 3 · hoy</p><h3 class="cp-t">una estructura abandonada</h3><p class="cp-d">Una obra parada hace años: hormigón a la vista, yuyos, un cartel de obra vencido y una cuadra que se apaga.</p></article><article class="cp-step" data-s="2" hidden><p class="cp-n">2 / 3 · da</p><h3 class="cp-t">la obra se reactiva</h3><p class="cp-d">Cada actor pone algo: la obra entra al registro, el proyecto se adapta y vuelven las grúas.</p></article><article class="cp-step" data-s="3" hidden><p class="cp-n">3 / 3 · recibe</p><h3 class="cp-t">40 hogares nuevos</h3><p class="cp-d">20 viviendas de 2 ambientes y 20 de 3: unas 110 personas donde había una obra parada, sin sumar suelo nuevo.</p></article></div>
+    <div class="cp-steps" aria-live="polite"><article class="cp-step on" data-s="1"><p class="cp-n">1 / 3 · hoy</p><h3 class="cp-t">una estructura abandonada</h3></article><article class="cp-step" data-s="2" hidden><p class="cp-n">2 / 3 · da</p><h3 class="cp-t">la obra se reactiva</h3></article><article class="cp-step" data-s="3" hidden><p class="cp-n">3 / 3 · recibe</p><h3 class="cp-t">40 hogares nuevos</h3></article></div>
     <div class="cp-cards"><article class="acard" style="--ab:var(--celeste);--af:var(--bordo)"><h3>futuro propietario</h3><dl><div><dt>hoy</dt><dd>Alquileres que suben y precios para comprar inaccesibles.</dd></div><div><dt>da</dt><dd>Reactiva el barrio con mixtura y diversidad.</dd></div><div><dt>recibe</dt><dd>Su primera casa, cerca de todo, con un crédito a su alcance.</dd></div></dl></article><article class="acard" style="--ab:var(--rosa);--af:var(--bordo)"><h3>propietario del esqueleto</h3><dl><div><dt>hoy</dt><dd>Capital inmovilizado, deudas de ABL y una estructura que se deteriora.</dd></div><div><dt>da</dt><dd>Terminar la obra en plazo y ofrecer viviendas asequibles.</dd></div><div><dt>recibe</dt><dd>Incentivos fiscales y un subsidio de hasta el 25% de la obra.</dd></div></dl></article><article class="acard" style="--ab:var(--lima);--af:var(--bordo)"><h3>vecino</h3><dl><div><dt>hoy</dt><dd>Una obra abandonada que trae inseguridad y apaga la cuadra.</dd></div><div><dt>da</dt><dd>Detectar y registrar esqueletos, y opinar en las mesas.</dd></div><div><dt>recibe</dt><dd>Una cuadra con vida y voz en el proceso.</dd></div></dl></article><article class="acard" style="--ab:var(--naranja);--af:var(--crema)"><h3>la Ciudad</h3><dl><div><dt>hoy</dt><dd>Suelo con infraestructura sin usar y deudas impagas.</dd></div><div><dt>da</dt><dd>Un registro, incentivos y créditos para primera vivienda.</dd></div><div><dt>recibe</dt><dd>Vivienda nueva sin comprar suelo y un tejido urbano recuperado.</dd></div></dl></article></div>
 </div>
     <div class="cp-nav"><button type="button" class="cp-btn" id="cpPrev" disabled>← anterior</button><span class="cp-dots" id="cpDots"><button type="button" class="on" aria-label="Hoy"></button><button type="button" aria-label="Da"></button><button type="button" aria-label="Recibe"></button></span><button type="button" class="cp-btn cp-next" id="cpNext">siguiente →</button></div>
@@ -1457,30 +1500,61 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 <g class="ax-work"><g transform="translate(425.7 1078.7)"><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FFFFFF"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><path d="M-2 -10.8 A2 2 0 0 1 2 -10.8 Z" fill="#DE7B7D"></path></g><g transform="translate(482.9 1111.7)"><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FFFFFF"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><path d="M-2 -10.8 A2 2 0 0 1 2 -10.8 Z" fill="#DE7B7D"></path></g><g transform="translate(801.0 906.0)"><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FFFFFF"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><path d="M-2 -10.8 A2 2 0 0 1 2 -10.8 Z" fill="#DE7B7D"></path></g></g>
 <g class="ax-people"><g class="pw"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#D0D35A"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="347.6 1035.8;576.2 1167.8;347.6 1035.8" dur="26s" begin="-0s" repeatCount="indefinite"></animateTransform></g></g><g class="pw"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#2A2B45"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="347.6 1035.8;576.2 1167.8;347.6 1035.8" dur="26s" begin="-13s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#D0D35A"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="321.9 1028.7;588.6 1182.7;321.9 1028.7" dur="28.282356076616995s" begin="-23.436541661392912s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#2A2B45"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="321.9 1028.7;588.6 1182.7;321.9 1028.7" dur="28.260547630851104s" begin="-5.697060939221158s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#9B1549"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="321.9 1028.7;588.6 1182.7;321.9 1028.7" dur="23.709158834506518s" begin="-18.418765021780924s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FFFFFF"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="334.3 1021.5;601.0 1175.5;334.3 1021.5" dur="23.35911783308398s" begin="-4.253853877783684s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#D0D35A"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="321.9 1028.7;588.6 1182.7;321.9 1028.7" dur="25.613433394600182s" begin="-17.86309517522009s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#9B1549"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="328.6 1024.8;595.3 1178.8;328.6 1024.8" dur="25.847070402406086s" begin="-18.466881137357124s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FF5200"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="321.9 1028.7;588.6 1182.7;321.9 1028.7" dur="18.18000884339526s" begin="-15.851437985114362s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FF5200"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="334.3 1021.5;601.0 1175.5;334.3 1021.5" dur="20.28249915357515s" begin="-7.258290409956443s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#9B1549"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="328.6 1024.8;595.3 1178.8;328.6 1024.8" dur="21.915520230579176s" begin="-17.728783304041727s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#D3E7F7"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="788.4 903.5;906.9 835.1;788.4 903.5" dur="13.974697191342209s" begin="-7.317278105592923s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#2A2B45"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="778.6 901.8;916.9 821.9;778.6 901.8" dur="10.49922086482389s" begin="-4.063915886315966s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#2A2B45"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="758.5 901.7;874.0 835.0;758.5 901.7" dur="14.597727318462443s" begin="-6.4063968786958565s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#FF5200"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="753.5 908.6;875.5 838.2;753.5 908.6" dur="14.10938484969191s" begin="-3.416026855673481s" repeatCount="indefinite"></animateTransform></g></g><g class="pm"><g><g stroke="#2A2B45" stroke-width=".7" stroke-linecap="round"><line x1="-1.1" y1="0" x2="-.5" y2="-4"></line><line x1="1.1" y1="0" x2=".5" y2="-4"></line><rect x="-2" y="-8.6" width="4" height="5" rx="1.6" fill="#2A2B45"></rect><circle cx="0" cy="-10.4" r="1.7" fill="#F1D3BC"></circle></g><animateTransform attributeName="transform" type="translate" values="798.6 894.4;900.2 835.8;798.6 894.4" dur="10.438230063002187s" begin="-10.071278595744387s" repeatCount="indefinite"></animateTransform></g></g></g>
 </svg>
-    <figcaption>caso hipotético · cálculo propio</figcaption>
   </figure>
-  <a class="vcta cp-go" href="#mapa">buscá las oportunidades ↓</a>
+  <a class="vcta cp-go" href="#sp">lo que aprendimos de San Pablo ↓</a>
 </section>
-
-
-<section id="mapa" class="mp" aria-label="Mapa de oportunidades">
-  <div class="mapwrap" id="mapwrap">
-    <div id="map" class="map" aria-label="Mapa de la Ciudad de Buenos Aires"></div>
-    <div class="mphd"><h2>el mapa de las <em>oportunidades</em></h2></div>
-    <div class="mcol"><div class="minfo"><p>Cada punto es un esqueleto: una obra parada en un barrio con transporte, escuelas y servicios, que podría ser vivienda. Tocá uno para ver su ficha: cuántas viviendas podría tener y si entra en nuestra propuesta.</p><p>¿Conocés uno que no está? Cargalo con el botón <b>+ cargar un esqueleto</b>.</p><p class="mcare">Por seguridad, no entres a las estructuras. No publicamos datos de los dueños ni de quienes viven en ellas.</p></div><div class="ficha" id="ficha" aria-live="polite"></div><button class="regbtn" id="regOpen">+ cargar un esqueleto</button></div>
-    <div class="legend" role="group" aria-label="Filtrar por tipo">
-      <button class="lg on" data-c="real" hidden><i style="background:#9B1549"></i>relevados</button>
-      <button class="lg on" data-c="ley"><i style="background:#F79F9F"></i>entra en la propuesta</button>
-      <button class="lg on" data-c="no"><i style="background:#FF5200"></i>no entra o faltan datos</button>
-      <button class="lg on" data-c="vec"><i style="background:#D3E7F7"></i>cargado por vecinos</button>
-    </div>
-    <div class="zoom" id="zoomCtl"><button id="zIn" aria-label="Acercar">+</button><button id="zOut" aria-label="Alejar">−</button></div>
-    <div class="pickbar" id="pickbar" hidden>Tocá el mapa donde está el esqueleto <button id="pickCancel">cancelar</button></div>
-    <a class="mnext" href="#sp">lo que aprendimos de San Pablo ↓</a>
-    <p class="mapnote" id="mapnote">Vista previa · ubicaciones de ejemplo</p>
+<section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
+  <h2>lo que aprendimos de <em>San Pablo</em></h2>
+  <div class="sp sp2">
+    <div class="sp-l"><p class="sp-k">el antecedente</p><p class="sp-p">En 2021, San Pablo lanzó <a class="sp-in" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Requalifica Centro ↗</a>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><div class="sp-fig"><img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo"></div></div>
+    <div class="sp-r"><p class="sp-dk">nuestra ley es distinta</p>
+      <ul class="sp-q">
+        <li style="--hc:var(--rosa)"><h3>¿cuánto es asequible?</h3><p>Un tope de precio por zona y una proporción mínima de viviendas asequibles en cada edificio.</p></li>
+        <li style="--hc:var(--naranja)"><h3>¿quién accede?</h3><p>Quienes compran su primera vivienda, con créditos a su alcance y el historial de alquiler como garantía.</p></li>
+        <li style="--hc:var(--celeste)"><h3>¿y si se revende?</h3><p>Un plazo mínimo de afectación, inscripto en el Registro de la Propiedad.</p></li>
+        <li style="--hc:var(--lima)"><h3>¿quién controla antes y después?</h3><p>Control de precios, contratos y condiciones de habitabilidad, con devolución de beneficios con intereses si no se cumple.</p></li>
+      </ul>
+      <a class="vcta" href="#participar">estrategias ↓</a></div>
   </div>
-  <div class="toast" id="toast" hidden></div>
 </section>
+<section id="participar" class="nov estr2" aria-label="Estrategias">
+  <div class="nov-top"><h2>estrategias</h2></div>
+  <div class="nov-row" id="nvRow"></div>
+  <div class="nov-nav"><button id="nvPrev" aria-label="Anteriores">←</button><button id="nvNext" aria-label="Siguientes">→</button><a class="vcta" href="#novedades">novedades ↓</a></div>
+</section>
+<section id="novedades" class="estr" aria-label="Novedades">
+  <div class="estr-top"><h2 class="estr-h">novedades</h2><p id="esSteps" hidden></p></div>
+  <p class="estr-cap" id="esCap"></p>
+  <div class="estr-stage" id="esStage" aria-roledescription="carrusel"></div>
+  <button class="estr-nav l" id="esPrev" aria-label="Anterior">←</button>
+  <button class="estr-nav r" id="esNext" aria-label="Siguiente">→</button>
+  <a class="vcta snext" href="#accion">cómo sumarte ↓</a>
+</section>
+<section id="accion" class="wall" aria-label="Cómo sumarte">
+  <h2>cómo sumarte</h2>
+  <p class="wall-hint">sumá tu voz antes de que llegue a la Legislatura</p>
+  <div class="posters"><article class="poster" style="--pb:#F79F9F;--pf:#9B1549;--r:-2.5deg"><div class="pbody"><h3>vení a una mesa</h3><p>Discutimos nuestra propuesta de ley en la vereda de un esqueleto. Próxima mesa: fecha y lugar a confirmar.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab gone" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button></div></article><article class="poster" style="--pb:#D3E7F7;--pf:#9B1549;--r:-1.2deg"><div class="pbody"><h3>firmá la propuesta</h3><p>Apoyá nuestro proyecto de ley para que llegue a la Legislatura.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab gone" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button></div></article><article class="poster" style="--pb:#FF5200;--pf:#F7F4D4;--r:2.6deg"><div class="pbody"><h3>suscribite al newsletter</h3><p>Novedades de la campaña, mesas y el avance de la ley en tu mail.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="news" aria-label="suscribime"><span>suscribime →</span></button><button class="tab" data-act="news" aria-label="suscribime"><span>suscribime →</span></button><button class="tab" data-act="news" aria-label="suscribime"><span>suscribime →</span></button><button class="tab gone" data-act="news" aria-label="suscribime"><span>suscribime →</span></button><button class="tab" data-act="news" aria-label="suscribime"><span>suscribime →</span></button><button class="tab gone" data-act="news" aria-label="suscribime"><span>suscribime →</span></button></div></article></div>
+  <div class="wall-ch"><nav class="cta-ch" aria-label="Redes"><a class="soc" href="https://www.instagram.com/cuerposvacantes/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" href="mailto:cuerposvacantes@gmail.com" aria-label="Escribinos a cuerposvacantes@gmail.com"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a><button type="button" class="soc" id="shareBtn" aria-label="Compartir la campaña"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg></button></nav></div>
+</section>
+<span id="datos"></span>
+<!-- 02 · EL PROBLEMA EN DATOS: ciudad isométrica -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="reg" id="reg" hidden role="dialog" aria-modal="true" aria-labelledby="regT">
   <form class="regsheet" id="regForm" novalidate>
@@ -1517,51 +1591,19 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
     <div class="regnav"><button type="button" class="ghost" id="regPrev" disabled>← atrás</button><button type="submit" class="solid" id="regNext">siguiente →</button></div>
   </form>
 </div>
-<section id="sp" class="spsec" aria-label="El antecedente de San Pablo">
-  <h2>lo que aprendimos de <em>San Pablo</em></h2>
-  <div class="sp sp2">
-    <div class="sp-l"><p class="sp-k">el antecedente</p><p class="sp-p">En 2021, San Pablo lanzó <a class="sp-in" href="https://gestaourbana.prefeitura.sp.gov.br/noticias/programas-municipais-consolidam-2025-como-ano-decisivo-para-o-retrofit-no-centro-de-sao-paulo/" target="_blank" rel="noopener">Requalifica Centro ↗</a>: menos impuestos, trámites más simples y una subvención de hasta el 25% de la obra para recuperar edificios abandonados del centro. A fines de 2025 había 48 edificios en recuperación y más de 5.000 viviendas en camino. Pero sin reglas de asequibilidad, pocas quedaron al alcance de quienes más las necesitaban.</p><div class="sp-fig"><img class="sp-ph" src="sp.jpg" alt="Edificio recuperado en el centro de San Pablo"></div></div>
-    <div class="sp-r"><p class="sp-dk">nuestra ley es distinta</p>
-      <ul class="sp-q">
-        <li style="--hc:var(--rosa)"><h3>¿cuánto es asequible?</h3><p>Un tope de precio por zona y una proporción mínima de viviendas asequibles en cada edificio.</p></li>
-        <li style="--hc:var(--naranja)"><h3>¿quién accede?</h3><p>Quienes compran su primera vivienda, con créditos a su alcance y el historial de alquiler como garantía.</p></li>
-        <li style="--hc:var(--celeste)"><h3>¿y si se revende?</h3><p>Un plazo mínimo de afectación, inscripto en el Registro de la Propiedad.</p></li>
-        <li style="--hc:var(--lima)"><h3>¿quién controla antes y después?</h3><p>Control de precios, contratos y condiciones de habitabilidad, con devolución de beneficios si no se cumple.</p></li>
-      </ul>
-      <a class="vcta" href="#participar">¿y cómo seguimos? ↓</a></div>
-  </div>
-</section>
-<section id="participar" class="nov estr2" aria-label="Estrategias">
-  <div class="nov-top"><h2>estrategias</h2></div>
-  <div class="nov-row" id="nvRow"></div>
-  <div class="nov-nav"><button id="nvPrev" aria-label="Anteriores">←</button><button id="nvNext" aria-label="Siguientes">→</button><a class="vcta" href="#accion">quiero sumarme ↓</a></div>
-</section>
-<section id="accion" class="wall" aria-label="Cómo sumarte">
-  <h2>cómo sumarte</h2>
-  <p class="wall-hint">arrancá un papelito</p>
-  <div class="posters"><article class="poster" style="--pb:#F79F9F;--pf:#9B1549;--r:-2.5deg"><div class="pbody"><h3>vení a una mesa</h3><p>Discutimos nuestra propuesta de ley en la vereda de un esqueleto. Próxima mesa: fecha y lugar a confirmar.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab gone" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button><button class="tab" data-act="mesa" aria-label="avisame"><span>avisame →</span></button></div></article><article class="poster" style="--pb:#D0D35A;--pf:#9B1549;--r:1.8deg"><div class="pbody"><h3>cargá un esqueleto</h3><p>¿Pasás seguido por una obra abandonada? Registrala en el mapa.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab gone" data-act="mapa" aria-label="cargá"><span>cargá →</span></button><button class="tab" data-act="mapa" aria-label="cargá"><span>cargá →</span></button><button class="tab" data-act="mapa" aria-label="cargá"><span>cargá →</span></button><button class="tab" data-act="mapa" aria-label="cargá"><span>cargá →</span></button><button class="tab gone" data-act="mapa" aria-label="cargá"><span>cargá →</span></button><button class="tab" data-act="mapa" aria-label="cargá"><span>cargá →</span></button></div></article><article class="poster" style="--pb:#D3E7F7;--pf:#9B1549;--r:-1.2deg"><div class="pbody"><h3>firmá la propuesta</h3><p>Apoyá nuestro proyecto de ley para que llegue a la Legislatura.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab gone" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button><button class="tab" data-act="firma" aria-label="firmá"><span>firmá →</span></button></div></article><article class="poster" style="--pb:#FF5200;--pf:#F7F4D4;--r:2.6deg"><div class="pbody"><h3>sumá tu organización</h3><p>Instituciones, colectivos y medios: armemos algo juntos.</p><span class="stamp" hidden>firmado</span></div><div class="tabs"><button class="tab" data-act="org" aria-label="escribinos"><span>escribinos →</span></button><button class="tab" data-act="org" aria-label="escribinos"><span>escribinos →</span></button><button class="tab" data-act="org" aria-label="escribinos"><span>escribinos →</span></button><button class="tab gone" data-act="org" aria-label="escribinos"><span>escribinos →</span></button><button class="tab" data-act="org" aria-label="escribinos"><span>escribinos →</span></button><button class="tab gone" data-act="org" aria-label="escribinos"><span>escribinos →</span></button></div></article></div>
-  <a class="vcta snext" href="#novedades">qué está pasando ↓</a>
-</section>
+
+
+
+
+
+
 
 <div class="apop" id="apop" hidden role="dialog" aria-modal="true" aria-label="Sumate"><div class="apop-s" id="apopS"></div></div>
 
-<section id="novedades" class="estr" aria-label="Novedades">
-  <div class="estr-top"><h2 class="estr-h">novedades</h2><p id="esSteps" hidden></p></div>
-  <p class="estr-cap" id="esCap"></p>
-  <div class="estr-stage" id="esStage" aria-roledescription="carrusel"></div>
-  <button class="estr-nav l" id="esPrev" aria-label="Anterior">←</button>
-  <button class="estr-nav r" id="esNext" aria-label="Siguiente">→</button>
-  <a class="vcta snext" href="#sumate">sumate ↓</a>
-</section>
 
-<section id="sumate" class="cta" aria-label="Sumate">
-  <div class="cta-in">
-    <p class="cta-w" id="ctaW" aria-live="polite">discutamos</p>
-    <p class="cta-s">Estamos escribiendo una ley para que los esqueletos vuelvan a ser vivienda. Sumá tu voz antes de que llegue a la Legislatura.</p>
-    <form class="nl" id="nl" novalidate><label for="nlMail" class="sr">Tu mail</label><input id="nlMail" type="email" placeholder="tu mail para el newsletter" autocomplete="email"><button type="submit">suscribime</button></form><p class="nlok" id="nlOk" hidden></p>
-    <nav class="cta-ch" aria-label="Redes"><a class="soc" href="https://www.instagram.com/cuerposvacantes/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" href="mailto:cuerposvacantes@gmail.com" aria-label="Escribinos a cuerposvacantes@gmail.com"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a><button type="button" class="soc" id="shareBtn" aria-label="Compartir la campaña"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg></button></nav>
-  </div>
-</section>
+
+
+
 
 <footer class="foot" id="pie">
   <div class="fbar"><p class="fbrand">cuerpos vacantes · Laboratorio Buenos Aires Desafía al Futuro · 2026</p>
@@ -1741,7 +1783,7 @@ const cloudPath='M0,0 H150 C166,0 170,-22 150,-28 C152,-50 120,-60 102,-46 C95,-
 const CL=[{x:-480,y:-40,s:1,v:7},{x:160,y:60,s:.75,v:5},{x:380,y:-70,s:1.15,v:9},{x:-120,y:300,s:.9,v:6}];
 const clouds=CL.map((c,i)=>`<g id="cl${i}" opacity=".5"><path d="${cloudPath}" transform="scale(${c.s})" fill="#FFFFFF" stroke="#2A2B45" stroke-width="1.1" stroke-linejoin="round"/></g>`).join('');
 const EV=ESQS.find(e=>e.id==='viv')||{x:19.3,y:37.2,z:5*FH};
-const MK={esq:P(19.3,37.2,5*FH+1.6),viv:P(EV.x,EV.y,EV.z+1.6),alq:P(38.2,22.3,6*FH+1.3),jov:P(...(BPOS.jov||[38.3,38.3,4])),juan:P(...(BPOS.juan||[12.3,38.3,5]))};
+const E4=ESQS.find(e=>e.n===4)||{x:19.3,y:37.2,z:5*FH};const MK={esq:P(E4.x,E4.y,E4.z+1.6),viv:P(EV.x,EV.y,EV.z+1.6),alq:P(38.2,22.3,6*FH+1.3),jov:P(...(BPOS.jov||[38.3,38.3,4])),juan:P(...(BPOS.juan||[12.3,38.3,5]))};
 const mk=Object.entries(MK).map(([id,[x,y]])=>`<g class="mk" data-id="${id}" id="mk-${id}" transform="translate(${r1(x)} ${r1(y)})" tabindex="0" role="button" aria-label="Ver dato"><g class="bob"><circle class="pulse" r="8"/><circle class="dot" r="8"/></g></g>`).join('');
 
 const svg=document.getElementById('city');
@@ -1812,7 +1854,7 @@ const DATA={
   jov:{k:'Comprar una casa',n:'45 años',b:'es hoy la edad promedio para convertirse en propietario. En 2005 era entre los 30 y los 35.',s:'Fundación Tejido Urbano'}};
 const $=id=>document.getElementById(id),stage=$('stage'),card=$('card');
 /* ---------- animaciones solo cuando la sección está en pantalla ---------- */
-const VIS=['inicio','ciudad','participar','sumate','novedades'].map(id=>$(id));
+const VIS=['inicio','ciudad','participar','novedades'].map(id=>$(id)).filter(Boolean);
 const onScreen=el=>el.classList.contains('vis');
 function visTick(){const vh=innerHeight;VIS.forEach(el=>{const r=el.getBoundingClientRect();el.classList.toggle('vis',r.bottom>vh*.25&&r.top<vh*.75)})}
 visTick();setInterval(visTick,250);addEventListener('scroll',visTick,{passive:true});
@@ -1836,7 +1878,7 @@ svg.addEventListener('click',e=>{const t=e.target.closest('[data-id]');if(t)flas
 
 $('cx').addEventListener('click',userClose);
 let inView=false;setInterval(()=>{const r=stage.getBoundingClientRect(),vh=innerHeight,v=Math.max(0,Math.min(r.bottom,vh)-Math.max(r.top,0))/Math.max(1,Math.min(r.height,vh)),now=v>=.6;if(now===inView)return;inView=now;if(inView){if(!concluded&&openId===null)later(tourNext,1000)}else{clearTimeout(tTimer);if(openId)closeCard();if(!modal.hidden)endModal()}},300);
-$('vermas').addEventListener('click',()=>$('derecho').scrollIntoView({behavior:'smooth'}));
+$('vermas').addEventListener('click',()=>$('ley').scrollIntoView({behavior:'smooth'}));
 addEventListener('resize',place);
 
 const modal={hidden:true};function endModal(){}
@@ -2030,7 +2072,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){if(picking)endPick(false);el
 const ES=[
  {img:'mk/landing.jpg',t:'página web',k:'el centro de la campaña',b:'var(--rosa)',f:'var(--bordo)',s:[0,1],c:'Todo lleva acá: el mapa de oportunidades, la ley explicada y cómo sumarse.'},
  {img:'mk/carteles-obra.jpg',t:'carteles de obra',k:'cartelería pública',b:'var(--naranja)',f:'var(--crema)',s:[0],c:'Vestimos el cerco de cada esqueleto con carteles y un QR que lleva a su ficha en el mapa y a nuestra propuesta.'},
- {img:'mk/instagram-perfil.jpg',t:'instagram · carrusel de datos',k:'redes propias',b:'var(--rosa)',f:'var(--bordo)',s:[0,1],c:'Un dato por publicación para instalar el tema y explicar, eje por eje, la ley que proponemos.'},
+ {img:'mk/instagram-perfil.jpg',t:'instagram',k:'redes propias',b:'var(--rosa)',f:'var(--bordo)',s:[0,1],c:'Un dato por publicación para instalar el tema y explicar, eje por eje, la ley que proponemos.'},
  {img:'mk/afiche-calle.jpg',t:'convocatorias abiertas',k:'vía pública',b:'var(--crema)',f:'var(--naranja)',s:[1],c:'Afiches en la calle que invitan a discutir la ley en las mesas abiertas de cada esqueleto.'},
  {img:'mk/mesa-vereda.jpg',t:'mesa en la vereda',k:'gestión participativa',b:'var(--lima)',f:'var(--bordo)',s:[1,2],c:'Discutimos nuestra propuesta con los vecinos en la puerta de las obras: lo que se acuerda ahí entra en la ley.'},
  {img:'mk/colaboraciones-cesba.jpg',t:'colaboraciones',k:'CESBA · FADU · Gato y la Caja · Popurrí · Migliore',b:'var(--celeste)',f:'var(--bordo)',s:[2,3],c:'Instituciones, universidades y divulgadores que suman respaldo para presentar la ley en la Legislatura y lograr que se apruebe.'}];
@@ -2046,7 +2088,7 @@ const NOV=[
  {soon:1,cat:'intervención',foto:'ph/ph10.jpg',color:'var(--crema)'},
  {soon:1,cat:'aliados',foto:'ph/ph02.jpg',color:'var(--crema)'}];
 const nvRow=$('nvRow');const ROW=ES;
-nvRow.innerHTML=ROW.map(e=>`<article class="ncard es"><div class="nh"><span>${esc(e.k)}</span></div><div class="nf" style="--c:${e.b}"><img src="${e.img}" alt="" loading="lazy"></div><h3>${esc(e.t)}</h3><p>${esc(e.c)}</p></article>`).join('');
+nvRow.innerHTML=ROW.map(e=>`<article class="ncard es"><div class="nf" style="--c:${e.b}"><img src="${e.img}" alt="" loading="lazy"></div><h3>${esc(e.t)}</h3><p>${esc(e.c)}</p></article>`).join('');
 const nvStep=()=>{const c=nvRow.querySelector('.ncard');return c?c.getBoundingClientRect().width+20:300};
 
 
@@ -2080,11 +2122,7 @@ let esPT;function esPause(){esHover=true;clearTimeout(esPT);esPT=setTimeout(()=>
 esRender();requestAnimationFrame(esTick);
 
 /* ---------- llamado final ---------- */
-const CTA=[['discutamos','#F79F9F','#FF5200'],['escribamos','#FF5200','#F79F9F'],['consensuemos','#D3E7F7','#9B1549'],['habitemos','#D0D35A','#9B1549'],['participemos','#9B1549','#D3E7F7']];
-const ctaSec=$('sumate'),ctaW=$('ctaW');let ctaI=0;
-function ctaGo(){const [w,b,f]=CTA[ctaI];ctaSec.style.setProperty('--cb',b);ctaSec.style.setProperty('--cf',f);
-  ctaW.className='cta-w';void ctaW.offsetWidth;ctaW.innerHTML=[...w].map((c,i)=>`<span style="--i:${i}">${c}</span>`).join('');ctaW.classList.add('go');ctaI=(ctaI+1)%CTA.length}
-ctaGo();setInterval(()=>{if(onScreen(ctaSec))ctaGo()},2800);
+
 
 /* ---------- recorrido: aparece al entrar ---------- */
 document.querySelectorAll('.rec').forEach(rc=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){rc.classList.add('in');io.disconnect()}}),{threshold:.25});io.observe(rc)});
@@ -2097,7 +2135,7 @@ document.querySelectorAll('.rec').forEach(rc=>{const io=new IntersectionObserver
 /* ---------- mapa: ancho de la columna = ancho del título ---------- */
 {const h=document.querySelector('.mphd h2'),mw=$('mapwrap');const fit=()=>{if(!h)return;const r=document.createRange();r.setStart(h.firstChild,0);r.setEnd(h.firstChild,h.firstChild.textContent.trimEnd().length);mw.style.setProperty('--mcw',Math.max(320,Math.round(r.getBoundingClientRect().width))+'px')};fit();addEventListener('resize',fit);document.fonts&&document.fonts.ready.then(fit)}
 /* ---------- puntos laterales ---------- */
-const NAV={recorrido:'recorrido',inicio:'inicio',ciudad:'la ciudad',derecho:'el derecho',ley:'nuestra ley',actores:'a quién beneficia',mapa:'oportunidades',participar:'estrategia',accion:'cómo sumarte',novedades:'novedades',sp:'antecedente',sumate:'sumate'};
+const NAV={recorrido:'recorrido',inicio:'inicio',derecho:'el derecho',ciudad:'la ciudad',ley:'nuestra ley',mapa:'oportunidades',actores:'a quién beneficia',sp:'antecedente',participar:'estrategias',novedades:'novedades',accion:'cómo sumarte'};
 const navSecs=[...document.querySelectorAll('body > section')].filter(s=>NAV[s.id]);const dotsEl=$('snav');
 navSecs.forEach(s=>{const a=document.createElement('a');a.href='#'+s.id;a.innerHTML=`<span>${NAV[s.id]}</span>`;a.setAttribute('aria-label',NAV[s.id]);dotsEl.appendChild(a)});
 const dotA=[...dotsEl.children];
@@ -2107,12 +2145,10 @@ document.querySelectorAll('.flinks button[aria-controls]').forEach(b=>b.addEvent
 $('shareBtn').addEventListener('click',async()=>{const d={title:'Cuerpos vacantes',text:'Buenos Aires tiene más de 100 esqueletos urbanos. Proponemos una ley para que vuelvan a ser vivienda. Sumate:',url:location.href.split('#')[0]};try{if(navigator.share){await navigator.share(d);return}}catch(e){if(e.name==='AbortError')return}try{await navigator.clipboard.writeText(d.url);toast('Link copiado. ¡Compartilo!')}catch(e){toast(d.url)}});
 /* ---------- firma y newsletter (prototipo, sin base de datos) ---------- */
 
-$('nl').addEventListener('submit',e=>{e.preventDefault();const v=$('nlMail').value.trim();const ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
-  if(ok)sendMail('suscripción al newsletter',{email:v});$('nlOk').hidden=false;$('nlOk').textContent=ok?'¡Listo! Te vamos a escribir con las novedades.':'Revisá el mail: parece incompleto.';if(ok)$('nlMail').value=''});
 
 
 /* ---------- ciudad: los cinco datos a la vista ---------- */
-const LBL={esq:{g:'esq',n:'+100',t:'esqueletos urbanos en la Ciudad, como este.',s:'Infobae, 29/05/2026',d:'R'},
+const LBL={esq:{g:'esq',n:'+100',t:'esqueletos urbanos en la Ciudad, como este.',s:'Infobae, 29/05/2026',d:'UC'},
  viv:{g:'esq',n:'+3.000',t:'viviendas posibles si se terminaran.',s:'Cálculo propio: 100 obras de 2.000 m²',d:'UR'},
  alq:{g:'viv',n:'37%',t:'de los hogares porteños alquila. Hace 20 años era el 22%.',s:'Observatorio Metropolitano',d:'UL'},
  juan:{g:'viv',n:'53%',t:'de los hogares inquilinos jóvenes destina más de la mitad de sus ingresos al alquiler.',s:'CELS, Encuesta Inquilina 2025',d:'DL'},
@@ -2121,7 +2157,7 @@ const LORD=['esq','viv','alq','juan','jov'],clabs=$('clabs');
 clabs.innerHTML=LORD.map((id,i)=>{const l=LBL[id];return `<div class="clab g-${l.g}" id="lab-${id}"><b>${l.n}</b><p>${l.t}</p><small${l.c?' class="tbc"':''}>${l.s}</small></div>`}).join('');
 function placeLabels(){if(innerWidth<=760)return;const s=stage.getBoundingClientRect();
   for(const id of LORD){const el=$('lab-'+id),m=$('mk-'+id).getBoundingClientRect(),x=m.left-s.left+m.width/2,y=m.top-s.top+m.height/2,w=el.offsetWidth,h=el.offsetHeight,d=LBL[id].d;
-    let l=d.includes('R')?x+18:x-18-w,tp=d.includes('U')?y-h-34:d.includes('D')?y+30:y-h/2;l=Math.max(8,Math.min(l,s.width-w-8));tp=Math.max(8,Math.min(tp,s.height-h-8));el.style.transform=`translate(${l.toFixed(0)}px,${tp.toFixed(0)}px)`}}
+    let l=d.includes('C')?x-w/2:d.includes('R')?x+18:x-18-w,tp=d.includes('U')?y-h-34:d.includes('D')?y+30:y-h/2;l=Math.max(8,Math.min(l,s.width-w-8));tp=Math.max(8,Math.min(tp,s.height-h-8));el.style.transform=`translate(${l.toFixed(0)}px,${tp.toFixed(0)}px)`}}
 function flashLab(id){const el=$('lab-'+id);if(!el)return;el.classList.add('flash');clearTimeout(el._ft);el._ft=setTimeout(()=>el.classList.remove('flash'),900)}
 svg.addEventListener('mouseover',e=>{const t=e.target.closest('.mk[data-id]');if(t){const el=$('lab-'+t.dataset.id);if(el)el.classList.add('flash')}});
 svg.addEventListener('mouseout',e=>{const t=e.target.closest('.mk[data-id]');if(t){const el=$('lab-'+t.dataset.id);if(el)el.classList.remove('flash')}});
@@ -2143,6 +2179,7 @@ document.querySelectorAll('.tab').forEach(tb=>tb.addEventListener('click',()=>{i
 const POP={mesa:{h:'vení a una mesa',p:'Discutimos nuestra propuesta de ley en la vereda de un esqueleto. La próxima mesa tiene fecha y lugar a confirmar: dejanos tu mail y te avisamos.',f:[['email','Tu mail']],b:'avisame',ok:'¡Listo! Te avisamos de la próxima mesa.'},
  mapa:{h:'cargá un esqueleto',p:'¿Pasás seguido por una obra abandonada? Marcala en el mapa, sumá una foto y contanos lo que ves.',go:1,b:'abrir el formulario'},
  firma:{h:'firmá la propuesta',p:'Sumá tu nombre a nuestro proyecto de ley para que llegue a la Legislatura.',f:[['text','Tu nombre'],['email','Tu mail']],b:'firmar',ok:'¡Gracias por sumar tu firma!'},
+ news:{h:'suscribite al newsletter',p:'Dejanos tu mail y te contamos las novedades de la campaña y de la ley.',f:[['email','Tu mail']],b:'suscribime',ok:'¡Listo! Te vamos a escribir con las novedades.'},
  org:{h:'sumá tu organización',p:'Instituciones, colectivos y medios: armemos algo juntos. También podés escribirnos a cuerposvacantes@gmail.com.',f:[['text','Organización'],['email','Mail de contacto'],['area','¿Qué te gustaría hacer?']],b:'enviar',ok:'¡Gracias! Te vamos a escribir.'}};
 const apop=$('apop'),apopS=$('apopS');
 function closePop(){apop.hidden=true}
@@ -2151,7 +2188,7 @@ function openPop(act,post){const c=POP[act];if(!c)return;apopS.style.setProperty
   apop.hidden=false;apopS.querySelector('.x').addEventListener('click',closePop);
   if(c.go)$('popGo').addEventListener('click',()=>{closePop();openReg()});
   else $('popF').addEventListener('submit',e=>{e.preventDefault();const em=apopS.querySelector('input[type=email]');if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim())){const er=apopS.querySelector('.err');er.textContent='Revisá el mail: parece incompleto.';er.hidden=false;return}
-    const d={};c.f.forEach(([ty,l],k)=>{const v=$('pf'+k).value.trim();d[ty==='email'?'email':l]=v});sendMail({mesa:'quiere venir a una mesa',firma:'nueva firma de la propuesta',org:'una organización quiere sumarse'}[act]||c.h,d);
+    const d={};c.f.forEach(([ty,l],k)=>{const v=$('pf'+k).value.trim();d[ty==='email'?'email':l]=v});sendMail({news:'suscripción al newsletter',mesa:'quiere venir a una mesa',firma:'nueva firma de la propuesta',org:'una organización quiere sumarse'}[act]||c.h,d);
     if(act==='firma')post.querySelector('.stamp').hidden=false;apopS.innerHTML=`<button type="button" class="x" aria-label="Cerrar">×</button><h3>${c.ok}</h3>`;apopS.querySelector('.x').addEventListener('click',closePop)})}
 apop.addEventListener('click',e=>{if(e.target===apop)closePop()});addEventListener('keydown',e=>{if(e.key==='Escape'&&!apop.hidden)closePop()});
 })();
