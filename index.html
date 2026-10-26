@@ -1195,14 +1195,9 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 @media (max-width:900px){.cp-cards{order:3}.cp-steps{order:2}.cp-nav{order:4}}
 @media (max-width:520px){.cp-cards{grid-template-columns:1fr 1fr;gap:8px}.cp-cards .acard{padding:12px!important}.cp-cards .acard h3{font-size:17px!important}.cp-cards .acard dd{font-size:13px!important}}
 
-/* v12 · puntos de navegación con aire propio */
-@media (min-width:761px){
-  :root{--navgut:58px}
-  body>section{padding-right:max(var(--gut),var(--navgut))!important;box-sizing:border-box}
-  .snav{right:16px}
-  .city,.mp,.hero{padding-right:0!important}
-  .city .stage,.mapwrap{margin-right:var(--navgut);border-right:1px solid transparent}
-}
+/* v12 · puntos de navegación: sólo la línea de tiempo deja aire */
+@media (min-width:761px){#recorrido{padding-right:max(var(--gut),56px)!important}}
+
 /* fondos rosita */
 .rec:not(.ley2),.estr2,.spsec{background-color:#FDECEC!important;background-image:radial-gradient(rgba(155,21,73,.07) 1px,transparent 1.3px)!important;background-size:7px 7px!important}
 .spsec .sp{background:#FFF7F6!important}
@@ -1230,7 +1225,7 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 .minfo{background:var(--rosa)!important;color:var(--ink)!important;border:0!important}
 .minfo p,.minfo b{color:var(--ink)!important}
 @media (min-width:1101px){
-  .mcol{left:auto!important;right:16px!important}
+  .mcol{left:auto!important;right:40px!important}
   .zoom{right:auto!important;left:16px!important;top:auto!important;bottom:16px!important}
   .mapwrap>.mnext{right:auto!important;left:76px!important}
   .mapwrap .legend{right:auto}
@@ -1242,8 +1237,10 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 @media (max-width:760px){.posters{grid-template-columns:1fr 1fr!important}.poster{min-height:300px!important}}
 
 /* v13b */
-@media (min-width:761px){body>section:not(.city):not(.mp):not(.hero){padding-right:max(var(--gut),var(--navgut))!important}}
 .ley-go{white-space:nowrap;font-size:13px!important;padding:.7em .9em!important}
+
+/* v14 · sin botones de navegación en celular */
+@media (max-width:760px){.vcta,.mnext,.hpill,.vermas,.snext{display:none!important}}
 </style>
 </head>
 <body style="margin:0">
