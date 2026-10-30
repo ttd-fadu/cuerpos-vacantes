@@ -1241,6 +1241,7 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 
 /* v14 · sin botones de navegación en celular */
 @media (max-width:760px){.vcta,.mnext,.hpill,.vermas,.snext{display:none!important}}
+#recorrido[hidden],#participar[hidden]{display:none!important}
 </style>
 </head>
 <body style="margin:0">
@@ -1253,7 +1254,7 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
 
 
 
-<section id="recorrido" class="rec" aria-label="Nuestro recorrido">
+<section id="recorrido" class="rec" aria-label="Nuestro recorrido" hidden>
   <div><p class="rec-k">nuestro recorrido</p><h2>de una idea <em>a una ley</em></h2></div>
   <ol class="rec-line">
     <li style="--rc:var(--rosa)"><span class="rec-d"></span><h3>concursamos</h3><p>Presentamos <b>Cuerpos Vacantes</b> en el concurso <i>“Buenos Aires desafía al futuro”</i> del CESBA y El Gato y La Caja. Propusimos recuperar edificios en construcción que fueron abandonados y transformarlos en vivienda asequible.</p></li>
@@ -1533,10 +1534,10 @@ a.sp-in:hover{text-decoration-thickness:2.5px}
         <li style="--hc:var(--celeste)"><h3>¿y si se revende?</h3><p>Un plazo mínimo de afectación, inscripto en el Registro de la Propiedad.</p></li>
         <li style="--hc:var(--lima)"><h3>¿quién controla antes y después?</h3><p>Control de precios, contratos y condiciones de habitabilidad, con devolución de beneficios con intereses si no se cumple.</p></li>
       </ul>
-      <a class="vcta" href="#participar">estrategias ↓</a></div>
+      <a class="vcta" href="#novedades">novedades ↓</a></div>
   </div>
 </section>
-<section id="participar" class="nov estr2" aria-label="Estrategias">
+<section id="participar" class="nov estr2" aria-label="Estrategias" hidden>
   <div class="nov-top"><h2>estrategias</h2></div>
   <div class="nov-row" id="nvRow"></div>
   <div class="nov-nav"><button id="nvPrev" aria-label="Anteriores">←</button><button id="nvNext" aria-label="Siguientes">→</button><a class="vcta" href="#novedades">novedades ↓</a></div>
@@ -2100,8 +2101,9 @@ const ES=[
 /* ---------- novedades ---------- */
 /* Para sumar una novedad, agregar un objeto a esta lista (la más nueva primero). */
 const NOV=[
+ {fecha:'29/10/2026',cat:'taller',titulo:'Segundo encuentro del taller de fortalecimiento',texto:'Participamos del segundo encuentro del taller de fortalecimiento en el CESBA, junto a los otros equipos del laboratorio, para seguir afinando la propuesta.',link:'#ley',linkTxt:'conocé la propuesta',foto:'ph/cesba-bn.jpg',color:'var(--lima)',real:1},
  {fecha:'19/10/2026',cat:'legislatura',titulo:'Nos reunimos en la Legislatura',texto:'Presentamos cuerpos vacantes a José Rosenfeld, director de Patrimonio y Paisaje de la Legislatura porteña, que nos contó cómo es el proceso para movilizar una ley.',link:'#ley',linkTxt:'conocé la propuesta',foto:'ph/legislatura-bn.jpg',color:'var(--naranja)',real:1},
- {fecha:'01/10/2026',cat:'incubación',titulo:'Incubamos la idea en el CESBA',texto:'Trabajamos el proyecto en el laboratorio del CESBA, en jornadas del 1 y el 29 de octubre, con especialistas y otros equipos. Ahí conocimos el proyecto de ley de esqueletos urbanos.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver la convocatoria',foto:'ph/cesba-bn.jpg',color:'var(--celeste)',real:1},
+ {fecha:'01/10/2026',cat:'incubación',titulo:'Incubamos la idea en el CESBA',texto:'Trabajamos el proyecto en el laboratorio del CESBA, con especialistas y otros equipos. Ahí conocimos el proyecto de ley de esqueletos urbanos.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver la convocatoria',foto:'ph/cesba-bn.jpg',color:'var(--celeste)',real:1},
  {fecha:'07/2026',cat:'convocatoria',titulo:'Presentamos cuerpos vacantes',texto:'Nos inscribimos en Buenos Aires desafía al futuro, del CESBA y El Gato y La Caja, con una propuesta para recuperar edificios en obra abandonados con un programa de vivienda.',link:'https://www.cesba.gob.ar/novedades/2026/07/propuestas-seleccionadas-de-buenos-aires-desafia-al-futuro/',linkTxt:'ver en CESBA',foto:'mk/mesa-vereda-bn.jpg',color:'var(--rosa)',real:1},
  {soon:1,cat:'prensa',foto:'ph/ph07.jpg',color:'var(--crema)'},
  {soon:1,cat:'intervención',foto:'ph/ph10.jpg',color:'var(--crema)'},
@@ -2157,7 +2159,7 @@ document.querySelectorAll('.rec').forEach(rc=>{const io=new IntersectionObserver
 {const g=document.querySelector('.ley-go'),last=document.querySelector('#ley .rec-line li:last-child');const fit=()=>{if(innerWidth>1100&&last)g.style.width=Math.round(last.getBoundingClientRect().width)+'px';else g.style.width=''};fit();addEventListener('resize',fit)}
 /* ---------- puntos laterales ---------- */
 const NAV={recorrido:'recorrido',inicio:'inicio',derecho:'el derecho',ciudad:'la ciudad',ley:'nuestra ley',mapa:'oportunidades',actores:'a quién beneficia',sp:'antecedente',participar:'estrategias',novedades:'novedades',accion:'cómo sumarte'};
-const navSecs=[...document.querySelectorAll('body > section')].filter(s=>NAV[s.id]);const dotsEl=$('snav');
+const navSecs=[...document.querySelectorAll('body > section')].filter(s=>NAV[s.id]&&!s.hidden);const dotsEl=$('snav');
 navSecs.forEach(s=>{const a=document.createElement('a');a.href='#'+s.id;a.innerHTML=`<span>${NAV[s.id]}</span>`;a.setAttribute('aria-label',NAV[s.id]);dotsEl.appendChild(a)});
 const dotA=[...dotsEl.children];
 function dotSync(){const mid=innerHeight/2;let k=0;navSecs.forEach((s,i)=>{if(s.getBoundingClientRect().top<=mid)k=i});dotA.forEach((a,i)=>a.classList.toggle('on',i===k))}
